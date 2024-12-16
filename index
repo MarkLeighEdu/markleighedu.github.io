@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to My GitHub Page</title>
-</head>
-<body>
-    <h1>Hello, World!</h1>
-    <p>This is my GitHub Pages site!</p>
-</body>
-</html>
+---
+layout: default
+---
+
+<header></header>
+<main>
+    <section class="container">
+        <div class="block">
+            <h2>Video Section</h2>
+            <div class="left">
+                <h3>Title 1</h3>
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP" frameborder="0"></iframe>
+            </div>
+            <div class="right">
+                <h3>Title 2</h3>
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div class="block">
+            <h2>Featured Articles</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <img src="/assets/img/daily1.jpg" alt="Daily Commentary">
+                    <div class="title">
+                        <p>Daily <span style="color: lightblue;">Commentary</span></p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="/assets/img/daily2.jpg" alt="Daily Report">
+                    <div class="title">
+                        <p>Daily <span style="color: lightgreen;">Report</span></p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="/assets/img/weekly.jpg" alt="Weekly Report">
+                    <div class="title">
+                        <p>Weekly <span style="color: lightyellow;">Report</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Recent Posts</h2>
+        <!-- Example for displaying recent posts -->
+        <div class="posts">
+            <!-- Display posts dynamically -->
+        </div>
+    </section>
+</main>
+<footer></footer>
