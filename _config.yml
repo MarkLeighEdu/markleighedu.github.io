@@ -1,0 +1,31 @@
+title: "Mark Leigh Edu"
+description: "Educational website with content in multiple languages"
+baseurl: ""
+url: "https://markleighedu.github.io"
+author: "Mark Leigh Edu"
+
+# Default Language
+locale: "en"
+
+# Languages
+languages:
+  en: "English"
+  es: "Spanish"
+  ar: "Arabic"
+  fr: "French"
+  de: "German"
+  pt-BR: "Portuguese (Brazil)"
+  tr: "Turkish"
+  ja: "Japanese"
+  ko: "Korean"
+  zh-CN: "Chinese (Simplified)"
+  zh-TW: "Chinese (Traditional)"
+
+# Pagination for posts
+paginate: 6
+
+# Jekyll plugins for translations
+plugins:
+  - jekyll-multiple-languages-plugin
+  - jekyll-feed
+  - jekyll-seo-tag
