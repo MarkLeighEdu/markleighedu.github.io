@@ -1,52 +1,118 @@
 ---
-layout: default
+layout: page
+title: "Mark Leigh Blog"
+description: "「Mark Leigh Trading Education」"
+hide-in-nav: true
 ---
 
-<header></header>
-<main>
-    <section class="container">
-        <div class="block">
-            <h2>Video Section</h2>
-            <div class="left">
-                <h3>Title 1</h3>
-                <iframe src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP" frameborder="0"></iframe>
-            </div>
-            <div class="right">
-                <h3>Title 2</h3>
-                <iframe src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3" frameborder="0"></iframe>
-            </div>
-        </div>
-        <div class="block">
-            <h2>Featured Articles</h2>
-            <div class="grid">
-                <div class="grid-item">
-                    <img src="/assets/img/daily1.jpg" alt="Daily Commentary">
-                    <div class="title">
-                        <p>Daily <span style="color: lightblue;">Commentary</span></p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="/assets/img/daily2.jpg" alt="Daily Report">
-                    <div class="title">
-                        <p>Daily <span style="color: lightgreen;">Report</span></p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="/assets/img/weekly.jpg" alt="Weekly Report">
-                    <div class="title">
-                        <p>Weekly <span style="color: lightyellow;">Report</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="post-preview" style="margin-top: 20px;">
+  <!-- First Block - Video Embeds -->
+  <div class="row mb-4">
+    <!-- First Video -->
+    <div class="col-12 mb-3">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP"
+          title="YouTube playlist 1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="text-center mt-2">Learn the essentials of trading strategies</p>
+    </div>
+    <!-- Second Video -->
+    <div class="col-12 mb-3">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3"
+          title="YouTube playlist 2"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="text-center mt-2">Dive deeper into advanced trading insights</p>
+    </div>
+  </div>
+</div>
 
-    <section class="container">
-        <h2>Recent Posts</h2>
-        <!-- Example for displaying recent posts -->
-        <div class="posts">
-            <!-- Display posts dynamically -->
+<!-- Second Block - Clickable Images -->
+<div class="post-preview">
+  <div class="row mb-4">
+    <!-- Image 1 -->
+    <div class="col-lg-4 col-md-4 col-sm-12 mb-3" style="margin-bottom: 15px;">
+      <a href="https://markleigh8.github.io/mark-report/daily1/EOD Commentary Dec 11.pdf" target="_blank">
+        <img
+          src="{{ '/img/eod1.jpg' | prepend: site.baseurl }}"
+          class="img-fluid w-100"
+          alt="EOD Report 1"
+          style="border-radius: 5px; max-width: 100%; height: auto;">
+      </a>
+    </div>
+    <!-- Image 2 -->
+    <div class="col-lg-4 col-md-4 col-sm-12 mb-3" style="margin-bottom: 15px;">
+      <a href="https://markleigh8.github.io/mark-report/daily2/EOD Report Dec 11.pdf" target="_blank">
+        <img
+          src="{{ '/img/eod2.jpg' | prepend: site.baseurl }}"
+          class="img-fluid w-100"
+          alt="EOD Report 2"
+          style="border-radius: 5px; max-width: 100%; height: auto;">
+      </a>
+    </div>
+    <!-- Image 3 -->
+    <div class="col-lg-4 col-md-4 col-sm-12 mb-3" style="margin-bottom: 15px;">
+      <a href="https://markleigh8.github.io/mark-report/weekly/Market Weekly Review Dec 8.pdf" target="_blank">
+        <img
+          src="{{ '/img/weekly.jpg' | prepend: site.baseurl }}"
+          class="img-fluid w-100"
+          alt="Weekly EOD Report"
+          style="border-radius: 5px; max-width: 100%; height: auto;">
+      </a>
+    </div>
+  </div>
+</div>
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
         </div>
-    </section>
-</main>
-<footer></footer>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
