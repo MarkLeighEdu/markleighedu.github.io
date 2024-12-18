@@ -1,31 +1,87 @@
-title: "Mark Leigh Edu"
-description: "Educational website with content in multiple languages"
-baseurl: ""
-url: "https://markleighedu.github.io"
-author: "Mark Leigh Edu"
-
-# Default Language
-locale: "en"
-
-# Languages
 languages:
-  en: "English"
-  es: "Spanish"
-  ar: "Arabic"
-  fr: "French"
-  de: "German"
-  pt-BR: "Portuguese (Brazil)"
-  tr: "Turkish"
-  ja: "Japanese"
-  ko: "Korean"
-  zh-CN: "Chinese (Simplified)"
-  zh-TW: "Chinese (Traditional)"
+  - en
+  - es
+  - zh-cn
+default_lang: en
 
-# Pagination for posts
-paginate: 6
+en:
+  url: "https://markleighedu.github.io"
+  baseurl: "/en"
+es:
+  url: "https://markleighedu.github.io"
+  baseurl: "/es"
+zh-cn:
+  url: "https://markleighedu.github.io"
+  baseurl: "/zh-cn"
 
-# Jekyll plugins for translations
-plugins:
-  - jekyll-multiple-languages-plugin
-  - jekyll-feed
-  - jekyll-seo-tag
+# Site settings
+title: Mark Leigh Educator Blog
+SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
+header-img: img/home-bg.jpg
+email: markleigh.edu@gmail.com
+description: "Mark Leigh's Personal Blog | Financial Market Trading Education"
+keyword: "Mark Leigh, Educator, Education, Expert, Forex Trading, Currencies, Cryptocurrencies, Blog, Commodities Trading, US Stock Trading"
+url: "https://markleighedu.github.io/"
+baseurl: ""
+
+# Publish posts or collection documents with a future date.
+future: false
+exclude:
+- _posts/
+
+# SNS settings
+RSS: false
+instagram_username: markleigh.educator
+twitter_username: MarkLeigh_edu
+youtube_username: "@MarkLeigh-Educator"
+facebook_username: markleigh.tradingeducator
+linkedin_username: mark-leigh-51132935
+
+# Build settings
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude:
+  [
+    "less",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "README.zh.md",
+  ]
+anchorjs: true
+
+# Gems
+plugins: [jekyll-paginate]
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Disqus settings
+disqus_username: markleigh
+disable_disqus: true
+
+# Analytics settings
+ga_track_id: "G-XXXXXXXXXX"
+ga_domain: markleighedu.github.io
+
+# Sidebar settings
+sidebar: true
+sidebar-about-description: "Trading Education <br> Blog @ Mark"
+sidebar-avatar: https://github.com/markleighedu.png
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+# MathJax rendering for layout:page
+page-mathjax: false
