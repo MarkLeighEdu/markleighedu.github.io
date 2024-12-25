@@ -16,7 +16,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Explicitly using Ubuntu 24.04 to test compatibility with upcoming default
+
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -24,15 +25,12 @@ jobs:
       - name: Setup Ruby environment
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'  # Use Ruby 3.1 for better compatibility
+          ruby-version: '2.7'  # Ruby 2.7 is compatible with Jekyll
           bundler-cache: true  # Automatically installs and caches gems
-
-      - name: Install Bundler
-        run: gem install bundler -v 2.2.33  # Install a specific Bundler version
 
       - name: Install dependencies
         run: |
-          bundle clean --force  # Clear Bundler cache
+          gem install bundler -v 2.2.33  # Specify Bundler version
           bundle install --verbose  # Install gems with verbose output
 
       - name: Build Jekyll site
@@ -49,7 +47,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Use Ubuntu 24.04 for consistency
     needs: build
     steps:
       - name: Deploy to GitHub Pages
