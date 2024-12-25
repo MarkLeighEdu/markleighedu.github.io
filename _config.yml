@@ -51,6 +51,7 @@ exclude:
     "README.zh.md",
   ]
 anchorjs: true
+encoding: utf-8
 
 # Gems
 plugins: [jekyll-paginate]
