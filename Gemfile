@@ -12,3 +12,6 @@ gem "webrick", "~> 1.7"
 
 # Optional tools for task automation
 gem "rake"
+
+# Ensure compatibility for Ruby versions 2.7 and newer
+gem "bundler", "~> 2.2"
