@@ -14,6 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Ensure img folder exists
+        run: |
+          mkdir -p img  # Ensure the 'img' folder exists before creating subfolders
+
       - name: Create monthly folders for 2025
         run: |
           for month in {01..12}; do
