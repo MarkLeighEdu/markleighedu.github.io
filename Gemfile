@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 # Use the GitHub Pages gem for compatibility
-gem "github-pages", group: :jekyll_plugins
+gem "github-pages", "~> 239", group: :jekyll_plugins
 
 # Specify additional plugins if needed
-gem "jekyll-paginate"  # Pagination plugin
-gem "jekyll-multiple-languages-plugin"  # Multilingual support
+gem "jekyll-paginate"  # Pagination plugin (ensure compatibility with the GitHub Pages version)
+gem "jekyll-multiple-languages-plugin"  # Multilingual support (ensure compatibility with the GitHub Pages version)
 
 # Required for local development with Ruby
 gem "webrick", "~> 1.7"
