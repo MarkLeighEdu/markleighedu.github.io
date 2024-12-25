@@ -1,11 +1,10 @@
-# Workflow for building and deploying a Jekyll site to GitHub Pages 
+# Workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the main branch (change from 'master' to 'main')
   push:
-    branches: ["master"]
-
+    branches: ["main"]  # Update to your default branch
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -32,7 +31,7 @@ jobs:
       - name: Setup Ruby environment
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '2.7'  # Updated to Ruby 2.7 if needed
           bundler-cache: true # Automatically installs and caches gems
 
       - name: Install dependencies
