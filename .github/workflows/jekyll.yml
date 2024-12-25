@@ -24,13 +24,15 @@ jobs:
       - name: Setup Ruby environment
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'  # Ruby 2.7 is compatible with Jekyll
+          ruby-version: '3.1'  # Use Ruby 3.1 for better compatibility
           bundler-cache: true  # Automatically installs and caches gems
+
+      - name: Install Bundler
+        run: gem install bundler -v 2.2.33  # Install a specific Bundler version
 
       - name: Install dependencies
         run: |
-          gem install bundler -v 2.2.33  # Install specific Bundler version
-          gem install github-pages  # Install the github-pages gem (includes Jekyll and dependencies)
+          bundle clean --force  # Clear Bundler cache
           bundle install --verbose  # Install gems with verbose output
 
       - name: Build Jekyll site
