@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04  # Explicitly using Ubuntu 24.04 to test compatibility with upcoming default
+    runs-on: ubuntu-22.04  # Use a more stable version for Ruby compatibility
 
     steps:
       - name: Checkout source code
@@ -25,18 +25,18 @@ jobs:
       - name: Setup Ruby environment
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'  # Ruby 3.0 for better compatibility
-          bundler-cache: true  # Automatically installs and caches gems
+          ruby-version: '3.0'  # Ruby 3.0 for compatibility with Jekyll 4.3
+          bundler-cache: true  # Cache gems to speed up subsequent builds
 
       - name: Install dependencies
         run: |
-          gem install bundler -v 2.3.10  # Latest stable Bundler version
-          bundle install --verbose  # Install gems with verbose output
+          gem install bundler -v 2.3.10  # Install specific Bundler version
+          bundle install --verbose  # Install all gems specified in the Gemfile
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
         env:
-          JEKYLL_ENV: production
+          JEKYLL_ENV: production  # Set environment variable for production build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -47,7 +47,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-24.04  # Use Ubuntu 24.04 for consistency
+    runs-on: ubuntu-22.04  # Consistency across build and deploy
     needs: build
     steps:
       - name: Deploy to GitHub Pages
