@@ -29,7 +29,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          gem install bundler -v 2.2.33  # Specify Bundler version
+          gem install bundler -v 2.2.33  # Install specific Bundler version
+          gem install github-pages  # Install the github-pages gem (includes Jekyll and dependencies)
           bundle install --verbose  # Install gems with verbose output
 
       - name: Build Jekyll site
