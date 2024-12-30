@@ -39,43 +39,6 @@ hide-in-nav: true
   </div>
 </div>
 
-<!-- Second Block - Clickable Images -->
-<div class="post-preview">
-  <div class="row mb-4">
-    <!-- Image 1 -->
-    <div class="col-lg-4 col-md-4 col-sm-12 mb-3" style="margin-bottom: 15px;">
-      <a href="https://markleigh8.github.io/mark-report/daily1/EOD Commentary Dec 11.pdf" target="_blank">
-        <img
-          src="{{ '/img/daily1.jpg' | prepend: site.baseurl }}"
-          class="img-fluid w-100"
-          alt="EOD Report 1"
-          style="border-radius: 5px; max-width: 100%; height: auto;">
-      </a>
-    </div>
-    <!-- Image 2 -->
-    <div class="col-lg-4 col-md-4 col-sm-12 mb-3" style="margin-bottom: 15px;">
-      <a href="https://markleigh8.github.io/mark-report/daily2/EOD Report Dec 11.pdf" target="_blank">
-        <img
-          src="{{ '/img/daily2.jpg' | prepend: site.baseurl }}"
-          class="img-fluid w-100"
-          alt="EOD Report 2"
-          style="border-radius: 5px; max-width: 100%; height: auto;">
-      </a>
-    </div>
-    <!-- Image 3 -->
-    <div class="col-lg-4 col-md-4 col-sm-12 mb-3" style="margin-bottom: 15px;">
-      <a href="https://markleigh8.github.io/mark-report/weekly/Market Weekly Review Dec 8.pdf" target="_blank">
-        <img
-          src="{{ '/img/weekly.jpg' | prepend: site.baseurl }}"
-          class="img-fluid w-100"
-          alt="Weekly EOD Report"
-          style="border-radius: 5px; max-width: 100%; height: auto;">
-      </a>
-    </div>
-  </div>
-</div>
-
-
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
