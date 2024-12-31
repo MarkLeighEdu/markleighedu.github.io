@@ -27,13 +27,7 @@ baseurl: ""
 # Publish posts or collection documents with a future date.
 future: false
 exclude:
-  - _posts/
-  - less
-  - node_modules
-  - Gruntfile.js
-  - package.json
-  - README.md
-  - README.zh.md
+- _posts/
 
 # SNS settings
 RSS: false
@@ -46,10 +40,16 @@ linkedin_username: mark-leigh-51132935
 # Build settings
 highlighter: rouge
 permalink: pretty
-
 paginate: 10
-paginate_path: "/page:num/"
-
+exclude:
+  [
+    "less",
+    "node_modules",
+    "Gruntfile.js",
+    "package.json",
+    "README.md",
+    "README.zh.md",
+  ]
 anchorjs: true
 encoding: utf-8
 
