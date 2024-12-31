@@ -8,26 +8,16 @@ permalink: /report/
 
 <h1>Report</h1>
 <hr>
-<div class="post-list">
-    {% for post in paginator.posts %}
-        {% if post.category == "report" %}
-            <div class="post-preview">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                    <h2>{{ post.title }}</h2>
-                </a>
-                <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-                <div class="post-content-preview">
-                    {% if post.lang == 'en' %}
-                        {{ post.content | strip_html | truncate:300 }}
-                    {% else %}
-                        {{ post.content | strip_html | truncate:200 }}
-                    {% endif %}
-                </div>
-            </div>
-            <hr>
-        {% endif %}
-    {% endfor %}
+
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2>{{ post.title }}</h2>
+    </a>
+    <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
+<hr>
+{% endfor %}
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
