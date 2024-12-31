@@ -1,0 +1,23 @@
+---
+layout: default
+title: "Commendary"
+description: "Posts under the Commendary category"
+---
+
+<div class="container">
+    <h1>Commendary</h1>
+    <hr>
+    <div class="post-list">
+        {% for post in site.posts %}
+            {% if post.category == "commendary" %}
+                <div class="post-preview">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                    <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+                </div>
+                <hr>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
