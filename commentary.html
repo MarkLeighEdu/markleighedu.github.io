@@ -1,17 +1,11 @@
 ---
 layout: page
-title: "EOD Market Commentary"
+title: "Commentary"
 description: "「Mark Leigh Trading Education」"
-header-img: "img/home-bg.jpg"
-header-mask: 0.3
-multilingual: true
 permalink: /commentary/
 ---
 
-
-
 <div class="container">
-    <h1>Commentary</h1>
     <hr>
     <div class="post-list">
         {% for post in site.posts %}
@@ -21,6 +15,9 @@ permalink: /commentary/
                         <h2>{{ post.title }}</h2>
                     </a>
                     <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+                    <div class="post-content">
+                        {{ post.content }}
+                    </div>
                 </div>
                 <hr>
             {% endif %}
