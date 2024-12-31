@@ -1,24 +1,73 @@
 ---
-layout: page
+layout: default
 title: "End of Day Report"
 nav-title: "Report"
 description: "「Mark Leigh Trading Education」"
 permalink: /report/
 ---
 
+<!-- Report Header -->
+{% include intro-header.html type='page' %}
 
-    <h1>Report</h1>
-    <hr>
-    <div class="post-list">
-        {% for post in site.posts %}
-            {% if post.category == "report" %}
-                <div class="post-preview">
-                    <a href="{{ post.url | prepend: site.baseurl }}">
-                        <h2>{{ post.title }}</h2>
-                    </a>
-                    <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-                </div>
+<!-- Report Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Report Container -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+                <h1>End of Day Reports</h1>
                 <hr>
-            {% endif %}
-        {% endfor %}
+
+                <div class="post-list">
+                    {% for post in site.posts %}
+                        {% if post.category == "report" %}
+                            <div class="post-item">
+                                <h2 class="post-title">
+                                    <a href="#" class="expand-toggle">{{ post.title }}</a>
+                                </h2>
+                                <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+
+                                <div class="post-content" style="display: none;">
+                                    <p>{{ post.excerpt }}</p>
+                                    <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                            <hr>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+            <!-- Sidebar Container -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
+                <!-- Featured Tags -->
+                {% include featured-tags.html bottom=true %}
+
+                <!-- Friends Blog -->
+                {% include friends.html %}
+            </div>
+        </div>
     </div>
+</article>
+
+<!-- JavaScript to Toggle Post Content -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const toggles = document.querySelectorAll('.expand-toggle');
+
+        toggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link action
+                const postContent = this.closest('.post-item').querySelector('.post-content');
+                if (postContent.style.display === "none") {
+                    postContent.style.display = "block";
+                } else {
+                    postContent.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
