@@ -1,3 +1,6 @@
+---
+category: weekly
+---
 ### USD INDEX. 
 
 Uptrend. The uptrend which started at the end of September continues into the last week of the year. Buyers have tested, but unable to maintain above the 108 resistance area. Sellers will aim at the 107 mark, while buyers target the 108.25 resistance.
