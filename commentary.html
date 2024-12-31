@@ -3,8 +3,8 @@ layout: page
 title: "Commentary"
 description: "「Mark Leigh Trading Education」"
 permalink: /commentary/
-pagination:
-  enabled: true
+paginate: 5
+paginate_path: "/commentary/page:num/"
 ---
 
 <!-- Post Content -->
@@ -15,14 +15,14 @@ pagination:
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
                 <div class="post-list">
                     {% for post in paginator.posts %}
-                        {% if post.category == "commentary" %}
+                        {% if post.categories contains "commentary" %}
                             <div class="post-preview">
                                 <a href="{{ post.url | prepend: site.baseurl }}">
                                     <h2>{{ post.title }}</h2>
                                 </a>
                                 <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
                                 <div class="post-content-preview">
-                                    {{ post.content | strip_html | truncate:300 }}
+                                    {{ post.content }}
                                 </div>
                                 <hr>
                             </div>
