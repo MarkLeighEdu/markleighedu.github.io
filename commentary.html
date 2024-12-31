@@ -4,58 +4,21 @@ title: "Market Commentary"
 nav-title: "Commentary"
 description: "「Mark Leigh Trading Education」"
 permalink: /commentary/
-paginate: 5
-paginate_path: "/commentary/page:num/"
 ---
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post List Container -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
-                <div class="post-list">
-                    {% for post in paginator.posts %}
-                        {% if post.categories contains "commentary" %}
-                            <div class="post-preview">
-                                <a href="{{ post.url | prepend: site.baseurl }}">
-                                    <h2>{{ post.title }}</h2>
-                                </a>
-                                <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-                                <div class="post-content-preview">
-                                    {{ post.content }}
-                                </div>
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+
+    <h1>Market Commentary</h1>
+    <hr>
+    <div class="post-list">
+        {% for post in site.posts %}
+            {% if post.category == "commentary" %}
+                <div class="post-preview">
+                    <a href="{{ post.url | prepend: site.baseurl }}">
+                        <h2>{{ post.title }}</h2>
+                    </a>
+                    <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
                 </div>
-            </div>
-
-            <!-- Sidebar Container -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 sidebar-container">
-                <!-- Featured Tags -->
-                {% include featured-tags.html bottom=true %}
-
-                <!-- Friends Blog -->
-                {% include friends.html %}
-            </div>
-        </div>
-
-        <!-- Pagination -->
-        {% if paginator.total_pages > 1 %}
-        <ul class="pager">
-            {% if paginator.previous_page %}
-            <li class="previous">
-                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-            </li>
+                <hr>
             {% endif %}
-            {% if paginator.next_page %}
-            <li class="next">
-                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-            </li>
-            {% endif %}
-        </ul>
-        {% endif %}
+        {% endfor %}
     </div>
-</article>
