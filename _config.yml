@@ -48,13 +48,24 @@ highlighter: rouge
 permalink: pretty
 
 paginate: 10
-paginate_path: "/page:num/" 
+paginate_path: "/page:num/"
+pagination:
+  enabled: true
+  per_page: 5
+  collection: posts
+  title: "Report"
+  permalink: "/report/page:num/"
+
+
 
 anchorjs: true
 encoding: utf-8
 
 # Gems
 plugins: [jekyll-paginate]
+
+plugins:
+  - jekyll-paginate-v2
 
 # Markdown settings
 markdown: kramdown
