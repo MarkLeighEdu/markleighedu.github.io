@@ -2,23 +2,27 @@ languages:
   - en
   - es
   - zh-cn
+
 default_lang: en
 
 en:
   url: "https://markleighedu.github.io"
   baseurl: "/"
+
 es:
   url: "https://markleighedu.github.io"
   baseurl: "/es"
+
 zh-cn:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-cn"
 
-  defaults:
+defaults:
   - scope:
       path: ""
     values:
       lang: en
+
 
 # Site settings
 title: Mark Leigh Educator Blog
