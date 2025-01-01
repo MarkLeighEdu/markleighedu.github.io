@@ -6,7 +6,7 @@ default_lang: en
 
 en:
   url: "https://markleighedu.github.io"
-  baseurl: "/en"
+  baseurl: "/"
 es:
   url: "https://markleighedu.github.io"
   baseurl: "/es"
