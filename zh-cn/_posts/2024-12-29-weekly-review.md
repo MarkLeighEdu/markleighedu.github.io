@@ -1,4 +1,5 @@
 ---
+lang: zh-cn
 category: weekly
 ---
 ### USD INDEX. 
