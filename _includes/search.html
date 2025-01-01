@@ -1,4 +1,3 @@
-<!-- Search -->
 <div class="search-page">
   <div class="search-icon-close-container">
     <span class="search-icon-close">
@@ -8,11 +7,52 @@
   <div class="search-main container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
+        <form>
+          <input type="text" id="search-input" placeholder="$ grep...">
         </form>
         <div id="search-results" class="mini-post-list"></div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    let data = [];
+
+    // Load the search JSON data
+    fetch('/search.json') // Adjust the path if necessary
+      .then(response => response.json())
+      .then(json => {
+        data = json;
+      });
+
+    // Search function
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase();
+      searchResults.innerHTML = '';
+
+      if (query.length > 0) {
+        const results = data.filter(item =>
+          item.title.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query) ||
+          item.content.toLowerCase().includes(query)
+        );
+
+        results.forEach(item => {
+          const resultElement = document.createElement('div');
+          resultElement.className = 'search-result';
+          resultElement.innerHTML = 
+            <a href="${item.url}">
+              <h3>${item.title}</h3>
+              <p>${item.description}</p>
+            </a>
+          ;
+          searchResults.appendChild(resultElement);
+        });
+      }
+    });
+  });
+</script>
