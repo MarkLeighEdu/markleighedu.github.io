@@ -42,6 +42,7 @@ permalink: pretty
 paginate: 10
 exclude:
   [
+    "search.html"
     "less",
     "node_modules",
     "Gruntfile.js",
