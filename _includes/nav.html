@@ -12,7 +12,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        <a class="navbar-brand" href="{{ site.baseurl }}">
+            {% if site.lang == "es" %}
+                {{ site.data.menu[site.lang][0].title | default: 'Inicio' }}  <!-- Spanish -->
+            {% elsif site.lang == "zh-cn" %}
+                {{ site.data.menu[site.lang][0].title | default: '首页' }}  <!-- Chinese -->
+            {% else %}
+                {{ site.data.menu[site.lang][0].title | default: 'Home' }}  <!-- English -->
+            {% endif %}
+        </a>
     </div>
 
     <div id="markblog_navbar">
