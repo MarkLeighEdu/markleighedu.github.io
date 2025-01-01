@@ -23,18 +23,14 @@
                         <li>
                             <a href="{{ site.baseurl }}/">Home</a>
                         </li>
-                        {% for page in site.pages %}
-                        {% if page.title and page.hide-in-nav != true %}
-                        <li>
-{% if page.nav-title %}
-  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.nav-title }}</a>
-{% else %}
-  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-{% endif %}
-                        </li>
-                        {% endif %}
+                        {% assign current_lang = page.lang | default: site.lang %}
+                        {% for item in site.data.menu[current_lang] %}
+                            <li>
+                                <a href="{{ item[0] | prepend: site.baseurl }}">{{ item[1] }}</a>
+                            </li>
                         {% endfor %}
                         
+                        <!-- Language Switcher -->
                         <li class="languages-icon">
                             <a href="javascript:void(0)" id="language-toggle">
                                 <i class="fa fa-globe fa-2x"></i> 
