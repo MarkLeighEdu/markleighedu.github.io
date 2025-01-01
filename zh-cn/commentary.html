@@ -10,7 +10,7 @@ paginate: 10
 <hr>
 
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" %}
+  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "zh-cn" %}
 
   {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
@@ -20,11 +20,7 @@ paginate: 10
           <h3 class="post-subtitle">{{ post.subtitle }}</h3>
         {% endif %}
         <div class="post-content-preview">
-          {% if post.lang == 'en' %}
-            {{ post.content | strip_html | truncate: 300 }}
-          {% else %}
-            {{ post.content | strip_html | truncate: 200 }}
-          {% endif %}
+          {{ post.content | strip_html | truncate: 200 }}
         </div>
       </a>
       <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
