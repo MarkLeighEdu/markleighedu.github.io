@@ -44,27 +44,28 @@ hide-in-nav: true
   </div>
 </div>
 
-{% for post in paginator.posts %}
-  {% if post.lang == "zh-cn" %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-          {{ post.content | strip_html | truncate:500 }}
-        </div>
-      </a>
-      <p class="post-meta">
-        发布于 {{ post.date | date: "%Y年%-m月%-d日" }}
-      </p>
-    </div>
-    <hr>
-  {% endif %}
+<!-- Display posts with lang: zh-cn -->
+{% assign zh_posts = site.posts | where: "lang", "zh-cn" %}
+
+{% for post in zh_posts %}
+  <div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+      <h2 class="post-title">{{ post.title }}</h2>
+      {% if post.subtitle %}
+        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+      {% endif %}
+      <div class="post-content-preview">
+        {{ post.content | strip_html | truncate:500 }}
+      </div>
+    </a>
+    <p class="post-meta">
+      发布于 {{ post.date | date: "%Y年%-m月%-d日" }}
+    </p>
+  </div>
+  <hr>
 {% endfor %}
 
-<!-- 分页 -->
+<!-- Pager -->
 {% if paginator.total_pages > 1 %}
   <ul class="pager">
     {% if paginator.previous_page %}
