@@ -1,17 +1,17 @@
 en:
   - /about/ : "About"
-  - /commentary/ : "commentary"
-  - /report/ : "report"
-  - /weekly/ : "weekly"
+  - /commentary/ : "Commentary"
+  - /report/ : "Report"
+  - /weekly/ : "Weekly"
 
 es:
-- /about/ : "Acerca de"
-- /commentary/ : "comentario"
-- /report/ : "informe"
-- /weekly/ : "semanal"
+  - /es/about/ : "Acerca de"
+  - /es/commentary/ : "Comentario"
+  - /es/report/ : "Informe"
+  - /es/weekly/ : "Semanal"
 
 zh-cn:
-- /about/ : “关于我”
-- /commentary/ : “市场评论”
-- /report/ : “市场报告”
-- /weekly/ : “每周回顾”
+  - /zh-cn/about/ : "关于我"
+  - /zh-cn/commentary/ : "市场评论"
+  - /zh-cn/report/ : "市场报告"
+  - /zh-cn/weekly/ : "每周回顾"
