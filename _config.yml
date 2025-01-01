@@ -1,88 +1,147 @@
-languages:
-  - en
-  - es
-  - zh-cn
-default_lang: en
+<!-- Navigation -->
+{% if page.nav-style == "invert" or page.header-style == "text" %}
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+{% else %}
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+{% endif %}
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        </div>
 
-en:
-  url: "https://markleighedu.github.io"
-  baseurl: "/"
-es:
-  url: "https://markleighedu.github.io"
-  baseurl: "/es"
-zh-cn:
-  url: "https://markleighedu.github.io"
-  baseurl: "/zh-cn"
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="markblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{ site.baseurl }}/">Home</a>
+                    </li>
 
-# Site settings
-title: Mark Leigh Educator Blog
-SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
-header-img: img/home-bg.jpg
-email: markleigh.edu@gmail.com
-description: "Mark Leigh's Personal Blog | Financial Market Trading Education"
-keyword: "Mark Leigh, Educator, Education, Expert, Forex Trading, Currencies, Cryptocurrencies, Blog, Commodities Trading, US Stock Trading"
-url: "https://markleighedu.github.io/"
-baseurl: ""
+                    {% assign current_lang = page.url | split: '/' | first %}
+                    {% if current_lang == "" %}
+                        {% assign lang_prefix = "/" %}
+                    {% elsif current_lang == "es" %}
+                        {% assign lang_prefix = "/es" %}
+                    {% elsif current_lang == "zh-cn" %}
+                        {% assign lang_prefix = "/zh-cn" %}
+                    {% else %}
+                        {% assign lang_prefix = "/" %}
+                    {% endif %}
 
-# Publish posts or collection documents with a future date.
-future: false
-exclude:
-- _posts/
-# SNS settings
-RSS: false
-instagram_username: markleigh.educator
-twitter_username: MarkLeigh_edu
-youtube_username: "@MarkLeigh-Educator"
-facebook_username: markleigh.tradingeducator
-linkedin_username: mark-leigh-51132935
+                    {% for page in site.pages %}
+                        {% if page.title and page.hide-in-nav != true %}
+                            {% assign page_lang = page.url | split: '/' | first %}
+                            {% if lang_prefix == "/" and (page_lang == "es" or page_lang == "zh-cn") %}
+                                {% continue %}
+                            {% elsif lang_prefix != "/" and page.url contains lang_prefix %}
+                                <li>
+                                    {% if page.nav-title %}
+                                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.nav-title }}</a>
+                                    {% else %}
+                                        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
 
-# Build settings
-highlighter: rouge
-permalink: pretty
-paginate: 10
-exclude:
-  [
-    "search.html",
-    "less",
-    "node_modules",
-    "Gruntfile.js",
-    "package.json",
-    "README.md",
-    "README.zh.md",
-  ]
-anchorjs: true
-encoding: utf-8
+                    <li class="languages-icon">
+                        <a href="javascript:void(0)" id="language-toggle">
+                            <i class="fa fa-globe fa-2x"></i> 
+                            <span class="language-label">
+                                {% if page.url contains '/es/' %}
+                                    Español
+                                {% elsif page.url contains '/zh-cn/' %}
+                                    简体中文
+                                {% else %}
+                                    English
+                                {% endif %}
+                            </span>
+                        </a>
+                        <!-- Language Dropdown Menu -->
+                        <ul id="language-menu" style="display:none;">
+                            {% if page.url contains '/es/' %}
+                                <li><a href="/zh-cn/index.html">简体中文</a></li>
+                                <li><a href="/">English</a></li>
+                            {% elsif page.url contains '/zh-cn/' %}
+                                <li><a href="/es">Español</a></li>
+                                <li><a href="/">English</a></li>
+                            {% else %}
+                                <li><a href="/es">Español</a></li>
+                                <li><a href="/zh-cn">简体中文</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
 
-# Gems
-plugins: [jekyll-paginate]
+<script>
+    // Custom Navbar toggle behavior
+    var $body = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#markblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+    var $languageToggle = document.getElementById('language-toggle');
+    var $languageMenu = document.getElementById('language-menu');
 
-# Markdown settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+    var __markNav__ = {
+        close: function () {
+            $navbar.className = " ";
+            setTimeout(function () {
+                if ($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            }, 400)
+        },
+        open: function () {
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
 
-# Disqus settings
-disqus_username: markleigh
-disable_disqus: true
+    // Bind Event to the language-toggle button
+    $languageToggle.addEventListener('click', function (e) {
+        // Prevent the menu from closing when clicking inside
+        e.stopPropagation();
+        // Toggle the visibility of the language menu
+        if ($languageMenu.style.display === 'none' || $languageMenu.style.display === '') {
+            $languageMenu.style.display = 'block';
+        } else {
+            $languageMenu.style.display = 'none';
+        }
+    });
 
-# Analytics settings
-ga_track_id: "G-XXXXXXXXXX"
-ga_domain: markleighedu.github.io
+    // Bind Event for closing the language menu when clicking outside of it
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest('#language-toggle')) {
+            $languageMenu.style.display = 'none';
+        }
+    });
 
-# Sidebar settings
-sidebar: true
-sidebar-about-description: "Trading Education <br> Blog @ Mark"
-sidebar-avatar: https://github.com/markleighedu.png
+    // Bind Event for the navbar toggle
+    $toggle.addEventListener('click', function (e) {
+        if ($navbar.className.indexOf('in') > 0) {
+            __markNav__.close()
+        } else {
+            __markNav__.open()
+        }
+    })
 
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-# MathJax rendering for layout:page
-page-mathjax: false
+    document.addEventListener('click', function (e) {
+        if (e.target == $toggle) return;
+        if (e.target.className == 'icon-bar') return;
+        __markNav__.close();
+    })
+</script>
