@@ -35,6 +35,18 @@
                         </li>
                         {% endif %}
                         {% endfor %}
+<li class="languages-icon">
+    <a href="javascript:void(0)" id="language-toggle">
+        <i class="fa fa-globe"></i>
+    </a>
+    <!-- Language Dropdown Menu -->
+    <ul id="language-menu" style="display:none;">
+        <!-- Manually hide the current language (English in this case) -->
+        <li><a href="/es">Español</a></li>
+        <li><a href="/zh-cn">中文</a></li>
+        <!-- Add more languages as needed -->
+    </ul>
+</li>
                     </ul>
                 </div>
             </div>
