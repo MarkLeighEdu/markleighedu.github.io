@@ -1,5 +1,4 @@
 <!-- Search -->
-
 <div class="search-page">
   <div class="search-icon-close-container">
     <span class="search-icon-close">
@@ -17,44 +16,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    let data = [];
-
-    // Load the search JSON data
-    fetch('/assets/search.json') // Adjust the path if necessary
-      .then(response => response.json())
-      .then(json => {
-        data = json;
-      });
-
-    // Search function
-    searchInput.addEventListener('input', function () {
-      const query = searchInput.value.toLowerCase();
-      searchResults.innerHTML = '';
-
-      if (query.length > 0) {
-        const results = data.filter(item =>
-          item.title.toLowerCase().includes(query) ||
-          item.description.toLowerCase().includes(query) ||
-          item.content.toLowerCase().includes(query)
-        );
-
-        results.forEach(item => {
-          const resultElement = document.createElement('div');
-          resultElement.className = 'search-result';
-          resultElement.innerHTML = `
-            <a href="${item.url}">
-              <h3>${item.title}</h3>
-              <p>${item.description}</p>
-            </a>
-          `;
-          searchResults.appendChild(resultElement);
-        });
-      }
-    });
-  });
-</script>
