@@ -10,8 +10,8 @@ paginate: 5
 <hr>
 
 <div class="post-list">
-  {% assign report_posts = site.posts | where: "category", "report" %}
-  
+  {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "zh-cn" %}
+
   {% for post in report_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -20,11 +20,7 @@ paginate: 5
           <h3 class="post-subtitle">{{ post.subtitle }}</h3>
         {% endif %}
         <div class="post-content-preview">
-          {% if post.lang == 'en' %}
-            {{ post.content | strip_html | truncate: 300 }}
-          {% else %}
-            {{ post.content | strip_html | truncate: 200 }}
-          {% endif %}
+          {{ post.content | strip_html | truncate: 200 }}
         </div>
       </a>
       <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
