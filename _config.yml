@@ -28,7 +28,6 @@ baseurl: ""
 future: false
 exclude:
 - _posts/
-- "search.html"  # Add this line to exclude search.html from the build
 # SNS settings
 RSS: false
 instagram_username: markleigh.educator
