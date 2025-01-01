@@ -37,13 +37,22 @@
                         
                         <li class="languages-icon">
                             <a href="javascript:void(0)" id="language-toggle">
-                                <i class="fa fa-globe"></i>
+                                <i class="fa fa-globe fa-2x"></i> 
+                                <span class="language-label">
+                                    {% if page.url contains '/es/' %}
+                                    Español
+                                    {% elsif page.url contains '/zh-cn/' %}
+                                    中文
+                                    {% else %}
+                                    English
+                                    {% endif %}
+                                </span>
                             </a>
                             <!-- Language Dropdown Menu -->
                             <ul id="language-menu" style="display:none;">
                                 {% if page.url contains '/es/' %}
                                     <!-- If on Spanish page, show other languages except Spanish -->
-                                    <li><a href="/zh-cn/index.html">简体中文</a></li>
+                                    <li><a href="/zh-cn/index.html">中文</a></li>
                                     <li><a href="/">English</a></li>
                                 {% elsif page.url contains '/zh-cn/' %}
                                     <!-- If on Chinese page, show other languages except Chinese -->
@@ -51,8 +60,8 @@
                                     <li><a href="/">English</a></li>
                                 {% else %}
                                     <!-- If on English page (root), show Spanish and Chinese -->
-                                    <li><a href="/es/index.html">Español</a></li>
-                                    <li><a href="/zh-cn/index.html">简体中文</a></li>
+                                    <li><a href="/es">Español</a></li>
+                                    <li><a href="/zh-cn/index.html">中文</a></li>
                                 {% endif %}
                             </ul>
                         </li>
