@@ -1,14 +1,17 @@
 en:
-  home: Home
-  about: About
-  contact: Contact
+  - /about/ : "About"
+  - /commentary/ : "commentary"
+  - /report/ : "report"
+  - /weekly/ : "weekly"
 
 es:
-  home: Inicio
-  about: Acerca de
-  contact: Contacto
+- /about/ : "Acerca de"
+- /commentary/ : "comentario"
+- /report/ : "informe"
+- /weekly/ : "semanal"
 
 zh-cn:
-  home: 首页
-  about: 关于
-  contact: 联系
+- /about/ : “关于我”
+- /commentary/ : “市场评论”
+- /report/ : “市场报告”
+- /weekly/ : “每周回顾”
