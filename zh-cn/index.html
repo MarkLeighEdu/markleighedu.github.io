@@ -7,35 +7,39 @@ hide-in-nav: true
 ---
 
 <div class="post-preview" style="margin-top: 20px;">
-  <!-- First Block - Video Embeds -->
+  <!-- 第一部分 - 视频嵌入 -->
   <div class="row mb-4">
-    <!-- First Video -->
+    <!-- 第一个视频 -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
           class="embed-responsive-item"
-          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP"
-          title="YouTube playlist 1"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+          title="YouTube 播放列表 1"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
+      <p class="text-left">
+        <strong>市场午间概览</strong> 提供专家技术分析，深入分析市场趋势和关键水平。这些视频旨在帮助您了解如何分析价格波动、识别交易机会并在实时市场条件下有效应用技术策略。
+      </p>
     </div>
-    <!-- Second Video -->
+    <!-- 第二个视频 -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
           class="embed-responsive-item"
-          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3"
-          title="YouTube playlist 2"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+          title="YouTube 播放列表 2"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
-     <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
+      <p class="text-left">
+        <strong>交易设置视频</strong> 解析最新的市场趋势和需要关注的关键水平。无论您是初学者还是有经验的交易者，您都会找到有价值的见解来帮助指导您的下一笔交易。
+      </p>
     </div>
   </div>
 </div>
@@ -60,23 +64,23 @@ hide-in-nav: true
         </div>
     </a>
 <p class="post-meta">
-     Posted on {{ post.date | date: "%B %-d, %Y" }}
+     发布于 {{ post.date | date: "%Y年%-m月%-d日" }}
  </p>
 </div>
 <hr>
 {% endfor %}
 
-<!-- Pager -->
+<!-- 分页 -->
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; 较新的文章</a>
     </li>
     {% endif %}
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">较旧的文章 &rarr;</a>
     </li>
     {% endif %}
 </ul>
