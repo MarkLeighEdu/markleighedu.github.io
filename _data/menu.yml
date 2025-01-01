@@ -1,17 +1,17 @@
 en:
-  - /about/ : "About"
-  - /commentary/ : "Commentary"
-  - /report/ : "Report"
-  - /weekly/ : "Weekly"
+  - { url: "/about/", title: "About" }
+  - { url: "/commentary/", title: "Commentary" }
+  - { url: "/report/", title: "Report" }
+  - { url: "/weekly/", title: "Weekly" }
 
 es:
-  - /es/about/ : "Acerca de"
-  - /es/commentary/ : "Comentario"
-  - /es/report/ : "Informe"
-  - /es/weekly/ : "Semanal"
+  - { url: "/es/about/", title: "Acerca de" }
+  - { url: "/es/commentary/", title: "Comentario" }
+  - { url: "/es/report/", title: "Informe" }
+  - { url: "/es/weekly/", title: "Semanal" }
 
 zh-cn:
-  - /zh-cn/about/ : "关于我"
-  - /zh-cn/commentary/ : "市场评论"
-  - /zh-cn/report/ : "市场报告"
-  - /zh-cn/weekly/ : "每周回顾"
+  - { url: "/zh-cn/about/", title: "关于我" }
+  - { url: "/zh-cn/commentary/", title: "市场评论" }
+  - { url: "/zh-cn/report/", title: "市场报告" }
+  - { url: "/zh-cn/weekly/", title: "每周回顾" }
