@@ -1,4 +1,4 @@
-<!-- Navigation --> 
+<!-- Navigation -->
 {% if page.nav-style == "invert" or page.header-style == "text" %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
 {% else %}
@@ -12,16 +12,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            {% if site.data.titles[site.lang] %}
+                {{ site.data.titles[site.lang].navbar_brand }}
+            {% else %}
+                {{ site.title }}  <!-- Fallback to the default site title if no translation is found -->
+            {% endif %}
+        </a>
     </div>
 
     <div id="markblog_navbar">
         <div class="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ site.baseurl }}/">{{ site.data.menu[site.lang][0].title | default: 'Home' }}</a>
-                </li>
-
                 {% assign current_lang = page.lang | default: site.lang %}
                 {% for item in site.data.menu[current_lang] %}
                     <li>
