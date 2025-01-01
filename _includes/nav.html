@@ -42,14 +42,17 @@
                             <!-- Language Dropdown Menu -->
                             <ul id="language-menu" style="display:none;">
                                 {% if page.url contains '/es/' %}
-                                    <li><a href="/zh-cn/index.html">中文</a></li> <!-- Only show non-current languages -->
+                                    <!-- If on Spanish page, show other languages except Spanish -->
+                                    <li><a href="/zh-cn/index.html">简体中文</a></li>
                                     <li><a href="/">English</a></li>
                                 {% elsif page.url contains '/zh-cn/' %}
+                                    <!-- If on Chinese page, show other languages except Chinese -->
                                     <li><a href="/es">Español</a></li>
                                     <li><a href="/">English</a></li>
                                 {% else %}
-                                    <li><a href="/es">Español</a></li>
-                                    <li><a href="/zh-cn/index.html">中文</a></li>
+                                    <!-- If on English page (root), show Spanish and Chinese -->
+                                    <li><a href="/es/index.html">Español</a></li>
+                                    <li><a href="/zh-cn/index.html">简体中文</a></li>
                                 {% endif %}
                             </ul>
                         </li>
