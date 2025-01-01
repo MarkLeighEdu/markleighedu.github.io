@@ -1,5 +1,4 @@
 <!-- Navigation -->
-
 {% if page.nav-style == "invert" or page.header-style == "text" %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
     {% else %}
@@ -35,18 +34,25 @@
                         </li>
                         {% endif %}
                         {% endfor %}
-<li class="languages-icon">
-    <a href="javascript:void(0)" id="language-toggle">
-        <i class="fa fa-globe"></i>
-    </a>
-    <!-- Language Dropdown Menu -->
-    <ul id="language-menu" style="display:none;">
-        <!-- Manually hide the current language (English in this case) -->
-        <li><a href="/es">Español</a></li>
-        <li><a href="/zh-cn">中文</a></li>
-        <!-- Add more languages as needed -->
-    </ul>
-</li>
+                        
+                        <li class="languages-icon">
+                            <a href="javascript:void(0)" id="language-toggle">
+                                <i class="fa fa-globe"></i>
+                            </a>
+                            <!-- Language Dropdown Menu -->
+                            <ul id="language-menu" style="display:none;">
+                                {% if page.url contains '/es/' %}
+                                    <li><a href="/zh-cn/index.html">中文</a></li> <!-- Only show non-current languages -->
+                                    <li><a href="/">English</a></li>
+                                {% elsif page.url contains '/zh-cn/' %}
+                                    <li><a href="/es">Español</a></li>
+                                    <li><a href="/">English</a></li>
+                                {% else %}
+                                    <li><a href="/es">Español</a></li>
+                                    <li><a href="/zh-cn/index.html">中文</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -56,9 +62,7 @@
     </nav>
 
     <script>
-        // Drop Bootstarp low-performance Navbar
-        // Use customize navbar with high-quality material design animation
-        // in high-perf jank-free CSS3 implementation
+        // Custom Navbar toggle behavior
         var $body = document.body;
         var $toggle = document.querySelector('.navbar-toggle');
         var $navbar = document.querySelector('#markblog_navbar');
@@ -67,9 +71,7 @@
         var __markNav__ = {
             close: function () {
                 $navbar.className = " ";
-                // wait until animation end.
                 setTimeout(function () {
-                    // prevent frequently toggle
                     if ($navbar.className.indexOf('in') < 0) {
                         $collapse.style.height = "0px"
                     }
@@ -90,20 +92,10 @@
             }
         })
 
-        /**
-         * Since Fastclick is used to delegate 'touchstart' globally
-         * to hack 300ms delay in iOS by performing a fake 'click',
-         * Using 'e.stopPropagation' to stop 'touchstart' event from 
-         * $toggle/$collapse will break global delegation.
-         * 
-         * Instead, we use a 'e.target' filter to prevent handler
-         * added to document close markNav.  
-         *
-         * Also, we use 'click' instead of 'touchstart' as compromise
-         */
         document.addEventListener('click', function (e) {
             if (e.target == $toggle) return;
             if (e.target.className == 'icon-bar') return;
             __markNav__.close();
         })
     </script>
+</nav>
