@@ -41,4 +41,16 @@
                         <span class="language-label">
                             {% if page.url contains '/es/' %}
                             Español
-                       
+                            {% elsif page.url contains '/fr/' %}
+                            Français
+                            {% else %}
+                            English
+                            {% endif %}
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</nav>
