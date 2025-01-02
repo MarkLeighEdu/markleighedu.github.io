@@ -13,13 +13,7 @@
             <span class="icon-bar"></span>
         </button>
 
- <a class="navbar-brand" href="{{ site.baseurl }}/">
-            {% if site.data.titles[site.lang] %}
-                {{ site.data.titles[site.lang].navbar_brand }}
-            {% else %}
-                {{ site.title }}  <!-- Fallback to the default site title if no translation is found -->
-            {% endif %}
-        </a>
+<a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
 
     </div>
