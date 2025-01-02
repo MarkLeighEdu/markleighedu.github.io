@@ -1,17 +1,17 @@
 ---
 layout: page
-lang: en
-title: "Weekly Report"
-nav-title: "Weekly"
+lang: es
+title: "Informe Semanal"
+nav-title: "Semanal"
 description: "「Mark Leigh Trading Education」"
-permalink: /weekly/
+permalink: /es/weekly/
 paginate: 5
 ---
 
 <hr>
 
 <div class="post-list">
-  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "en" %}
+  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "es" %}
 
   {% for post in weekly_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
@@ -24,7 +24,7 @@ paginate: 5
           {{ post.content | strip_html | truncate: 300 }}
         </div>
       </a>
-      <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+      <p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
     </div>
     <hr>
   {% endfor %}
@@ -35,12 +35,12 @@ paginate: 5
   <ul class="pager">
     {% if paginator.previous_page %}
       <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
       </li>
     {% endif %}
     {% if paginator.next_page %}
       <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones anteriores &rarr;</a>
       </li>
     {% endif %}
   </ul>
