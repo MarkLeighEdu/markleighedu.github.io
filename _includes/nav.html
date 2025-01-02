@@ -12,16 +12,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-<a class="navbar-brand" href="{% case site.lang %}
-    {% when 'en' %}{{ site.baseurl }}/{% endcase %}
-    {% when 'es' %}{{ site.baseurl }}/es/{% endcase %}
-    {% when 'zh-cn' %}{{ site.baseurl }}/zh-cn/{% endcase %}">
-    {% if site.data.titles[site.lang] %}
-        {{ site.data.titles[site.lang].navbar_brand }}
+<a class="navbar-brand" href="{{ site.baseurl }}/">
+    {% assign lang_titles = site.data.titles[site.lang] %}
+    {% if lang_titles and lang_titles.navbar_brand %}
+        {{ lang_titles.navbar_brand }}
     {% else %}
-        {{ site.title }} <!-- Fallback to the default site title if no translation is found -->
+        {{ site.title }}  <!-- Fallback to the default site title if no translation is found -->
     {% endif %}
 </a>
+
     </div>
 
     <div id="markblog_navbar">
