@@ -1,1 +1,81 @@
+---
+layout: page
+lang: es
+title: "Mark Leigh Blog"
+description: "「Mark Leigh Trading Education」"
+hide-in-nav: true
+---
 
+<div class="post-preview" style="margin-top: 20px;">
+  <!-- First Block - Video Embeds -->
+  <div class="row mb-4">
+    <!-- First Video -->
+    <div class="col-12 mb-3">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP"
+          title="YouTube playlist 1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="text-left">El análisis de mercado a mediodía proporciona un análisis técnico realizado por expertos, ofreciendo una visión profunda de las tendencias del mercado y los niveles clave. Estos videos están diseñados para ayudarte a comprender cómo analizar los movimientos de precios, identificar oportunidades de trading y aplicar estrategias técnicas de manera efectiva en condiciones de mercado en tiempo real.</p>
+    </div>
+    <!-- Second Video -->
+    <div class="col-12 mb-3">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe
+          class="embed-responsive-item"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3"
+          title="YouTube playlist 2"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="text-left">El video Trade Setup desglosa las últimas tendencias del mercado y los niveles clave a seguir en varios activos. Ya seas un principiante o un trader experimentado, encontrarás valiosos conocimientos para guiar tu próxima operación.</p>
+    </div>
+  </div>
+</div>
+
+{% for post in paginator.posts %}
+  {% if post.lang == 'es' %}
+  <div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:300 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Publicado el {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  </div>
+  <hr>
+  {% endif %}
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones más antiguas &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
