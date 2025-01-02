@@ -8,14 +8,17 @@ default_lang: en
 en:
   url: "https://markleighedu.github.io"
   baseurl: "/"
+  title: "Mark Leigh Educator Blog"  # English site title
 
 es:
   url: "https://markleighedu.github.io"
   baseurl: "/es"
+  title: "Blog del Educador Mark Leigh"  # Spanish site title
 
 zh-cn:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-cn"
+  title: "Mark Leigh 教育博客"  # Chinese site title
 
 defaults:
   - scope:
@@ -23,9 +26,7 @@ defaults:
     values:
       lang: en
 
-
 # Site settings
-title: Mark Leigh Educator Blog
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
 header-img: img/home-bg.jpg
 email: markleigh.edu@gmail.com
