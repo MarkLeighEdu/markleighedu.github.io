@@ -8,7 +8,7 @@ default_lang: en
 en:
   url: "https://markleighedu.github.io"
   baseurl: "/"
-
+title: "Mark Leigh Educator Blog"
 
 es:
   url: "https://markleighedu.github.io"
@@ -27,7 +27,7 @@ defaults:
       lang: en
 
 # Site settings
-title: "Mark Leigh Educator Blog"
+
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
 header-img: img/home-bg.jpg
 email: markleigh.edu@gmail.com
