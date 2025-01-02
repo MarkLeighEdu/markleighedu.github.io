@@ -12,14 +12,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-<a class="navbar-brand" href="{{ site.baseurl }}/">
-    {% if site.title %}
-        {{ site.title }}  <!-- This will use the title defined for the current language in _config.yml -->
-    {% else %}
-        Mark Leigh Educator Blog  <!-- Fallback to the default title if not defined -->
-    {% endif %}
-</a>
 
+ <a class="navbar-brand" href="{{ site.baseurl }}/">
+            {% if site.data.titles[site.lang] %}
+                {{ site.data.titles[site.lang].navbar_brand }}
+            {% else %}
+                {{ site.title }}  <!-- Fallback to the default site title if no translation is found -->
+            {% endif %}
+        </a>
 
 
     </div>
