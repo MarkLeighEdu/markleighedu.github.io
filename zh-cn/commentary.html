@@ -2,7 +2,7 @@
 layout: page
 lang: zh-cn
 title: "市场评论"
-description: "「Mark Leigh Trading Education」"
+description: "「Mark Leigh 马克-李 交易教学」"
 permalink: /zh-cn/commentary/
 paginate: 10
 ---
@@ -23,7 +23,9 @@ paginate: 10
           {{ post.content | strip_html | truncate: 200 }}
         </div>
       </a>
-      <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+      <p class="post-meta">
+        发布于 {{ post.date | date: "%Y年%-m月%-d日" }}
+      </p>
     </div>
     <hr>
   {% endfor %}
