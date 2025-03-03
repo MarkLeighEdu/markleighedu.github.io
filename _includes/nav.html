@@ -13,7 +13,9 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+<a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+
     </div>
 
     <div id="markblog_navbar">
@@ -30,31 +32,27 @@
                     <a href="javascript:void(0)" id="language-toggle">
                         <i class="fa fa-globe fa-2x"></i> 
                         <span class="language-label">
-                            {% case page.lang %}
-                                {% when 'es' %} Español
-                                {% when 'zh-cn' %} 简体中文
-                                {% when 'zh-tw' %} 繁體中文
-                                {% when 'ar' %} العربية
-                                {% when 'fr' %} Français
-                                {% when 'de' %} Deutsch
-                                {% when 'pt-br' %} Português (BR)
-                                {% when 'tr' %} Türkçe
-                                {% when 'ja' %} 日本語
-                                {% when 'ko' %} 한국어
-                                {% else %} English
-                            {% endcase %}
+                            {% if page.url contains '/es/' %}
+                            Español
+                            {% elsif page.url contains '/zh-cn/' %}
+                            简体中文
+                            {% else %}
+                            English
+                            {% endif %}
                         </span>
                     </a>
-                    
                     <!-- Language Dropdown Menu -->
                     <ul id="language-menu" style="display:none;">
-                        {% assign languages = "en,es,zh-cn,zh-tw,ar,fr,de,pt-br,tr,ja,ko" | split: "," %}
-                        {% assign language_labels = "English,Español,简体中文,繁體中文,العربية,Français,Deutsch,Português (BR),Türkçe,日本語,한국어" | split: "," %}
-                        {% for lang in languages %}
-                            {% unless lang == page.lang %}
-                                <li><a href="/{{ lang }}/">{{ language_labels[forloop.index0] }}</a></li>
-                            {% endunless %}
-                        {% endfor %}
+                        {% if page.url contains '/es/' %}
+                            <li><a href="/zh-cn/index.html">简体中文</a></li>
+                            <li><a href="/">English</a></li>
+                        {% elsif page.url contains '/zh-cn/' %}
+                            <li><a href="/es">Español</a></li>
+                            <li><a href="/">English</a></li>
+                        {% else %}
+                            <li><a href="/es">Español</a></li>
+                            <li><a href="/zh-cn">简体中文</a></li>
+                        {% endif %}
                     </ul>
                 </li>
             </ul>
@@ -89,7 +87,9 @@
 
     // Bind Event to the language-toggle button
     $languageToggle.addEventListener('click', function (e) {
+        // Prevent the menu from closing when clicking inside
         e.stopPropagation();
+        // Toggle the visibility of the language menu
         if ($languageMenu.style.display === 'none' || $languageMenu.style.display === '') {
             $languageMenu.style.display = 'block';
         } else {
@@ -97,7 +97,7 @@
         }
     });
 
-    // Close the language menu when clicking outside of it
+    // Bind Event for closing the language menu when clicking outside of it
     document.addEventListener('click', function (e) {
         if (!e.target.closest('#language-toggle')) {
             $languageMenu.style.display = 'none';
