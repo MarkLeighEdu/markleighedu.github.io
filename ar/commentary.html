@@ -1,16 +1,17 @@
 ---
 layout: page
 lang: ar
-title: "تعليق"
-nav-title: "تعليق"
+title: "تعليقات"
+nav-title: "تعليقات"
 description: "تعليم التداول مع مارك لي"
 permalink: /ar/commentary/
 paginate: 10
 ---
+
 <hr>
 
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", page.lang %}
+  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "ar" %}
   {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -22,7 +23,7 @@ paginate: 10
           {{ post.content | strip_html | truncate: 300 }}
         </div>
       </a>
-      <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+      <p class="post-meta">تم النشر في {{ post.date | date: "%B %-d, %Y" }}</p>
     </div>
     <hr>
   {% endfor %}
@@ -33,12 +34,12 @@ paginate: 10
   <ul class="pager">
     {% if paginator.previous_page %}
       <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; المشاركات الأحدث</a>
       </li>
     {% endif %}
     {% if paginator.next_page %}
       <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">المشاركات الأقدم &rarr;</a>
       </li>
     {% endif %}
   </ul>
