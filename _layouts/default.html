@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: 'en' }}">  <!-- Add the lang attribute here -->
-  
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">  <!-- Correct lang setup -->
+
     {% include head.html %}
 
     <!-- hack iOS CSS :active style -->
