@@ -60,14 +60,15 @@ Türkçe
                     <!-- Language Dropdown Menu -->
 <ul id="language-menu" style="display:none;">
     {% assign languages = "en,es,zh-cn,zh-tw,ar,fr,de,pt-br,tr,ja,ko" | split: "," %}
-    {% assign language_names = "English,Español,简体中文,繁體中文,العربية,Français,Deutsch,Português-br,Türkçe,日本語,한국어" | split: "," %}
+    {% assign language_names = "English,Español,简体中文,繁體中文,العربية,Français,Deutsch,Português (Brasil),Türkçe,日本語,한국어" | split: "," %}
 
     {% for lang in languages %}
         {% unless page.url contains lang %}
-            <li><a href="/{{ lang }}/index.html">{{ language_names[forloop.index0] }}</a></li>
+            <li><a href="{{ site.baseurl }}/{{ lang }}/">{{ language_names[forloop.index0] }}</a></li>
         {% endunless %}
     {% endfor %}
 </ul>
+
 
 
 
