@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">  <!-- Correct lang setup -->
 
-    {% include head.html %}
 
-    <!-- hack iOS CSS :active style -->
-    <body ontouchstart="">
+{% include head.html %}
 
-        {% include nav.html %}
-        {{ content }}
-        {% include footer.html %}
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
 
-    </body>
+    {% include nav.html %}
+    {{ content }}
+
+    {% include footer.html %}
+
+</body>
 
 </html>
