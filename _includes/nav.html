@@ -13,9 +13,7 @@
             <span class="icon-bar"></span>
         </button>
 
-<a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-
+        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
     </div>
 
     <div id="markblog_navbar">
@@ -32,27 +30,42 @@
                     <a href="javascript:void(0)" id="language-toggle">
                         <i class="fa fa-globe fa-2x"></i> 
                         <span class="language-label">
-                            {% if page.url contains '/es/' %}
-                            Español
-                            {% elsif page.url contains '/zh-cn/' %}
-                            简体中文
-                            {% else %}
-                            English
-                            {% endif %}
+{% if page.url contains '/es/' %}
+Español
+{% elsif page.url contains '/zh-cn/' %}
+简体中文
+{% elsif page.url contains '/zh-tw/' %}
+繁體中文
+{% elsif page.url contains '/ar/' %}
+العربية
+{% elsif page.url contains '/fr/' %}
+Français
+{% elsif page.url contains '/de/' %}
+Deutsch
+{% elsif page.url contains '/pt-br/' %}
+Português (Brasil)
+{% elsif page.url contains '/tr/' %}
+Türkçe
+{% elsif page.url contains '/ja/' %}
+日本語
+{% elsif page.url contains '/ko/' %}
+한국어
+{% else %}
+English
+{% endif %}
                         </span>
                     </a>
+
                     <!-- Language Dropdown Menu -->
                     <ul id="language-menu" style="display:none;">
-                        {% if page.url contains '/es/' %}
-                            <li><a href="/zh-cn/index.html">简体中文</a></li>
-                            <li><a href="/">English</a></li>
-                        {% elsif page.url contains '/zh-cn/' %}
-                            <li><a href="/es">Español</a></li>
-                            <li><a href="/">English</a></li>
-                        {% else %}
-                            <li><a href="/es">Español</a></li>
-                            <li><a href="/zh-cn">简体中文</a></li>
-                        {% endif %}
+                        {% assign languages = "en,es,zh-cn,zh-tw,ar,fr,de,pt-br,tr,ja,ko" | split: "," %}
+                        {% assign language_names = "English,Español,简体中文,繁體中文,العربية,Français,Deutsch,Português (Brasil),Türkçe,日本語,한국어" | split: "," %}
+
+                        {% for lang in languages offset:1 %}
+                            {% unless page.url contains lang %}
+                                <li><a href="{{ site.baseurl }}/{{ lang }}/index.html">{{ language_names[forloop.index0] }}</a></li>
+                            {% endunless %}
+                        {% endfor %}
                     </ul>
                 </li>
             </ul>
@@ -62,60 +75,41 @@
 </nav>
 
 <script>
-    // Custom Navbar toggle behavior
-    var $body = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#markblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-    var $languageToggle = document.getElementById('language-toggle');
-    var $languageMenu = document.getElementById('language-menu');
+    document.addEventListener("DOMContentLoaded", function () {
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#markblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
+        var $languageToggle = document.getElementById('language-toggle');
+        var $languageMenu = document.getElementById('language-menu');
 
-    var __markNav__ = {
-        close: function () {
-            $navbar.className = " ";
-            setTimeout(function () {
-                if ($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            }, 400)
-        },
-        open: function () {
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
+        function toggleNav() {
+            if ($navbar.classList.contains('in')) {
+                $navbar.classList.remove('in');
+                $collapse.style.height = "0px";
+            } else {
+                $collapse.style.height = "auto";
+                $navbar.classList.add('in');
+            }
         }
-    }
 
-    // Bind Event to the language-toggle button
-    $languageToggle.addEventListener('click', function (e) {
-        // Prevent the menu from closing when clicking inside
-        e.stopPropagation();
-        // Toggle the visibility of the language menu
-        if ($languageMenu.style.display === 'none' || $languageMenu.style.display === '') {
-            $languageMenu.style.display = 'block';
-        } else {
-            $languageMenu.style.display = 'none';
-        }
-    });
+        // Toggle Navbar
+        $toggle.addEventListener('click', toggleNav);
 
-    // Bind Event for closing the language menu when clicking outside of it
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('#language-toggle')) {
-            $languageMenu.style.display = 'none';
-        }
-    });
+        // Toggle Language Menu
+        $languageToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            $languageMenu.style.display = ($languageMenu.style.display === 'none' || $languageMenu.style.display === '') ? 'block' : 'none';
+        });
 
-    // Bind Event for the navbar toggle
-    $toggle.addEventListener('click', function (e) {
-        if ($navbar.className.indexOf('in') > 0) {
-            __markNav__.close()
-        } else {
-            __markNav__.open()
-        }
-    });
-
-    document.addEventListener('click', function (e) {
-        if (e.target == $toggle) return;
-        if (e.target.className == 'icon-bar') return;
-        __markNav__.close();
+        // Close menus when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.navbar-toggle, .icon-bar')) {
+                $navbar.classList.remove('in');
+                $collapse.style.height = "0px";
+            }
+            if (!e.target.closest('#language-toggle')) {
+                $languageMenu.style.display = 'none';
+            }
+        });
     });
 </script>
