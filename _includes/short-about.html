@@ -1,9 +1,22 @@
 <section class="visible-md visible-lg">
-  <html lang="en">
-<html lang="es">
-<html lang="zh-cn">
   <hr>
-  <h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
+  <h5>
+    <a href="{{'/about/' | prepend: site.baseurl }}">
+      {% if page.lang == "en" %} ABOUT ME
+      {% elsif page.lang == "es" %} SOBRE MÍ
+      {% elsif page.lang == "zh-cn" %} 关于我
+      {% elsif page.lang == "zh-tw" %} 關於我
+      {% elsif page.lang == "ar" %} معلومات عني
+      {% elsif page.lang == "fr" %} À PROPOS DE MOI
+      {% elsif page.lang == "de" %} ÜBER MICH
+      {% elsif page.lang == "pt-br" %} SOBRE MIM
+      {% elsif page.lang == "tr" %} HAKKIMDA
+      {% elsif page.lang == "ja" %} 私について
+      {% elsif page.lang == "ko" %} 내 소개
+      {% else %} ABOUT ME
+      {% endif %}
+    </a>
+  </h5>
   <div class="short-about">
     {% if site.sidebar-avatar %}
     <img src="{{site.sidebar-avatar}}" />
