@@ -61,6 +61,7 @@ Türkçe
     {% for lang in languages %}
         {% unless page.url contains lang %}
             {% if lang == 'en' %}
+                <!-- Link to the root of the site when on English -->
                 <li><a href="{{ site.baseurl }}/">{{ language_names[forloop.index0] }}</a></li>
             {% else %}
                 <li><a href="/{{ lang }}/index.html">{{ language_names[forloop.index0] }}</a></li>
@@ -68,7 +69,6 @@ Türkçe
         {% endunless %}
     {% endfor %}
 </ul>
-
 
                 </li>
             </ul>
