@@ -1,8 +1,8 @@
 ---
 layout: page
-lang: es
+lang: tr
 title: "Mark Leigh Blog"
-description: "「Educación en Trading de Mark Leigh」"
+description: "「Mark Leigh Ticaret Eğitimi」"
 hide-in-nav: true
 ---
 
@@ -14,36 +14,36 @@ hide-in-nav: true
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
           class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP&hl=es&cc_lang_pref=es&cc_load_policy=1"
-          title="YouTube playlist 1"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP&hl=tr&cc_lang_pref=tr&cc_load_policy=1"
+          title="YouTube oynatma listesi 1"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">El análisis de mercado a mediodía proporciona un análisis técnico realizado por expertos, ofreciendo una visión profunda de las tendencias del mercado y los niveles clave. Estos videos están diseñados para ayudarte a comprender cómo analizar los movimientos de precios, identificar oportunidades de trading y aplicar estrategias técnicas de manera efectiva en condiciones de mercado en tiempo real.</p>
+      <p class="text-left">Öğle piyasası değerlendirmesi, piyasa eğilimleri ve kilit seviyeler hakkında derinlemesine içgörüler sunan uzman liderliğinde teknik analiz sağlar. Bu videolar, fiyat hareketlerini analiz etmeyi, ticaret fırsatlarını belirlemeyi ve teknik stratejileri gerçek piyasa koşullarında etkili bir şekilde uygulamayı öğrenmenize yardımcı olmak için tasarlanmıştır.</p>
     </div>
     <!-- Second Video -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
           class="embed-responsive-item"
-          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3&hl=es&cc_lang_pref=es&cc_load_policy=1"
-          title="YouTube playlist 2"
+          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3&hl=tr&cc_lang_pref=tr&cc_load_policy=1"
+          title="YouTube oynatma listesi 2"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">El video Trade Setup desglosa las últimas tendencias del mercado y los niveles clave a seguir en varios activos. Ya seas un principiante o un trader experimentado, encontrarás valiosos conocimientos para guiar tu próxima operación.</p>
+      <p class="text-left">Trade Setup videosu, çeşitli varlıklardaki en son piyasa trendlerini ve izlenmesi gereken kilit seviyeleri analiz eder. İster acemi ister deneyimli bir yatırımcı olun, bir sonraki işleminize rehberlik edecek değerli içgörüler bulacaksınız.</p>
     </div>
   </div>
 </div>
 
-<!-- Display posts with lang: es-->
-{% assign es_posts = site.posts | where: "lang", "es" %}
+<!-- Display posts with lang: tr -->
+{% assign tr_posts = site.posts | where: "lang", "tr" %}
 
-{% for post in es_posts %}
+{% for post in tr_posts %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
       <h2 class="post-title">{{ post.title }}</h2>
@@ -55,7 +55,7 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
       </div>
     </a>
     <p class="post-meta">
-      Publicado el {{ post.date | date: "%B %-d, %Y" }}
+      Yayınlanma tarihi {{ post.date | date: "%d %B %Y" }}
     </p>
   </div>
   <hr>
@@ -66,12 +66,12 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Daha yeni gönderiler</a>
     </li>
     {% endif %}
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones más antiguas &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Daha eski gönderiler &rarr;</a>
     </li>
     {% endif %}
 </ul>
