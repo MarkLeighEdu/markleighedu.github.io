@@ -30,27 +30,47 @@
                     <a href="javascript:void(0)" id="language-toggle">
                         <i class="fa fa-globe fa-2x"></i> 
                         <span class="language-label">
-                            {% if page.url contains '/es/' %} Español
-                            {% elsif page.url contains '/zh-cn/' %} 简体中文
-                            {% elsif page.url contains '/zh-tw/' %} 繁體中文
-                            {% elsif page.url contains '/ar/' %} العربية
-                            {% elsif page.url contains '/fr/' %} Français
-                            {% elsif page.url contains '/de/' %} Deutsch
-                            {% elsif page.url contains '/pt-br/' %} Português-br
-                            {% elsif page.url contains '/tr/' %} Türkçe
-                            {% elsif page.url contains '/ja/' %} 日本語
-                            {% elsif page.url contains '/ko/' %} 한국어
-                            {% else %} English
+                            {% if page.url contains '/es/' %}
+                                Español
+                            {% elsif page.url contains '/zh-cn/' %}
+                                简体中文
+                            {% elsif page.url contains '/zh-tw/' %}
+                                繁體中文
+                            {% elsif page.url contains '/ar/' %}
+                                العربية
+                            {% elsif page.url contains '/fr/' %}
+                                Français
+                            {% elsif page.url contains '/de/' %}
+                                Deutsch
+                            {% elsif page.url contains '/pt-br/' %}
+                                Português-br
+                            {% elsif page.url contains '/tr/' %}
+                                Türkçe
+                            {% elsif page.url contains '/ja/' %}
+                                日本語
+                            {% elsif page.url contains '/ko/' %}
+                                한국어
+                            {% else %}
+                                English
                             {% endif %}
                         </span>
                     </a>
                     <!-- Language Dropdown Menu -->
                     <ul id="language-menu" style="display:none;">
-                        {% assign languages = "es,zh-cn,zh-tw,ar,fr,de,pt-br,tr,ja,ko" | split: "," %}
-                        {% assign language_names = "Español,简体中文,繁體中文,العربية,Français,Deutsch,Português-br,Türkçe,日本語,한국어" | split: "," %}
+                        {% assign languages = "en,es,zh-cn,zh-tw,ar,fr,de,pt-br,tr,ja,ko" | split: "," %}
+                        {% assign language_names = "English,Español,简体中文,繁體中文,العربية,Français,Deutsch,Português-br,Türkçe,日本語,한국어" | split: "," %}
 
                         {% for lang in languages %}
-                            <li><a href="/{{ lang }}/index.html">{{ language_names[forloop.index0] }}</a></li>
+                            {% unless page.url contains lang %}
+                                {% if lang == 'en' %}
+                                    <!-- Do not show English if on English page -->
+                                    {% if current_lang != 'en' %}
+                                        <li><a href="{{ site.baseurl }}/">{{ language_names[forloop.index0] }}</a></li>
+                                    {% endif %}
+                                {% else %}
+                                    <li><a href="/{{ lang }}/index.html">{{ language_names[forloop.index0] }}</a></li>
+                                {% endif %}
+                            {% endunless %}
                         {% endfor %}
                     </ul>
                 </li>
@@ -59,6 +79,7 @@
     </div>
 </div>
 </nav>
+
 
 <script>
     // Custom Navbar toggle behavior
