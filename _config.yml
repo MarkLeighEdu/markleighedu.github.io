@@ -2,13 +2,21 @@ languages:
   - en
   - es
   - zh-cn
+  - zh-tw
+  - ar
+  - fr
+  - de
+  - pt-br
+  - tr
+  - ja
+  - ko
 
 default_lang: en
 
 en:
   url: "https://markleighedu.github.io"
   baseurl: "/"
-title: "Mark Leigh Educator Blog"
+  title: "Mark Leigh Educator Blog"
 
 es:
   url: "https://markleighedu.github.io"
@@ -18,7 +26,47 @@ es:
 zh-cn:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-cn"
-  title: "Mark Leigh 教育博客"  # Chinese site title
+  title: "Mark Leigh 马克.李教育博客"  # Simplified Chinese site title
+
+zh-tw:
+  url: "https://markleighedu.github.io"
+  baseurl: "/zh-tw"
+  title: "Mark Leigh 馬克.李教育博客"  # Traditional Chinese site title
+
+ar:
+  url: "https://markleighedu.github.io"
+  baseurl: "/ar"
+  title: "مدونة مارك لي للمعلم"  # Arabic site title
+
+fr:
+  url: "https://markleighedu.github.io"
+  baseurl: "/fr"
+  title: "Blog de Mark Leigh pour les éducateurs"  # French site title
+
+de:
+  url: "https://markleighedu.github.io"
+  baseurl: "/de"
+  title: "Mark Leigh Pädagogen-Blog"
+
+pt-br:
+  url: "https://markleighedu.github.io"
+  baseurl: "/pt-br"
+  title: "Blog do Educador Mark Leigh"
+
+tr:
+  url: "https://markleighedu.github.io"
+  baseurl: "/tr"
+  title: "Mark Leigh Eğitimci Blogu"
+
+ja:
+  url: "https://markleighedu.github.io"
+  baseurl: "/ja"
+  title: "Mark Leighマーク・リー教育者ブログ"
+
+ko:
+  url: "https://markleighedu.github.io"
+  baseurl: "/ko"
+  title: "Mark Leigh 교육자 블로그"
 
 defaults:
   - scope:
@@ -27,7 +75,6 @@ defaults:
       lang: en
 
 # Site settings
-
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
 header-img: img/home-bg.jpg
 email: markleigh.edu@gmail.com
@@ -38,8 +85,18 @@ baseurl: ""
 
 # Publish posts or collection documents with a future date.
 future: false
+
+# Exclude unnecessary files
 exclude:
-- _posts/
+  - _posts/
+  - search.html
+  - less
+  - node_modules
+  - Gruntfile.js
+  - package.json
+  - README.md
+  - README.zh.md
+
 # SNS settings
 RSS: false
 instagram_username: markleigh.educator
@@ -53,20 +110,10 @@ linkedin_username: mark-leigh-51132935
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude:
-  [
-    "search.html",
-    "less",
-    "node_modules",
-    "Gruntfile.js",
-    "package.json",
-    "README.md",
-    "README.zh.md",
-  ]
 anchorjs: true
 encoding: utf-8
 
-# Gems
+# Gems (Plugins)
 plugins: [jekyll-paginate]
 
 # Markdown settings
