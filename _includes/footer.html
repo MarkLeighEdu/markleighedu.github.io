@@ -1,40 +1,86 @@
-<!-- Language Selection -->
-<div class="language-switcher">
-    <label for="language-select">🌍 Language:</label>
-    <select id="language-select" onchange="onLangChange(this.value)">
-        <option value="zh">中文 (简体)</option>
-        <option value="zh-tw">中文 (繁體)</option>
-        <option value="en">English</option>
-        <option value="ar">العربية</option>
-        <option value="fr">Français</option>
-        <option value="de">Deutsch</option>
-        <option value="pt-br">Português (Brasil)</option>
-        <option value="tr">Türkçe</option>
-        <option value="ja">日本語</option>
-        <option value="ko">한국어</option>
-    </select>
-</div>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- SNS Links -->
+                {% include sns-links.html center=true %}
 
-<!-- Handle Language Change -->
+                <!-- Dynamic Copyright & Disclaimer -->
+                <p class="copyright text-muted" id="copyright-text"></p>
+
+                <!-- Language Selection -->
+                <div class="language-switcher">
+                    <label for="language-select">🌍 Language:</label>
+                    <select id="language-select" onchange="onLangChange(this.value)">
+                        <option value="zh">中文 (简体)</option>
+                        <option value="zh-tw">中文 (繁體)</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="pt-br">Português (Brasil)</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ "/js/mark-blog.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Simple Jekyll Search -->
+<script src="{{ "/js/simple-jekyll-search.min.js" | prepend: site.baseurl }}"></script>
+
+<!-- Service Worker -->
+{% if site.service-worker %}
+<script src="{{ "/js/snackbar.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/sw-registration.js" | prepend: site.baseurl }}"></script>
+{% endif %}
+
+<!-- Language Change Handling -->
 <script type="text/javascript">
     function getLang() {
-        return new URLSearchParams(document.location.search).get("lang");
+        return new URLSearchParams(document.location.search).get("lang") || "en";
     }
 
     function setLang(newLang) {
         var params = new URLSearchParams(document.location.search);
         params.set("lang", newLang);
-        document.location.search = params.toString(); // refresh the page with the new language
+        document.location.search = params.toString();
     }
 
     function _render() {
         var lang = getLang();
         var select = document.getElementById("language-select");
+        if (select) select.value = lang;
 
-        if (lang) {
-            select.value = lang;
-        } else {
-            select.value = "en"; // Default to English
+        var copyrightTexts = {
+            "en": "Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>Powered by <a href='http://markleighedu.github.io/'>Mark Leigh Blog</a><br>📊 Disclaimer: All content on this site is for educational and informational purposes only and does not constitute financial or investment advice.",
+            "zh": "版权所有 &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>由 <a href='http://markleighedu.github.io/'>Mark Leigh Blog</a> 提供技术支持<br>📊 免责声明：本站所有内容仅供教育和信息用途，不构成任何金融或投资建议。",
+            "zh-tw": "版權所有 &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>由 <a href='http://markleighedu.github.io/'>Mark Leigh Blog</a> 提供技術支持<br>📊 免責聲明：本站所有內容僅供教育和信息用途，不構成任何金融或投資建議。",
+            "ar": "حقوق النشر &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>مدعوم من <a href='http://markleighedu.github.io/'>مدونة مارك لي</a><br>📊 إخلاء المسؤولية: جميع المحتويات على هذا الموقع لأغراض تعليمية وإعلامية فقط ولا تشكل نصيحة مالية أو استثمارية.",
+            "fr": "Droits d'auteur &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>Propulsé par <a href='http://markleighedu.github.io/'>Mark Leigh Blog</a><br>📊 Avertissement : Tout le contenu de ce site est à titre éducatif et informatif uniquement et ne constitue pas un conseil financier ou d'investissement.",
+            "de": "Urheberrecht &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>Bereitgestellt von <a href='http://markleighedu.github.io/'>Mark Leigh Blog</a><br>📊 Haftungsausschluss: Alle Inhalte auf dieser Website dienen nur zu Bildungs- und Informationszwecken und stellen keine Finanz- oder Anlageberatung dar.",
+            "pt-br": "Direitos autorais &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br>Desenvolvido por <a href='http://markleighedu.github.io/'>Mark Leigh Blog</a><br>📊 Aviso Legal: Todo o conteúdo deste site é apenas para fins educacionais e informativos e não constitui aconselhamento financeiro ou de investimento.",
+            "tr": "Telif Hakkı &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br><a href='http://markleighedu.github.io/'>Mark Leigh Blog</a> tarafından desteklenmektedir.<br>📊 Yasal Uyarı: Bu sitedeki tüm içerik yalnızca eğitim ve bilgi amaçlıdır ve finansal veya yatırım tavsiyesi niteliğinde değildir.",
+            "ja": "著作権 &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br><a href='http://markleighedu.github.io/'>Mark Leigh Blog</a> によって提供されています。<br>📊 免責事項: このサイトのすべてのコンテンツは、教育および情報提供のみを目的としており、金融または投資アドバイスを構成するものではありません。",
+            "ko": "저작권 &copy; {{ site.title }} {{ site.time | date: '%Y' }}<br><a href='http://markleighedu.github.io/'>Mark Leigh Blog</a> 제공<br>📊 면책 조항: 이 사이트의 모든 콘텐츠는 교육 및 정보 제공 목적으로만 사용되며, 금융 또는 투자 조언을 구성하지 않습니다。"
+        };
+
+        var copyrightElement = document.getElementById("copyright-text");
+        if (copyrightElement) {
+            copyrightElement.innerHTML = copyrightTexts[lang] || copyrightTexts["en"];
         }
     }
 
