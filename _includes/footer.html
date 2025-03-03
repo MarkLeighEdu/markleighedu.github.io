@@ -5,12 +5,82 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <!-- SNS Link -->
                 {% include sns-links.html center=true %}
+                
                 <p class="copyright text-muted">
-                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
-                    <br>
-                    Powered by <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
-                     <br>
-                   📊 Disclaimer: All content on this site is for educational and informational purposes only and does not constitute financial or investment advice. By using any content here, you acknowledge that you understand the risks involved in trading and agree that no one, including the site owner, is liable for any of your financial decisions or outcomes.
+                    {% case page.lang %}
+                        {% when 'en' %}
+                            Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Powered by <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Disclaimer: All content on this site is for educational and informational purposes only and does not constitute financial or investment advice. By using any content here, you acknowledge that you understand the risks involved in trading and agree that no one, including the site owner, is liable for any of your financial decisions or outcomes.
+                        {% when 'es' %}
+                            Derechos de autor &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Desarrollado por <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Descargo de responsabilidad: Todo el contenido de este sitio es solo para fines educativos e informativos y no constituye asesoramiento financiero ni de inversión. Al usar cualquier contenido aquí, reconoce que comprende los riesgos involucrados en el comercio y acepta que nadie, incluido el propietario del sitio, es responsable de sus decisiones o resultados financieros.
+                        {% when 'zh-cn' %}
+                            版权 &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            由 <a href="http://markleighedu.github.io/">Mark Leigh Blog</a> 提供支持
+                            <br>
+                            📊 免责声明：本网站上的所有内容仅供教育和信息用途，不构成财务或投资建议。通过使用此处的任何内容，您承认自己理解交易涉及的风险，并同意没有人，包括站点所有者，对您的任何财务决策或结果负责。
+                        {% when 'zh-tw' %}
+                            版權 &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            由 <a href="http://markleighedu.github.io/">Mark Leigh Blog</a> 提供支援
+                            <br>
+                            📊 免責聲明：本網站上的所有內容僅供教育和資訊用途，並不構成財務或投資建議。使用此處的任何內容即表示您了解交易所涉及的風險，並同意任何人，包括網站擁有者，對您的財務決策或結果不承擔任何責任。
+                        {% when 'ar' %}
+                            حقوق النشر &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            مدعوم من <a href="http://markleighedu.github.io/">مدونة مارك لي</a>
+                            <br>
+                            📊 إخلاء المسؤولية: جميع المحتويات على هذا الموقع هي لأغراض تعليمية وإعلامية فقط ولا تشكل نصيحة مالية أو استثمارية. باستخدام أي محتوى هنا، فإنك تقر بأنك تفهم المخاطر المتضمنة في التداول وتوافق على أن أي شخص، بما في ذلك مالك الموقع، غير مسؤول عن أي من قراراتك أو نتائجك المالية.
+                        {% when 'fr' %}
+                            Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Propulsé par <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Avertissement : Tout le contenu de ce site est uniquement à des fins éducatives et informatives et ne constitue pas un conseil financier ou en investissement. En utilisant tout contenu ici, vous reconnaissez que vous comprenez les risques impliqués dans le trading et vous acceptez que personne, y compris le propriétaire du site, ne soit responsable de vos décisions ou résultats financiers.
+                        {% when 'de' %}
+                            Urheberrecht &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Bereitgestellt von <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Haftungsausschluss: Alle Inhalte auf dieser Seite dienen nur zu Bildungs- und Informationszwecken und stellen keine Finanz- oder Investitionsberatung dar. Durch die Nutzung von Inhalten auf dieser Seite erkennen Sie an, dass Sie die Risiken des Handels verstehen, und stimmen zu, dass niemand, einschließlich des Seiteninhabers, für Ihre finanziellen Entscheidungen oder Ergebnisse haftet.
+                        {% when 'pt-br' %}
+                            Direitos autorais &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Desenvolvido por <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Isenção de responsabilidade: Todo o conteúdo deste site é apenas para fins educacionais e informativos e não constitui aconselhamento financeiro ou de investimento. Ao usar qualquer conteúdo aqui, você reconhece que entende os riscos envolvidos na negociação e concorda que ninguém, incluindo o proprietário do site, é responsável por quaisquer decisões ou resultados financeiros.
+                        {% when 'tr' %}
+                            Telif hakkı &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Tarafından desteklenmektedir <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Feragat: Bu sitedeki tüm içerik yalnızca eğitim ve bilgilendirme amaçlıdır ve mali veya yatırım tavsiyesi oluşturmaz. Buradaki herhangi bir içeriği kullanarak, ticaretin içerdiği riskleri anladığınızı kabul eder ve kimsenin, site sahibi dahil, mali kararlarınız veya sonuçlarınızdan sorumlu olmadığını kabul edersiniz.
+                        {% when 'ja' %}
+                            著作権 &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            提供元： <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 免責事項：このサイトのすべてのコンテンツは教育および情報提供を目的としたものであり、金融または投資アドバイスを構成するものではありません。ここにあるコンテンツを使用することにより、取引に関連するリスクを理解し、サイトの所有者を含む誰もがあなたの財務決定や結果について責任を負わないことを理解したことになります。
+                        {% when 'ko' %}
+                            저작권 &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            지원: <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 면책 조항: 이 사이트의 모든 콘텐츠는 교육 및 정보 제공 목적으로만 사용되며 재정적 또는 투자적 조언을 구성하지 않습니다. 여기의 콘텐츠를 사용함으로써 거래에 따른 위험을 이해하고 사이트 소유자를 포함한 누구도 귀하의 재정적 결정이나 결과에 대해 책임지지 않는다는 것을 인정하는 것입니다.
+                        {% else %}
+                            Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+                            <br>
+                            Powered by <a href="http://markleighedu.github.io/">Mark Leigh Blog</a>
+                            <br>
+                            📊 Disclaimer: All content on this site is for educational and informational purposes only and does not constitute financial or investment advice. By using any content here, you acknowledge that you understand the risks involved in trading and agree that no one, including the site owner, is liable for any of your financial decisions or outcomes.
+                    {% endcase %}
                 </p>
             </div>
         </div>
