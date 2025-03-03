@@ -131,3 +131,7 @@ YYYY-MM-DD-title.md
     }
 }
 
+#markblog_navbar li::marker {
+  content: none;
+}
+
