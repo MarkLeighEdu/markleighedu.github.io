@@ -130,3 +130,13 @@ YYYY-MM-DD-title.md
         overflow-y: auto; /* Add scroll bar if the content exceeds the max height */
     }
 }
+
+.dropdown-menu > li > a {
+  display: block;
+padding: 3px 20px 3px 3px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
