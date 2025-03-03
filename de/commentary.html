@@ -1,18 +1,17 @@
 ---
 layout: page
-lang: es
-title: "Comentarios"
-nav-title: "Comentarios"
-description: "「Educación en Trading de Mark Leigh」"
-permalink: /es/commentary/
+lang: de
+title: "Kommentar"
+nav-title: "Kommentar"
+description: "Trading Education mit Mark Leigh"
+permalink: /de/commentary/
 paginate: 10
 ---
 
 <hr>
 
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "es" %}
-
+  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "de" %}
   {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -24,7 +23,7 @@ paginate: 10
           {{ post.content | strip_html | truncate: 300 }}
         </div>
       </a>
-      <p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
+      <p class="post-meta">Veröffentlicht am {{ post.date | date: "%B %-d, %Y" }}</p>
     </div>
     <hr>
   {% endfor %}
@@ -35,12 +34,12 @@ paginate: 10
   <ul class="pager">
     {% if paginator.previous_page %}
       <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Neuere Beiträge</a>
       </li>
     {% endif %}
     {% if paginator.next_page %}
       <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones anteriores &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Ältere Beiträge &rarr;</a>
       </li>
     {% endif %}
   </ul>
