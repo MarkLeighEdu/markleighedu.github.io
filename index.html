@@ -41,9 +41,9 @@ hide-in-nav: true
 </div>
 
 <!-- Display posts with lang: en -->
-{% assign _posts = site.posts | where: "lang", "en" %}
+{% assign en_posts = site.posts | where: "lang", "en" %}
 
-{% for post in _posts %}
+{% for post in en_posts %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
       <h2 class="post-title">{{ post.title }}</h2>
