@@ -13,6 +13,7 @@ languages:
 
 default_lang: en
 
+# Language-specific site settings
 en:
   url: "https://markleighedu.github.io"
   baseurl: "/"
@@ -21,27 +22,27 @@ en:
 es:
   url: "https://markleighedu.github.io"
   baseurl: "/es"
-  title: "Blog del Educador Mark Leigh"  # Spanish site title
+  title: "Blog del Educador Mark Leigh"
 
 zh-cn:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-cn"
-  title: "Mark Leigh 马克.李教育博客"  # Simplified Chinese site title
+  title: "Mark Leigh 马克.李教育博客"
 
 zh-tw:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-tw"
-  title: "Mark Leigh 馬克.李教育博客"  # Traditional Chinese site title
+  title: "Mark Leigh 馬克.李教育博客"
 
 ar:
   url: "https://markleighedu.github.io"
   baseurl: "/ar"
-  title: "مدونة مارك لي للمعلم"  # Arabic site title
+  title: "مدونة مارك لي للمعلم"
 
 fr:
   url: "https://markleighedu.github.io"
   baseurl: "/fr"
-  title: "Blog de Mark Leigh pour les éducateurs"  # French site title
+  title: "Blog de Mark Leigh pour les éducateurs"
 
 de:
   url: "https://markleighedu.github.io"
@@ -68,54 +69,60 @@ ko:
   baseurl: "/ko"
   title: "Mark Leigh 교육자 블로그"
 
+# Default language setting
 defaults:
   - scope:
       path: ""
     values:
       lang: en
 
-# Site settings
+# Pagination settings
+paginate: 10
+paginate_path: "/:lang/page:num/"
 
+# Ensure Jekyll processes non-English posts
+include:
+  - es/_posts
+  - zh-cn/_posts
+  - zh-tw/_posts
+  - ar/_posts
+  - fr/_posts
+  - de/_posts
+  - pt-br/_posts
+  - tr/_posts
+  - ja/_posts
+  - ko/_posts
+
+# Exclude unnecessary files
+exclude:
+  - "search.html"
+  - "less"
+  - "node_modules"
+  - "Gruntfile.js"
+  - "package.json"
+  - "README.md"
+  - "README.zh.md"
+
+# Jekyll Plugins
+plugins:
+  - jekyll-paginate
+
+# Site settings
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
-header-img: img/home-bg.jpg
 email: markleigh.edu@gmail.com
 description: "Mark Leigh's Personal Blog | Financial Market Trading Education"
-keyword: "Mark Leigh, Educator, Education, Expert, Forex Trading, Currencies, Cryptocurrencies, Blog, Commodities Trading, US Stock Trading"
+keyword: "Mark Leigh, Educator, Education, Forex Trading, US Stock Trading"
 url: "https://markleighedu.github.io/"
 baseurl: ""
 
-# Publish posts or collection documents with a future date.
-future: false
-exclude:
-- _posts/
-# SNS settings
-RSS: false
-instagram_username: markleigh.educator
-tiktok_username: markleigh.edu
-twitter_username: MarkLeigh_edu
-youtube_username: "@MarkLeigh-Educator"
-facebook_username: markleigh.tradingeducator
-linkedin_username: mark-leigh-51132935
+# Sidebar settings
+sidebar: true
+sidebar-about-description: "Trading Education <br> Blog @ Mark"
+sidebar-avatar: "https://github.com/markleighedu.png"
 
-# Build settings
-highlighter: rouge
-permalink: pretty
-paginate: 10
-exclude:
-  [
-    "search.html",
-    "less",
-    "node_modules",
-    "Gruntfile.js",
-    "package.json",
-    "README.md",
-    "README.zh.md",
-  ]
-anchorjs: true
-encoding: utf-8
-
-# Gems
-plugins: [jekyll-paginate]
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
 
 # Markdown settings
 markdown: kramdown
@@ -128,22 +135,6 @@ kramdown:
       line_numbers: true
       start_line: 1
 
-# Disqus settings
+# Disable Disqus
 disqus_username: markleigh
 disable_disqus: true
-
-# Analytics settings
-ga_track_id: "G-XXXXXXXXXX"
-ga_domain: markleighedu.github.io
-
-# Sidebar settings
-sidebar: true
-sidebar-about-description: "Trading Education <br> Blog @ Mark"
-sidebar-avatar: https://github.com/markleighedu.png
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-# MathJax rendering for layout:page
-page-mathjax: false
