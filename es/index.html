@@ -40,40 +40,43 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
   </div>
 </div>
 
-<!-- Display posts with lang: es-->
-{% assign es_posts = site.posts | where: "lang", "es" %}
-
-{% for post in es_posts %}
+{% for post in paginator.posts %}
+  {% if post.lang == 'es' %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-      <h2 class="post-title">{{ post.title }}</h2>
-      {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-      {% endif %}
-      <div class="post-content-preview">
-        {{ post.content | strip_html | truncate:300 }}
-      </div>
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:300 }}
+        </div>
     </a>
     <p class="post-meta">
-      Publicado el {{ post.date | date: "%B %-d, %Y" }}
+        Publicado el {{ post.date | date: "%B %-d, %Y" }}
     </p>
   </div>
   <hr>
+  {% endif %}
 {% endfor %}
 
-<!-- Pager for Spanish Language -->
+<!-- Pager -->
 {% if paginator.total_pages > 1 %}
-  <ul class="pager">
+<ul class="pager">
     {% if paginator.previous_page %}
-      <li class="previous">
+    <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
-      </li>
+    </li>
     {% endif %}
     {% if paginator.next_page %}
-      <li class="next">
+    <li class="next">
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones más antiguas &rarr;</a>
-      </li>
+    </li>
     {% endif %}
-  </ul>
+</ul>
 {% endif %}
 
