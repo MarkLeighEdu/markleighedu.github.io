@@ -66,14 +66,13 @@ pagination: true
   <ul class="pager">
     {% if paginator.previous_page %}
       <li class="previous">
-        <a href="{{ site.baseurl }}{{ paginator.previous_page_path | prepend: site[page.lang].baseurl }}">← Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | prepend: site[page.lang].baseurl }}">← Newer Posts</a>
       </li>
     {% endif %}
     {% if paginator.next_page %}
       <li class="next">
-        <a href="{{ site.baseurl }}{{ paginator.next_page_path | prepend: site[page.lang].baseurl }}">Older Posts →</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | prepend: site[page.lang].baseurl }}">Older Posts →</a>
       </li>
     {% endif %}
   </ul>
 {% endif %}
-
