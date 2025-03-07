@@ -68,6 +68,11 @@ ko:
   baseurl: "/ko"
   title: "Mark Leigh 교육자 블로그"
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
 
 
 # Site settings
