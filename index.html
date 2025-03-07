@@ -21,7 +21,7 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">The Market Midday Overview provides expert-led technical analysis...</p>
+      <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
     </div>
     <!-- Second Video -->
     <div class="col-12 mb-3">
@@ -35,27 +35,29 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">The Trade Setup video breaks down the latest market trends...</p>
+     <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
     </div>
   </div>
 </div>
 
-<!-- Display posts with lang: en, sorted by date (newest first) -->
-{% assign en_posts = site.posts | where: "lang", "en" | sort: "date" | reverse %}
 
-{% for post in en_posts offset: paginator.per_page * (paginator.page - 1) limit: paginator.per_page %}
+
+<!-- Display posts with lang: en-->
+{% assign _posts = site.posts | where: "lang", "en" %}
+
+{% for post in _posts %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
+      <h2 class="post-title">{{ post.title }}</h2>
+      {% if post.subtitle %}
         <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:300 }}
-        </div>
+      {% endif %}
+      <div class="post-content-preview">
+        {{ post.content | strip_html | truncate:300 }}
+      </div>
     </a>
     <p class="post-meta">
-        Posted on {{ post.date | date: "%B %-d, %Y" }}
+      Posted on {{ post.date | date: "%B %-d, %Y" }}
     </p>
   </div>
   <hr>
