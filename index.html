@@ -4,7 +4,6 @@ lang: en
 title: "Mark Leigh Blog"
 description: "「Mark Leigh Trading Education」"
 hide-in-nav: true
-pagination: true
 ---
 
 <div class="post-preview" style="margin-top: 20px;">
@@ -43,7 +42,8 @@ pagination: true
 </div>
 
 {% for post in paginator.posts %}
-<div class="post-preview">
+  {% if post.lang == 'en' %}
+  <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
             {{ post.title }}
@@ -54,18 +54,15 @@ pagination: true
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {% if post.lang == 'en' %}
-                {{ post.content | strip_html | truncate:300 }}
-            {% else %}
-                {{ post.content | strip_html | truncate:200 }}
-            {% endif %}
+            {{ post.content | strip_html | truncate:300 }}
         </div>
     </a>
-<p class="post-meta">
-     Posted on {{ post.date | date: "%B %-d, %Y" }}
- </p>
-</div>
-<hr>
+    <p class="post-meta">
+        Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  </div>
+  <hr>
+  {% endif %}
 {% endfor %}
 
 <!-- Pager -->
