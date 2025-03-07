@@ -10,7 +10,7 @@ paginate: 5
 <hr>
 
 <div class="post-list">
- {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "zh-cn" %}
+ {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "zh-tw" %}
 
  {% for post in report_posts offset: paginator.offset limit: paginator.per_page %}
  <div class="post-preview">
