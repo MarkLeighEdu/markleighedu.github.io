@@ -68,51 +68,7 @@ ko:
   baseurl: "/ko"
   title: "Mark Leigh 교육자 블로그"
 
-defaults:
-  - scope:
-      path: "_posts"
-    values:
-      lang: en
-  - scope:
-      path: "es/_posts"
-    values:
-      lang: es
-  - scope:
-      path: "zh-cn/_posts"
-    values:
-      lang: zh-cn
-  - scope:
-      path: "zh-tw/_posts"
-    values:
-      lang: zh-tw
-  - scope:
-      path: "ar/_posts"
-    values:
-      lang: ar
-  - scope:
-      path: "fr/_posts"
-    values:
-      lang: fr
-  - scope:
-      path: "de/_posts"
-    values:
-      lang: de
-  - scope:
-      path: "pt-br/_posts"
-    values:
-      lang: pt-br
-  - scope:
-      path: "tr/_posts"
-    values:
-      lang: tr
-  - scope:
-      path: "ja/_posts"
-    values:
-      lang: ja
-  - scope:
-      path: "ko/_posts"
-    values:
-      lang: ko
+
 
 # Site settings
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
@@ -125,7 +81,8 @@ baseurl: ""
 
 # Publish posts or collection documents with a future date.
 future: false
-
+exclude:
+- _posts/
 # SNS settings
 RSS: false
 instagram_username: markleigh.educator
