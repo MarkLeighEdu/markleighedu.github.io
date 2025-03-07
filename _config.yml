@@ -86,8 +86,7 @@ baseurl: ""
 
 # Publish posts or collection documents with a future date.
 future: false
-exclude:
-- _posts/
+
 # SNS settings
 RSS: false
 instagram_username: markleigh.educator
