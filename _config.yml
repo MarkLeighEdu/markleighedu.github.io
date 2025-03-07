@@ -139,7 +139,6 @@ linkedin_username: mark-leigh-51132935
 highlighter: rouge
 permalink: pretty
 paginate: 6
-paginate_path: "/:lang/page:num/"
 exclude:
   [
     "search.html",
