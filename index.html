@@ -1,4 +1,4 @@
----
+--- 
 layout: page
 lang: en
 title: "Mark Leigh Blog"
@@ -21,7 +21,7 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels...</p>
+      <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
     </div>
     <!-- Second Video -->
     <div class="col-12 mb-3">
@@ -35,40 +35,46 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch...</p>
+     <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
     </div>
   </div>
 </div>
 
-<!-- Pagination & Filtering -->
-{% assign filtered_posts = site.posts | where: "lang", "en" %}
-{% for post in filtered_posts limit: 10 %}
+{% for post in paginator.posts %}
+  {% if post.lang == 'en' %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
         {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
         <div class="post-content-preview">
             {{ post.content | strip_html | truncate:300 }}
         </div>
     </a>
-    <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">
+        Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
   </div>
   <hr>
+  {% endif %}
 {% endfor %}
 
 <!-- Pager -->
-{% if filtered_posts.size > 10 %}
+{% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">&larr; Newer Posts</a>
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
     </li>
     {% endif %}
     {% if paginator.next_page %}
     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older Posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
     </li>
     {% endif %}
 </ul>
