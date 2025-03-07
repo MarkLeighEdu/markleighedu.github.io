@@ -1,6 +1,6 @@
 ---
 layout: page
-lang: es
+lang: ar
 title: "Informe diario"
 nav-title: "Informe"
 description: "「Educación en Trading de Mark Leigh」"
@@ -11,7 +11,7 @@ paginate: 5
 <hr>
 
 <div class="post-list">
-  {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "es" %}
+  {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "ar" %}
   
   {% for post in report_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
