@@ -6,10 +6,10 @@ description: "「تعليم تداول مارك لي」"
 hide-in-nav: true
 ---
 
-<div class="post-preview" style="margin-top: 20px;">
-  <!-- First Block - Video Embeds -->
+<div class="post-preview" style="margin-top: 20px;" dir="rtl">
+  <!-- أول قسم - تضمين الفيديوهات -->
   <div class="row mb-4">
-    <!-- First Video -->
+    <!-- الفيديو الأول -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
@@ -21,9 +21,12 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-right">يقدم تحليل منتصف اليوم نظرة متعمقة على اتجاهات السوق والمستويات الرئيسية، من خلال تحليل فني يقوم به الخبراء. هذه الفيديوهات مصممة لمساعدتك على فهم كيفية تحليل تحركات الأسعار، تحديد فرص التداول، وتطبيق استراتيجيات التحليل الفني بفعالية في الأسواق الحية.</p>
+      <p class="text-right">
+        <strong>تحليل منتصف اليوم</strong> يقدم نظرة متعمقة على اتجاهات السوق والمستويات الرئيسية من خلال تحليل فني يقوم به الخبراء. هذه الفيديوهات مصممة لمساعدتك على فهم كيفية تحليل تحركات الأسعار، تحديد فرص التداول، وتطبيق استراتيجيات التحليل الفني بفعالية.
+      </p>
     </div>
-    <!-- Second Video -->
+
+    <!-- الفيديو الثاني -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
@@ -35,33 +38,35 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-right">يقدم فيديو إعداد الصفقات تحليلًا حديثًا لأحدث اتجاهات السوق والمستويات الرئيسية للمتابعة عبر مختلف الأصول. سواء كنت مبتدئًا أو متداولًا خبيرًا، ستجد رؤى قيمة لتوجيه تداولاتك.</p>
+      <p class="text-right">
+        <strong>فيديو إعداد الصفقات</strong> يوفر تحليلًا لأحدث اتجاهات السوق والمستويات الرئيسية عبر مختلف الأصول. سواء كنت مبتدئًا أو متداولًا محترفًا، ستجد رؤى قيمة تساعدك على اتخاذ قرارات تداول ذكية.
+      </p>
     </div>
   </div>
 </div>
 
-<!-- Display posts with lang: ar -->
+<!-- عرض المقالات باللغة العربية -->
 {% assign ar_posts = site.posts | where: "lang", "ar" %}
 
 {% for post in ar_posts %}
-  <div class="post-preview">
+  <div class="post-preview" dir="rtl">
     <a href="{{ post.url | prepend: site.baseurl }}">
       <h2 class="post-title">{{ post.title }}</h2>
       {% if post.subtitle %}
         <h3 class="post-subtitle">{{ post.subtitle }}</h3>
       {% endif %}
       <div class="post-content-preview">
-        {{ post.content | strip_html | truncate:300 }}
+        {{ post.content | strip_html | truncate: 300 }}
       </div>
     </a>
     <p class="post-meta">
-      نُشر في {{ post.date | date: "%B %-d, %Y" }}
+      نُشر في {{ post.date | date: "%Y/%m/%d" }}
     </p>
   </div>
   <hr>
 {% endfor %}
 
-<!-- Pager -->
+<!-- الصفحات -->
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
