@@ -1,4 +1,4 @@
-languages:
+perlanguages:
   - en
   - es
   - zh-cn
@@ -137,7 +137,7 @@ linkedin_username: mark-leigh-51132935
 
 # Build settings
 highlighter: rouge
-permalink: "/:lang/:title/"  # Clean URLs without date
+permalink: pretty
 paginate: 6
 paginate_path: "/:lang/page:num/"
 exclude:
