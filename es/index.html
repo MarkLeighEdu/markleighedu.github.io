@@ -61,18 +61,19 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
   <hr>
 {% endfor %}
 
-<!-- Pager -->
+<!-- Pager for Spanish Language -->
 {% if paginator.total_pages > 1 %}
-<ul class="pager">
+  <ul class="pager">
     {% if paginator.previous_page %}
-    <li class="previous">
+      <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
-    </li>
+      </li>
     {% endif %}
     {% if paginator.next_page %}
-    <li class="next">
+      <li class="next">
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones más antiguas &rarr;</a>
-    </li>
+      </li>
     {% endif %}
-</ul>
+  </ul>
 {% endif %}
+
