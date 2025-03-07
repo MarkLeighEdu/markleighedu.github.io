@@ -40,31 +40,40 @@ hide-in-nav: true
   </div>
 </div>
 
+<!-- Only display English posts from _posts -->
+{% assign english_posts = site.posts | where: "lang", "en" %}
 
+<!-- Paginate through filtered posts -->
+{% assign paginator = english_posts | slice: paginator.per_page * (paginator.page - 1), paginator.per_page %}
 
-<!-- Display posts with lang: en-->
-{% assign en_posts = site.posts | where: "lang", "en" %}
-
-{% for post in en_posts %}
+{% for post in paginator %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-      <h2 class="post-title">{{ post.title }}</h2>
-      {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-      {% endif %}
-      <div class="post-content-preview">
-        {{ post.content | strip_html | truncate:300 }}
-      </div>
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
+        </div>
     </a>
     <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
+         Posted on {{ post.date | date: "%B %-d, %Y" }}
     </p>
   </div>
   <hr>
 {% endfor %}
 
 <!-- Pager -->
-{% if paginator.total_pages > 1 %}
+{% if paginator.size > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">
