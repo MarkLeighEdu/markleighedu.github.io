@@ -40,9 +40,10 @@ hide-in-nav: true
   </div>
 </div>
 
-<!-- Only display English posts from _posts -->
-{% assign english_posts = site.posts | where: "lang", "en" %}
-{% for post in english_posts offset: paginator.per_page * (paginator.page - 1) limit: paginator.per_page %}
+<!-- Display posts with lang: en -->
+{% assign en_posts = site.posts | where: "lang", "en" %}
+
+{% for post in en_posts offset: paginator.per_page * (paginator.page - 1) limit: paginator.per_page %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
