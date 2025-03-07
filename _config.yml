@@ -77,7 +77,7 @@ defaults:
 # Site settings
 
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
-header-img: img/home-bg.jpg
+header-img: img/home-bg.jpg  # Home image added back
 email: markleigh.edu@gmail.com
 description: "Mark Leigh's Personal Blog | Financial Market Trading Education"
 keyword: "Mark Leigh, Educator, Education, Expert, Forex Trading, Currencies, Cryptocurrencies, Blog, Commodities Trading, US Stock Trading"
@@ -101,6 +101,7 @@ linkedin_username: mark-leigh-51132935
 highlighter: rouge
 permalink: pretty
 paginate: 10
+paginate_path: "/:lang/page:num/"  # Ensure separate pagination for each language
 exclude:
   [
     "search.html",
