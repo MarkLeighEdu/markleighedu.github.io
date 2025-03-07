@@ -95,7 +95,7 @@ linkedin_username: mark-leigh-51132935
 # Build settings
 highlighter: rouge
 permalink: pretty
-paginate: 10
+paginate: 4
 exclude:
   [
     "search.html",
