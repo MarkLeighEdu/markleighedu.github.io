@@ -7,9 +7,9 @@ hide-in-nav: true
 ---
 
 <div class="post-preview" style="margin-top: 20px;">
-  <!-- First Block - Video Embeds -->
+  <!-- Erster Abschnitt - Video-Einbettungen -->
   <div class="row mb-4">
-    <!-- First Video -->
+    <!-- Erstes Video -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
@@ -21,9 +21,12 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">Die Marktübersicht zur Mittagszeit bietet eine von Experten geleitete technische Analyse mit detaillierten Einblicken in Markttrends und wichtige Kursniveaus. Diese Videos helfen Ihnen dabei, Kursbewegungen zu analysieren, Handelsmöglichkeiten zu erkennen und technische Strategien effektiv in Echtzeit umzusetzen.</p>
+      <p class="text-left">
+        <strong>Marktübersicht zur Mittagszeit</strong> bietet eine von Experten geleitete technische Analyse mit detaillierten Einblicken in Markttrends und wichtige Kursniveaus. Diese Videos helfen Ihnen, Kursbewegungen zu analysieren, Handelsmöglichkeiten zu erkennen und technische Strategien effektiv umzusetzen.
+      </p>
     </div>
-    <!-- Second Video -->
+
+    <!-- Zweites Video -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe
@@ -35,12 +38,14 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">Das Trade-Setup-Video analysiert die neuesten Markttrends und wichtige Kursniveaus für verschiedene Anlageklassen. Egal, ob Sie Anfänger oder erfahrener Trader sind – diese Analysen liefern wertvolle Einblicke für Ihre nächste Handelsentscheidung.</p>
+      <p class="text-left">
+        <strong>Trade-Setup-Video</strong> analysiert die neuesten Markttrends und wichtige Kursniveaus für verschiedene Anlageklassen. Egal, ob Sie Anfänger oder erfahrener Trader sind – diese Analysen liefern wertvolle Einblicke für Ihre nächste Handelsentscheidung.
+      </p>
     </div>
   </div>
 </div>
 
-<!-- Display posts with lang: de -->
+<!-- Anzeige von Beiträgen mit der Sprache 'de' -->
 {% assign de_posts = site.posts | where: "lang", "de" %}
 
 {% for post in de_posts %}
@@ -51,7 +56,7 @@ hide-in-nav: true
         <h3 class="post-subtitle">{{ post.subtitle }}</h3>
       {% endif %}
       <div class="post-content-preview">
-        {{ post.content | strip_html | truncate:300 }}
+        {{ post.content | strip_html | truncate: 300 }}
       </div>
     </a>
     <p class="post-meta">
@@ -61,7 +66,7 @@ hide-in-nav: true
   <hr>
 {% endfor %}
 
-<!-- Pager -->
+<!-- Paginierung -->
 {% if paginator.total_pages > 1 %}
 <ul class="pager">
     {% if paginator.previous_page %}
