@@ -2,32 +2,73 @@ languages:
   - en
   - es
   - zh-cn
+  - zh-tw
+  - ar
+  - fr
+  - de
+  - pt-br
+  - tr
+  - ja
+  - ko
 
 default_lang: en
 
 en:
   url: "https://markleighedu.github.io"
-  baseurl: "/"
-title: "Mark Leigh Educator Blog"
+  baseurl: ""
+  title: "Mark Leigh Educator Blog"
 
 es:
   url: "https://markleighedu.github.io"
   baseurl: "/es"
-  title: "Blog del Educador Mark Leigh"  # Spanish site title
+  title: "Blog del Educador Mark Leigh"
 
 zh-cn:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-cn"
-  title: "Mark Leigh 教育博客"  # Chinese site title
+  title: "Mark Leigh 马克.李教育博客"
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      lang: en
+zh-tw:
+  url: "https://markleighedu.github.io"
+  baseurl: "/zh-tw"
+  title: "Mark Leigh 馬克.李教育博客"
+
+ar:
+  url: "https://markleighedu.github.io"
+  baseurl: "/ar"
+  title: "مدونة مارك لي للمعلم"
+
+fr:
+  url: "https://markleighedu.github.io"
+  baseurl: "/fr"
+  title: "Blog de Mark Leigh pour les éducateurs"
+
+de:
+  url: "https://markleighedu.github.io"
+  baseurl: "/de"
+  title: "Mark Leigh Pädagogen-Blog"
+
+pt-br:
+  url: "https://markleighedu.github.io"
+  baseurl: "/pt-br"
+  title: "Blog do Educador Mark Leigh"
+
+tr:
+  url: "https://markleighedu.github.io"
+  baseurl: "/tr"
+  title: "Mark Leigh Eğitimci Blogu"
+
+ja:
+  url: "https://markleighedu.github.io"
+  baseurl: "/ja"
+  title: "Mark Leighマーク・リー教育者ブログ"
+
+ko:
+  url: "https://markleighedu.github.io"
+  baseurl: "/ko"
+  title: "Mark Leigh 교육자 블로그"
 
 # Site settings
-
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
 header-img: img/home-bg.jpg
 email: markleigh.edu@gmail.com
@@ -38,8 +79,7 @@ baseurl: ""
 
 # Publish posts or collection documents with a future date.
 future: false
-exclude:
-- _posts/
+
 # SNS settings
 RSS: false
 instagram_username: markleigh.educator
@@ -52,22 +92,87 @@ linkedin_username: mark-leigh-51132935
 # Build settings
 highlighter: rouge
 permalink: pretty
-paginate: 10
+
+# Pagination v2 settings
+pagination:
+  enabled: true
+  per_page: 4
+  limit: 0
+  sort_field: "date"
+  sort_reverse: true
+
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      lang: "en"
+
+  - scope:
+      path: "es/_posts"
+    values:
+      lang: "es"
+
+  - scope:
+      path: "zh-cn/_posts"
+    values:
+      lang: "zh-cn"
+
+  - scope:
+      path: "zh-tw/_posts"
+    values:
+      lang: "zh-tw"
+
+  - scope:
+      path: "ar/_posts"
+    values:
+      lang: "ar"
+
+  - scope:
+      path: "fr/_posts"
+    values:
+      lang: "fr"
+
+  - scope:
+      path: "de/_posts"
+    values:
+      lang: "de"
+
+  - scope:
+      path: "pt-br/_posts"
+    values:
+      lang: "pt-br"
+
+  - scope:
+      path: "tr/_posts"
+    values:
+      lang: "tr"
+
+  - scope:
+      path: "ja/_posts"
+    values:
+      lang: "ja"
+
+  - scope:
+      path: "ko/_posts"
+    values:
+      lang: "ko"
+
 exclude:
-  [
-    "search.html",
-    "less",
-    "node_modules",
-    "Gruntfile.js",
-    "package.json",
-    "README.md",
-    "README.zh.md",
-  ]
+  - "search.html"
+  - "less"
+  - "node_modules"
+  - "Gruntfile.js"
+  - "package.json"
+  - "README.md"
+  - "README.zh.md"
+
 anchorjs: true
 encoding: utf-8
 
-# Gems
-plugins: [jekyll-paginate]
+# Plugins
+plugins:
+  - jekyll-paginate-v2
 
 # Markdown settings
 markdown: kramdown
