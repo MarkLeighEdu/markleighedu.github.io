@@ -11,9 +11,7 @@ paginate: 4
 <hr>
 
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "en" %}
-
-  {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
+  {% for post in paginator.posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -30,7 +28,6 @@ paginate: 4
   {% endfor %}
 </div>
 
-
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
   <ul class="pager">
@@ -46,3 +43,4 @@ paginate: 4
     {% endif %}
   </ul>
 {% endif %}
+
