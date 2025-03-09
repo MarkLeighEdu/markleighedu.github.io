@@ -11,7 +11,7 @@ paginate: 4
 <hr>
 
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "en" %}
+  {% assign commentary_posts = site.posts %}
 
   {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
