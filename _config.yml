@@ -15,57 +15,57 @@ default_lang: en
 
 en:
   url: "https://markleighedu.github.io"
-  baseurl: "/"
+  baseurl: ""
   title: "Mark Leigh Educator Blog"
 
 es:
   url: "https://markleighedu.github.io"
-  baseurl: "/es"
+  baseurl: "es"
   title: "Blog del Educador Mark Leigh"
 
 zh-cn:
   url: "https://markleighedu.github.io"
-  baseurl: "/zh-cn"
+  baseurl: "zh-cn"
   title: "Mark Leigh 马克.李教育博客"
 
 zh-tw:
   url: "https://markleighedu.github.io"
-  baseurl: "/zh-tw"
+  baseurl: "zh-tw"
   title: "Mark Leigh 馬克.李教育博客"
 
 ar:
   url: "https://markleighedu.github.io"
-  baseurl: "/ar"
+  baseurl: "ar"
   title: "مدونة مارك لي للمعلم"
 
 fr:
   url: "https://markleighedu.github.io"
-  baseurl: "/fr"
+  baseurl: "fr"
   title: "Blog de Mark Leigh pour les éducateurs"
 
 de:
   url: "https://markleighedu.github.io"
-  baseurl: "/de"
+  baseurl: "de"
   title: "Mark Leigh Pädagogen-Blog"
 
 pt-br:
   url: "https://markleighedu.github.io"
-  baseurl: "/pt-br"
+  baseurl: "pt-br"
   title: "Blog do Educador Mark Leigh"
 
 tr:
   url: "https://markleighedu.github.io"
-  baseurl: "/tr"
+  baseurl: "tr"
   title: "Mark Leigh Eğitimci Blogu"
 
 ja:
   url: "https://markleighedu.github.io"
-  baseurl: "/ja"
+  baseurl: "ja"
   title: "Mark Leighマーク・リー教育者ブログ"
 
 ko:
   url: "https://markleighedu.github.io"
-  baseurl: "/ko"
+  baseurl: "ko"
   title: "Mark Leigh 교육자 블로그"
 
 # Site settings
