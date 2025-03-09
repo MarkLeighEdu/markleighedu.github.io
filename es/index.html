@@ -43,7 +43,7 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
 <!-- Display posts with lang: es-->
 {% assign es_posts = site.posts | where: "lang", "es" %}
 
-{% for post in es_posts %}
+{% for post in es_posts offset: paginator.offset limit: paginator.per_page %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
       <h2 class="post-title">{{ post.title }}</h2>
