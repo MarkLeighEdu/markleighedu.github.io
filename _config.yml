@@ -75,6 +75,7 @@ defaults:
       lang: en
 
 # Site settings
+
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
 header-img: img/home-bg.jpg
 email: markleigh.edu@gmail.com
@@ -85,7 +86,8 @@ baseurl: ""
 
 # Publish posts or collection documents with a future date.
 future: false
-
+exclude:
+- _posts/
 # SNS settings
 RSS: false
 instagram_username: markleigh.educator
@@ -98,11 +100,7 @@ linkedin_username: mark-leigh-51132935
 # Build settings
 highlighter: rouge
 permalink: pretty
-
-pagination:
-  enabled: true
-  paginate: 2
-  paginate_path: "/{%- if page.lang != 'en' -%}{{ page.lang }}/{%- endif -%}page:num/"
+paginate: 10
 exclude:
   [
     "search.html",
@@ -116,7 +114,7 @@ exclude:
 anchorjs: true
 encoding: utf-8
 
-# Plugins
+# Gems
 plugins: [jekyll-paginate]
 
 # Markdown settings
