@@ -41,8 +41,10 @@ hide-in-nav: true
 </div>
 
 <!-- Display paginated posts with lang: en -->
-{% for post in paginator.posts %}
-  {% if post.lang == "en" %}
+{% assign en_posts = site.posts | where: "lang", "en" %}
+{% assign paginated_posts = en_posts | slice: paginator.per_page | offset: paginator.page | default: en_posts %}
+
+{% for post in paginated_posts %}
   <div class="post-preview">
     <a href="{{ post.url | relative_url }}">
       <h2 class="post-title">{{ post.title }}</h2>
@@ -58,7 +60,6 @@ hide-in-nav: true
     </p>
   </div>
   <hr>
-  {% endif %}
 {% endfor %}
 
 <!-- Pager -->
