@@ -41,31 +41,42 @@ hide-in-nav: true
 </div>
 
 <!-- Display posts with lang: en -->
-{% assign en_posts = paginator.posts | where: "lang", "en" %}
-
-{% for post in en_posts %}
+{% for post in paginator.posts %}
+  {% if post.lang == 'en' %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
-      <h2 class="post-title">{{ post.title }}</h2>
-      <div class="post-content-preview">{{ post.content | strip_html | truncate: 300 }}</div>
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:300 }}
+        </div>
     </a>
-    <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">
+        Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
   </div>
   <hr>
+  {% endif %}
 {% endfor %}
 
-<!-- Pagination Controls -->
+<!-- Pager -->
 {% if paginator.total_pages > 1 %}
-  <ul class="pager">
+<ul class="pager">
     {% if paginator.previous_page %}
-      <li class="previous">
+    <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-      </li>
+    </li>
     {% endif %}
     {% if paginator.next_page %}
-      <li class="next">
+    <li class="next">
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-      </li>
+    </li>
     {% endif %}
-  </ul>
+</ul>
 {% endif %}
