@@ -21,37 +21,26 @@ layout: default
                 {{ content }}
 
                 <hr style="visibility: hidden;">
-
-                <!-- Language-Specific Previous/Next Navigation -->
-                {% assign current_lang = page.path | split: '/' | first %}
                 <ul class="pager">
-                    {% if page.previous %}
-                        {% assign prev_lang = page.previous.path | split: '/' | first %}
-                        {% if prev_lang == current_lang %}
-                        <li class="previous">
-                            <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-                                Previous<br>
-                                <span>{{page.previous.title}}</span>
-                            </a>
-                        </li>
-                        {% endif %}
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+                        Previous<br>
+                        <span>{{page.previous.title}}</span>
+                        </a>
+                    </li>
                     {% endif %}
-
-                    {% if page.next %}
-                        {% assign next_lang = page.next.path | split: '/' | first %}
-                        {% if next_lang == current_lang %}
-                        <li class="next">
-                            <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-                                Next<br>
-                                <span>{{page.next.title}}</span>
-                            </a>
-                        </li>
-                        {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+                        Next<br>
+                        <span>{{page.next.title}}</span>
+                        </a>
+                    </li>
                     {% endif %}
                 </ul>
-
                 <hr style="visibility: hidden;">
-
+                
                 {% unless site.disable_disqus %}
                 <!-- Disqus Comment Section Start -->
                 <div class="comment">
