@@ -101,7 +101,7 @@ permalink: pretty
 
 pagination:
   enabled: true
-  paginate: 10
+  paginate: 6
   paginate_path: "/{%- if page.lang != 'en' -%}{{ page.lang }}/{%- endif -%}page:num/"
 exclude:
   [
