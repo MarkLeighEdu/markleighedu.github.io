@@ -73,7 +73,7 @@ YYYY-MM-DD-title.md
         overflow-y: auto; /* Add scrolling if needed */
     }
 
-#markblog_navbar {
+    #markblog_navbar {
         opacity: 0;
         transform: scaleX(0);
         transform-origin: top right;
@@ -130,3 +130,4 @@ YYYY-MM-DD-title.md
         overflow-y: auto; /* Add scroll bar if the content exceeds the max height */
     }
 }
+
