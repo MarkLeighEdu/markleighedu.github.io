@@ -40,9 +40,8 @@ hide-in-nav: true
   </div>
 </div>
 
-<!-- Display posts with lang: en -->
 {% for post in paginator.posts %}
-
+  {% if post.lang == 'en' %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
@@ -62,7 +61,7 @@ hide-in-nav: true
     </p>
   </div>
   <hr>
-
+  {% endif %}
 {% endfor %}
 
 <!-- Pager -->
