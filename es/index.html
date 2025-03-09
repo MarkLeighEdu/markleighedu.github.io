@@ -42,11 +42,8 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
 
 <!-- Display posts with lang: es-->
 {% assign es_posts = site.posts | where: "lang", "es" %}
-{% assign es_posts_in_folder = es_posts | where_exp: "post", "post.path contains '/es/_posts/'" %}
 
-{% assign paginated_es_posts = es_posts_in_folder | slice: paginator.offset, paginator.per_page %}
-
-{% for post in paginated_es_posts %}
+{% for post in es_posts %}
   <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
       <h2 class="post-title">{{ post.title }}</h2>
