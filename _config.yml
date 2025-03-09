@@ -1,3 +1,10 @@
+defaults:
+  - scope:
+      path: "index.html"
+    values:
+      layout: null
+
+
 languages:
   - en
   - es
