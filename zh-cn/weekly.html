@@ -1,0 +1,48 @@
+---
+layout: page
+lang: zh-cn
+title: "每周回顾"
+description: "「Mark Leigh 马克-李 交易教学」"
+permalink: /zh-cn/weekly/
+paginate: 5
+---
+
+<hr>
+
+<div class="post-list">
+  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-cn" %}
+
+  {% for post in weekly_posts offset: paginator.offset limit: paginator.per_page %}
+    <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% endif %}
+        <div class="post-content-preview">
+          {{ post.content | strip_html | truncate: 200 }}
+        </div>
+      </a>
+      <p class="post-meta">
+        发布于 {{ post.date | date: "%Y年%-m月%-d日" }}
+      </p>
+    </div>
+    <hr>
+  {% endfor %}
+</div>
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+  <ul class="pager">
+    {% if paginator.previous_page %}
+      <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+      </li>
+    {% endif %}
+    {% if paginator.next_page %}
+      <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}
