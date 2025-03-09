@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           gem install bundler
-          bundle install
+          bundle install  # This will install all dependencies including jekyll-paginate-v2
 
       - name: Build site
         run: bundle exec jekyll build
