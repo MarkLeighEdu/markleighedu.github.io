@@ -40,14 +40,8 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
   </div>
 </div>
 
-<!-- Display posts with lang: es using jekyll-paginate-v2 -->
-{% if paginator.posts %}
-  {% assign es_posts = paginator.posts | where: "lang", "es" %}
-{% else %}
-  {% assign es_posts = site.posts | where: "lang", "es" %}
-{% endif %}
-
-{% for post in es_posts %}
+<!-- Display paginated posts for lang: es -->
+{% for post in paginator.posts %}
   <div class="post-preview">
     <a href="{{ post.url | relative_url }}">
       <h2 class="post-title">{{ post.title }}</h2>
