@@ -2,7 +2,7 @@
 layout: page
 lang: en
 title: "Mark Leigh Blog"
-description: "「Mark Leigh Trading Education」"
+description: "Mark Leigh Trading Education"
 hide-in-nav: true
 ---
 
@@ -35,47 +35,42 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-     <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
+      <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
     </div>
   </div>
 </div>
 
-{% for post in paginator.posts %}
-  {% if post.lang == 'en' %}
-  <div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
+<div class="post-list">
+  {% for post in paginator.posts %}
+    <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}</h2>
         {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
+          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
         {% endif %}
         <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:300 }}
+          {{ post.content | strip_html | truncate: 300 }}
         </div>
-    </a>
-    <p class="post-meta">
-        Posted on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-  </div>
-  <hr>
-  {% endif %}
-{% endfor %}
+      </a>
+      <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+    </div>
+    <hr>
+  {% endfor %}
+</div>
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
-<ul class="pager">
+  <ul class="pager">
     {% if paginator.previous_page %}
-    <li class="previous">
+      <li class="previous">
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
+      </li>
     {% endif %}
     {% if paginator.next_page %}
-    <li class="next">
+      <li class="next">
         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
+      </li>
     {% endif %}
-</ul>
+  </ul>
 {% endif %}
+
