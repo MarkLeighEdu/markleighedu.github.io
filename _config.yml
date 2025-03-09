@@ -68,8 +68,6 @@ ko:
   baseurl: "/ko"
   title: "Mark Leigh 교육자 블로그"
 
-
-
 # Site settings
 
 SEOTitle: "Mark Leigh Blog | Trading Educator | Expert Financial Insights"
@@ -95,7 +93,7 @@ linkedin_username: mark-leigh-51132935
 # Build settings
 highlighter: rouge
 permalink: pretty
-paginate: 4
+paginate_v2: 4
 defaults:
   - scope:
       path: "_posts"
@@ -166,7 +164,8 @@ anchorjs: true
 encoding: utf-8
 
 # Gems
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate-v2
 
 # Markdown settings
 markdown: kramdown
