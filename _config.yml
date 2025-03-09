@@ -49,7 +49,7 @@ youtube_username: "@MarkLeigh-Educator"
 facebook_username: markleigh.tradingeducator
 linkedin_username: mark-leigh-51132935
 
-# Build settings
+# Build setting
 highlighter: rouge
 permalink: pretty
 paginate: 10
