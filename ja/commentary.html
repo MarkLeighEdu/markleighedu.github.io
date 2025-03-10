@@ -1,19 +1,16 @@
 ---
 layout: page
-lang: es
-title: "Comentarios"
-nav-title: "Comentarios"
-description: "「Educación en Trading de Mark Leigh」"
-permalink: /es/commentary/
-paginate: 10
+lang: ja
+title: "終値市場コメント"
+nav-title: "市場コメント"
+description: "{{ site.titles.ja.commentary_description }}"
+permalink: /ja/commentary/
 ---
 
 <hr>
-
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "es" %}
-
-  {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
+  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "ja" %}
+  {% for post in commentary_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -24,24 +21,8 @@ paginate: 10
           {{ post.content | strip_html | truncate: 300 }}
         </div>
       </a>
-      <p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
+      <p class="post-meta">投稿日: {{ post.date | date: "%B %-d, %Y" }}</p>
     </div>
     <hr>
   {% endfor %}
 </div>
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-  <ul class="pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
-      </li>
-    {% endif %}
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones anteriores &rarr;</a>
-      </li>
-    {% endif %}
-  </ul>
-{% endif %}
