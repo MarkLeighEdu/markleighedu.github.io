@@ -40,37 +40,22 @@ src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6
   </div>
 </div>
 
-<!-- Display paginated posts for lang: es -->
-{% for post in paginator.posts %}
-  <div class="post-preview">
-    <a href="{{ post.url | relative_url }}">
-      <h2 class="post-title">{{ post.title }}</h2>
-      {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-      {% endif %}
-      <div class="post-content-preview">
-        {{ post.content | strip_html | truncate: 300 }}
-      </div>
-    </a>
-    <p class="post-meta">
-      Publicado el {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-  </div>
-  <hr>
-{% endfor %}
-
-<!-- Pager using jekyll-paginate-v2 -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Publicaciones más recientes</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | relative_url }}">Publicaciones más antiguas &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+<h2 class="most-updated-title"><strong>Publicaciones más recientes</strong></h2>
+<div class="post-list">
+  {% assign es_posts = site.posts | where: "lang", "es" %}
+  {% for post in es_posts limit: 6 %}
+    <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% endif %}
+        <div class="post-content-preview">
+          {{ post.content | strip_html | truncate: 300 }}
+        </div>
+      </a>
+      <p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
+    </div>
+    <hr>
+  {% endfor %}
+</div>
