@@ -1,18 +1,16 @@
 ---
 layout: page
 lang: de
-title: "Kommentar"
-nav-title: "Kommentar"
-description: "Trading Education mit Mark Leigh"
+title: "Marktkommentar zum Tagesende"
+nav-title: "Marktkommentar"
+description: "{{ site.titles.de.commentary_description }}"
 permalink: /de/commentary/
-paginate: 10
 ---
 
 <hr>
-
 <div class="post-list">
   {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "de" %}
-  {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
+  {% for post in commentary_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -28,19 +26,3 @@ paginate: 10
     <hr>
   {% endfor %}
 </div>
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-  <ul class="pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Neuere Beiträge</a>
-      </li>
-    {% endif %}
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Ältere Beiträge &rarr;</a>
-      </li>
-    {% endif %}
-  </ul>
-{% endif %}
