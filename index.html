@@ -40,9 +40,9 @@ hide-in-nav: true
   </div>
 </div>
 
+<h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
 <div class="post-list">
   {% assign en_posts = site.posts | where: "lang", "en" %}
-
   {% for post in en_posts limit: 6 %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
