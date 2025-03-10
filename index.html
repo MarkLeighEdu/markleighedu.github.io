@@ -42,36 +42,22 @@ hide-in-nav: true
 
 <!-- Bold title for Most Updated Posts -->
 <h2><strong>Most Updated Posts</strong></h2>
-
 <div class="post-list">
   {% assign en_posts = site.posts | where: "lang", "en" %}
-  
-  <!-- Sort posts by date -->
-  {% assign sorted_posts = en_posts | sort: 'date' | reverse %}
-  
-  <!-- Get the most recent date -->
-  {% assign most_recent_date = sorted_posts[0].date | date: "%Y-%m-%d" %}
-  
-  <!-- Filter posts by the most recent date -->
-  {% assign recent_posts = sorted_posts | where: "date", most_recent_date %}
-  
-  {% if recent_posts.size > 0 %}
-    {% for post in recent_posts %}
-      <div class="post-preview">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <h2 class="post-title">{{ post.title }}</h2>
-          {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-          {% endif %}
-          <div class="post-content-preview">
-            {{ post.content | strip_html | truncate: 300 }}
-          </div>
-        </a>
-        <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-      </div>
-      <hr>
-    {% endfor %}
-  {% else %}
-    <p>No new posts for today.</p>
-  {% endif %}
+
+  {% for post in en_posts limit: 6 %}
+    <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% endif %}
+        <div class="post-content-preview">
+          {{ post.content | strip_html | truncate: 300 }}
+        </div>
+      </a>
+      <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+    </div>
+    <hr>
+  {% endfor %}
 </div>
