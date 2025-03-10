@@ -41,7 +41,9 @@ hide-in-nav: true
 </div>
 
 <div class="post-list">
-  {% for post in paginator.posts %}
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+
+  {% for post in en_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
