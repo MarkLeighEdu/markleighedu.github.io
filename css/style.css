@@ -130,3 +130,6 @@ YYYY-MM-DD-title.md
         overflow-y: auto; /* Add scroll bar if the content exceeds the max height */
     }
 }
+.most-updated-title {
+  color: #003366; /* Dark Blue */
+}
