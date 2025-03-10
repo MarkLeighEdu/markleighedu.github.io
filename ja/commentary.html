@@ -1,16 +1,16 @@
 ---
 layout: page
 lang: ja
-title: "終値市場コメント"
-nav-title: "市場コメント"
+title: "週次レビュー"
+nav-title: "週次レビュー"
 description: "{{ site.data.titles.ja.navbar_brand }}"
-permalink: /ja/commentary/
+permalink: /ja/weekly/
 ---
 
 <hr>
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "ja" %}
-  {% for post in commentary_posts %}
+  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "ja" %}
+  {% for post in weekly_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
