@@ -6,3 +6,27 @@ es:
 
 zh-cn:
   navbar_brand: "Mark Leigh 教育博客"
+
+zh-tw:
+  navbar_brand: "Mark Leigh 教育博客"
+
+ar:
+  navbar_brand: "مدونة مارك لي للمعلم"
+
+fr:
+  navbar_brand: "Blog de Mark Leigh pour les éducateurs"
+
+de:
+  navbar_brand: "Mark Leigh Pädagogen-Blog"
+
+pt-br:
+  navbar_brand: "Blog do Educador Mark Leigh"
+
+tr:
+  navbar_brand: "Mark Leigh Eğitimci Blogu"
+
+ja:
+  navbar_brand: "Mark Leigh 教育者ブログ"
+
+ko:
+  navbar_brand: "Mark Leigh 교육자 블로그"
