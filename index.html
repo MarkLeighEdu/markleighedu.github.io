@@ -41,8 +41,19 @@ paginate: 6
   </div>
 </div>
 
+<---
+layout: page
+lang: en
+title: "Mark Leigh Blog"
+description: "Mark Leigh Trading Education"
+hide-in-nav: true
+paginate: 6
+---
+
 <div class="post-list">
-  {% for post in site.posts offset: page.previous_page * page.per_page limit: page.per_page %}
+  {% assign en_posts = site.posts | where: "lang", "en" %}
+  
+  {% for post in en_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -74,3 +85,4 @@ paginate: 6
     {% endif %}
   </ul>
 {% endif %}
+
