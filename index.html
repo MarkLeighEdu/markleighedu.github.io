@@ -4,55 +4,12 @@ lang: en
 title: "Mark Leigh Blog"
 description: "Mark Leigh Trading Education"
 hide-in-nav: true
-paginate: 6
----
-
-<div class="post-preview" style="margin-top: 20px;">
-  <!-- First Block - Video Embeds -->
-  <div class="row mb-4">
-    <!-- First Video -->
-    <div class="col-12 mb-3">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe
-          class="embed-responsive-item"
-          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzC3cVLTZmvQWB4Ak6Q0D6IP"
-          title="YouTube playlist 1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
-    </div>
-    <!-- Second Video -->
-    <div class="col-12 mb-3">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe
-          class="embed-responsive-item"
-          src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDNZXxZgCMnheYFX34xsGL3"
-          title="YouTube playlist 2"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
-    </div>
-  </div>
-</div>
-
-<---
-layout: page
-lang: en
-title: "Mark Leigh Blog"
-description: "Mark Leigh Trading Education"
-hide-in-nav: true
-paginate: 6
+paginate: 6  # You can also set this here to control pagination per page
 ---
 
 <div class="post-list">
   {% assign en_posts = site.posts | where: "lang", "en" %}
-  
+
   {% for post in en_posts offset: paginator.offset limit: paginator.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -85,4 +42,3 @@ paginate: 6
     {% endif %}
   </ul>
 {% endif %}
-
