@@ -31,7 +31,7 @@ ar:
   - { url: "/ar/about/", title: "عن الموقع" }
   - { url: "/ar/commentary/", title: "تعليق السوق" }
   - { url: "/ar/report/", title: "تقرير السوق" }
-  - { url: "/ar/weekly/", title: "المراجعة الأسبوعية" }
+  - { url: "/ar/weekly/", title: "أسبوعي" }
 
 fr:
   - { url: "/fr/", title: "Accueil" }
@@ -45,7 +45,7 @@ de:
   - { url: "/de/about/", title: "Über mich" }
   - { url: "/de/commentary/", title: "Marktkommentar" }
   - { url: "/de/report/", title: "Marktbericht" }
-  - { url: "/de/weekly/", title: "Wöchentliche Übersicht" }
+  - { url: "/de/weekly/", title: "Wöchentlich" }
 
 pt-br:
   - { url: "/pt-br/", title: "Início" }
@@ -59,7 +59,7 @@ tr:
   - { url: "/tr/about/", title: "Hakkında" }
   - { url: "/tr/commentary/", title: "Piyasa Yorumu" }
   - { url: "/tr/report/", title: "Piyasa Raporu" }
-  - { url: "/tr/weekly/", title: "Haftalık İnceleme" }
+  - { url: "/tr/weekly/", title: "Haftalık" }
 
 ja:
   - { url: "/ja/", title: "ホーム" }
