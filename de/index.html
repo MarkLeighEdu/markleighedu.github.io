@@ -45,39 +45,22 @@ hide-in-nav: true
   </div>
 </div>
 
-<!-- Anzeige von Beiträgen mit der Sprache 'de' -->
-{% assign de_posts = site.posts | where: "lang", "de" %}
-
-{% for post in de_posts %}
-  <div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-      <h2 class="post-title">{{ post.title }}</h2>
-      {% if post.subtitle %}
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-      {% endif %}
-      <div class="post-content-preview">
-        {{ post.content | strip_html | truncate: 300 }}
-      </div>
-    </a>
-    <p class="post-meta">
-      Veröffentlicht am {{ post.date | date: "%d. %B %Y" }}
-    </p>
-  </div>
-  <hr>
-{% endfor %}
-
-<!-- Paginierung -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Neuere Beiträge</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Ältere Beiträge &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+<h2 class="most-updated-title"><strong>Neueste Beiträge</strong></h2>
+<div class="post-list">
+  {% assign de_posts = site.posts | where: "lang", "de" %}
+  {% for post in de_posts limit: 6 %}
+    <div class="post-preview">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}</h2>
+        {% if post.subtitle %}
+          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        {% endif %}
+        <div class="post-content-preview">
+          {{ post.content | strip_html | truncate: 300 }}
+        </div>
+      </a>
+      <p class="post-meta">Veröffentlicht am {{ post.date | date: "%B %-d, %Y" }}</p>
+    </div>
+    <hr>
+  {% endfor %}
+</div>
