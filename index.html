@@ -4,6 +4,7 @@ lang: en
 title: "Mark Leigh Blog"
 description: "Mark Leigh Trading Education"
 hide-in-nav: true
+paginate: 6
 ---
 
 <div class="post-preview" style="margin-top: 20px;">
@@ -41,9 +42,7 @@ hide-in-nav: true
 </div>
 
 <div class="post-list">
-  {% assign en_posts = site.posts | where: "lang", "en" %}
-
-  {% for post in en_posts limit: 6 %}
+  {% for post in site.posts offset: page.previous_page * page.per_page limit: page.per_page %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -59,3 +58,19 @@ hide-in-nav: true
     <hr>
   {% endfor %}
 </div>
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+  <ul class="pager">
+    {% if paginator.previous_page %}
+      <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+      </li>
+    {% endif %}
+    {% if paginator.next_page %}
+      <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}
