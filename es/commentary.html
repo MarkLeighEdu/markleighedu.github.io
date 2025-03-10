@@ -3,17 +3,14 @@ layout: page
 lang: es
 title: "Comentario"
 nav-title: "Comentario"
-description: "「Educación en Trading de Mark Leigh」"
+description: "「Mark Leigh Trading Education」"
 permalink: /es/commentary/
-paginate: 1
 ---
 
 <hr>
-
 <div class="post-list">
   {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "es" %}
-
-  {% for post in commentary_posts offset: paginator.offset limit: paginator.per_page %}
+  {% for post in commentary_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -29,19 +26,3 @@ paginate: 1
     <hr>
   {% endfor %}
 </div>
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-  <ul class="pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
-      </li>
-    {% endif %}
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones anteriores &rarr;</a>
-      </li>
-    {% endif %}
-  </ul>
-{% endif %}
