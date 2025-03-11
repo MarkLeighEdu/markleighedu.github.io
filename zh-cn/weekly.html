@@ -8,11 +8,9 @@ paginate: 5
 ---
 
 <hr>
-
 <div class="post-list">
   {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-cn" %}
-
-  {% for post in weekly_posts offset: paginator.offset limit: paginator.per_page %}
+  {% for post in weekly_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -23,26 +21,8 @@ paginate: 5
           {{ post.content | strip_html | truncate: 200 }}
         </div>
       </a>
-      <p class="post-meta">
-        发布于 {{ post.date | date: "%Y年%-m月%-d日" }}
-      </p>
+      <p class="post-meta">发表于 {{ post.date | date: "%B %-d, %Y" }}</p>
     </div>
     <hr>
   {% endfor %}
 </div>
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-  <ul class="pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-      </li>
-    {% endif %}
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-      </li>
-    {% endif %}
-  </ul>
-{% endif %}
