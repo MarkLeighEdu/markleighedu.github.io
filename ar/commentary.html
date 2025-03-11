@@ -1,28 +1,27 @@
 ---
 layout: page
 lang: ar
-title: "تعليق يومي على السوق"
-nav-title: "تعليق السوق"
+title: "????? ???? ??? ?????"
+nav-title: "????? ?????"
 description: "{{ site.titles.ar.commentary_description }}"
 permalink: /ar/commentary/
 ---
-
 <hr>
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "ar" %}
-  {% for post in commentary_posts %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 300 }}
-        </div>
-      </a>
-      <p class="post-meta">تم النشر في {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
-  {% endfor %}
+{% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "ar" %}
+{% for post in commentary_posts %}
+<div class="post-preview">
+<a href="{{ post.url | prepend: site.baseurl }}">
+<h2 class="post-title">{{ post.title }}</h2>
+{% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+{% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 300 }}
+</div>
+</a>
+<p class="post-meta">?? ????? ?? {{ post.date | date: "%d %B, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
 </div>
