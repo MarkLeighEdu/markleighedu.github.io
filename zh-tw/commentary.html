@@ -1,28 +1,27 @@
 ---
 layout: page
 lang: zh-tw
-title: "每日市場評論"
-nav-title: "市場評論"
+title: "??????"
+nav-title: "????"
 description: "{{ site.titles.zh_tw.commentary_description }}"
 permalink: /zh-tw/commentary/
 ---
-
 <hr>
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "zh-tw" %}
-  {% for post in commentary_posts %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 300 }}
-        </div>
-      </a>
-      <p class="post-meta">發佈於 {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
-  {% endfor %}
+{% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "zh-tw" %}
+{% for post in commentary_posts %}
+<div class="post-preview">
+<a href="{{ post.url | prepend: site.baseurl }}">
+<h2 class="post-title">{{ post.title }}</h2>
+{% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+{% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 300 }}
+</div>
+</a>
+<p class="post-meta">??? {{ post.date | date: "%Y?%-m?%-d?" }}</p>
+</div>
+<hr>
+{% endfor %}
 </div>
