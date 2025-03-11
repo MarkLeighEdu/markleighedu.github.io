@@ -1,28 +1,27 @@
 ---
 layout: page
 lang: de
-title: "Marktkommentar zum Tagesende"
-nav-title: "Marktkommentar"
-description: "{{ site.titles.de.commentary_description }}"
-permalink: /de/commentary/
+title: "Kommentar"
+nav-title: "Kommentar"
+description: "?Mark Leigh Trading Education?"
+permalink: /commentary/
 ---
-
 <hr>
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "de" %}
-  {% for post in commentary_posts %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 300 }}
-        </div>
-      </a>
-      <p class="post-meta">Veröffentlicht am {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
-  {% endfor %}
+{% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "de" %}
+{% for post in commentary_posts %}
+<div class="post-preview">
+<a href="{{ post.url | prepend: site.baseurl }}">
+<h2 class="post-title">{{ post.title }}</h2>
+{% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+{% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 300 }}
+</div>
+</a>
+<p class="post-meta">Ver?ffentlicht am {{ post.date | date: "%d. %B %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
 </div>
