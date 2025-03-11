@@ -11,34 +11,33 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    # Ensure the job only runs if it's not a bot and the workflow file is not changed by bots
+    if: |
+      github.actor != 'github-actions[bot]' &&
+      github.actor != 'dependabot' &&
+      startsWith(github.actor, 'github-') == false &&
+      !contains(github.event.head_commit.message, '.github/workflows/')  # Block changes to workflow files
 
     steps:
-      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Ruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
 
-      # Step 3: Install Bundler and dependencies from Gemfile
       - name: Install dependencies
         run: |
           gem install bundler
-          bundle install  # This will install all dependencies including jekyll-paginate-v2
+          bundle install
 
-      # Step 4: Build site with Jekyll
       - name: Build site
         run: bundle exec jekyll build
 
-      # Step 5: Deploy allowed files (Folders, .md, and .jpg) while blocking HTML
-      - name: Deploy allowed files to GitHub
-        run: |
-          rsync -av --include='*/' --include='*.md' --include='*.jpg' --exclude='*' _site/ .  # Allow folders, .md, and .jpg only
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add . -- ':!*.html'  # Add everything except .html files
-          git commit -m "Update markdown, images, and folders only" || echo "No changes to commit"
-          git push origin main
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          force_orphan: true
