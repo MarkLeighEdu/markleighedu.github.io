@@ -93,15 +93,9 @@ linkedin_username: mark-leigh-51132935
 highlighter: rouge
 permalink: pretty
 
-# Pagination v2 settings
-pagination:
-  enabled: true
-  per_page: 4
-  limit: 0
-  sort_field: "date"
-  sort_reverse: true
-
-
+# Pagination settings
+pagination: 10
+  
 defaults:
   - scope:
       path: "_posts"
@@ -170,9 +164,8 @@ exclude:
 anchorjs: true
 encoding: utf-8
 
-# Plugins
-plugins:
-  - jekyll-paginate-v2
+# Gems
+plugins: [jekyll-paginate]
 
 # Markdown settings
 markdown: kramdown
