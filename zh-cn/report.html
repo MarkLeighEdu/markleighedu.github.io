@@ -8,8 +8,8 @@ permalink: /zh-cn/report/
 
 <hr>
 <div class="post-list">
-  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-cn" %}
-  {% for post in weekly_posts %}
+  {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "zh-cn" %}
+  {% for post in report_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -17,7 +17,7 @@ permalink: /zh-cn/report/
           <h3 class="post-subtitle">{{ post.subtitle }}</h3>
         {% endif %}
         <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 300 }}
+          {{ post.content | strip_html | truncate: 100 }}
         </div>
       </a>
       <p class="post-meta">发表于 {{ post.date | date: "%B %-d, %Y" }}</p>
