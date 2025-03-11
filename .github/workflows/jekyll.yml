@@ -16,7 +16,7 @@ jobs:
       github.actor != 'github-actions[bot]' &&
       github.actor != 'dependabot' &&
       startsWith(github.actor, 'github-') == false &&
-      !contains(github.event.head_commit.message, '.github/workflows/')  # Block changes to workflow files
+      !contains(github.event.head_commit.message, '.github/workflows/')
 
     steps:
       - name: Checkout code
