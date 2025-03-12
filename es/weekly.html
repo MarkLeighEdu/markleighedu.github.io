@@ -1,12 +1,11 @@
 ---
 layout: page
 lang: es
-title: "Informe Semanal"
-nav-title: "Semanal"
+title: "Revisión semanal"
+nav-title: "Revisión semanal"
 description: "「Educación en Trading de Mark Leigh」"
 permalink: /es/weekly/
 ---
-
 <hr>
 <div class="post-list">
 {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "es" %}
@@ -21,7 +20,7 @@ permalink: /es/weekly/
 {{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
+<p class="post-meta">Publicado el {{ post.date | date: "%d de %B, %Y" }}</p>
 </div>
 <hr>
 {% endfor %}
