@@ -1,47 +1,27 @@
 ---
 layout: page
-lang: es
-title: "Informe Semanal"
-nav-title: "Semanal"
-description: "「Educación en Trading de Mark Leigh」"
-permalink: /es/weekly/
-paginate: 5
+lang: tr
+title: "Haftalık inceleme"
+nav-title: "Haftalık inceleme"
+description: "「Mark Leigh Trading Education」"
+permalink: /tr/weekly/
 ---
-
 <hr>
-
 <div class="post-list">
-  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "es" %}
-
-  {% for post in weekly_posts offset: paginator.offset limit: paginator.per_page %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 300 }}
-        </div>
-      </a>
-      <p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
-  {% endfor %}
-</div>
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-  <ul class="pager">
-    {% if paginator.previous_page %}
-      <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Publicaciones más recientes</a>
-      </li>
-    {% endif %}
-    {% if paginator.next_page %}
-      <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Publicaciones anteriores &rarr;</a>
-      </li>
-    {% endif %}
-  </ul>
+{% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "tr" %}
+{% for post in weekly_posts %}
+<div class="post-preview">
+<a href="{{ post.url | prepend: site.baseurl }}">
+<h2 class="post-title">{{ post.title }}</h2>
+{% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
 {% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 300 }}
+</div>
+</a>
+<p class="post-meta">Yayınlanma tarihi: {{ post.date | date: "%d %B %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+</div>
