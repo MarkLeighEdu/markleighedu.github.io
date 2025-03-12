@@ -2,27 +2,26 @@
 layout: page
 lang: zh-cn
 title: "每周回顾"
+nav-title: "每周回顾"
 description: "「Mark Leigh 马克-李 交易教学」"
 permalink: /zh-cn/weekly/
-paginate: 5
 ---
-
 <hr>
 <div class="post-list">
-  {% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-cn" %}
-  {% for post in weekly_posts %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-        {% endif %}
-        <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 200 }}
-        </div>
-      </a>
-      <p class="post-meta">发表于 {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
-  {% endfor %}
+{% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-cn" %}
+{% for post in weekly_posts %}
+<div class="post-preview">
+<a href="{{ post.url | prepend: site.baseurl }}">
+<h2 class="post-title">{{ post.title }}</h2>
+{% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+{% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 200 }}
+</div>
+</a>
+<p class="post-meta">发布于 {{ post.date | date: "%Y年%-m月%-d日" }}</p>
+</div>
+<hr>
+{% endfor %}
 </div>
