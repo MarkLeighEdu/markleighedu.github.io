@@ -6,7 +6,6 @@ nav-title: "Informe"
 description: "「Educación en Trading de Mark Leigh」"
 permalink: /es/report/
 ---
-
 <hr>
 <div class="post-list">
 {% assign report_posts = site.posts | where: "category", "report" | where: "lang", "es" %}
@@ -21,7 +20,7 @@ permalink: /es/report/
 {{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
+<p class="post-meta">Publicado el {{ post.date | date: "%d de %B, %Y" }}</p>
 </div>
 <hr>
 {% endfor %}
