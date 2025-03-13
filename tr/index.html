@@ -58,3 +58,23 @@ allowfullscreen>
 <p class="post-meta">
 Yayınlanma tarihi: {{ post.date | date: "%d %B %Y" }}
 </p>
+</div>
+<hr>
+{% endif %}
+{% endfor %}
+
+<!-- Sayfalama -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+{% if paginator.previous_page %}
+<li class="previous">
+<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Yeni Yazılar</a>
+</li>
+{% endif %}
+{% if paginator.next_page %}
+<li class="next">
+<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Eski Yazılar &rarr;</a>
+</li>
+{% endif %}
+</ul>
+{% endif %}
