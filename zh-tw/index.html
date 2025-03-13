@@ -39,22 +39,22 @@ allowfullscreen>
 </div>
 </div>
 
-<h2 class="most-updated-title"><strong>最新更新的文章</strong></h2>
-<div class="post-list">
-{% assign zh-tw_posts = site.posts | where: "lang", "zh-tw" %}
-{% for post in zh-tw_posts limit: 6 %}
+{% for post in paginator.posts %}
+{% if post.lang == 'zh-tw' %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
-<h2 class="post-title">{{ post.title }}</h2>
+<h2 class="post-title">
+{{ post.title }}
+</h2>
 {% if post.subtitle %}
-<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+<h3 class="post-subtitle">
+{{ post.subtitle }}
+</h3>
 {% endif %}
 <div class="post-content-preview">
-{{ post.content | strip_html | truncate: 200 }}
+{{ post.content | strip_html | truncate:300 }}
 </div>
 </a>
-<p class="post-meta">發布於 {{ post.date | date: "%Y年%-m月%-d日" }}</p>
-</div>
-<hr>
-{% endfor %}
-</div>
+<p class="post-meta">
+發佈於 {{ post.date | date: "%Y年%B%-d日" }}
+</p>
