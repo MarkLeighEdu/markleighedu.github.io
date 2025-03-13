@@ -2,7 +2,7 @@
 layout: page
 lang: en
 title: "Mark Leigh Blog"
-description: "Mark Leigh Trading Education"
+description: "「Mark Leigh Trading Education」"
 hide-in-nav: true
 ---
 
@@ -21,11 +21,8 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">
-        The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.
-      </p>
+      <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
     </div>
-
     <!-- Second Video -->
     <div class="col-12 mb-3">
       <div class="embed-responsive embed-responsive-16by9">
@@ -38,37 +35,47 @@ hide-in-nav: true
           allowfullscreen>
         </iframe>
       </div>
-      <p class="text-left">
-        The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.
-      </p>
+     <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
     </div>
   </div>
 </div>
 
-<h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
-<div class="post-list">
-  {% assign en_posts = "" | split: "" %}
-  {% for post in site.posts %}
-    {% if post.lang == "en" %}
-      {% assign en_posts = en_posts | push: post %}
-    {% endif %}
-  {% endfor %}
-  
-  {% assign en_posts = en_posts | sort: "date" | reverse %}
-  
-  {% for post in en_posts limit: 6 %}
-    <div class="post-preview">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
+{% for post in paginator.posts %}
+  {% if post.lang == 'en' %}
+  <div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
         {% if post.subtitle %}
-          <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
         {% endif %}
         <div class="post-content-preview">
-          {{ post.content | strip_html | truncate: 300 }}
+            {{ post.content | strip_html | truncate:300 }}
         </div>
-      </a>
-      <p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
-  {% endfor %}
-</div>
+    </a>
+    <p class="post-meta">
+        Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  </div>
+  <hr>
+  {% endif %}
+{% endfor %}
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
