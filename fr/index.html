@@ -41,8 +41,8 @@ allowfullscreen>
 
 <h2 class="most-updated-title"><strong>Articles les Plus Récents</strong></h2>
 <div class="post-list">
-{% assign en_posts = site.posts | where: "lang", "fr" %}
-{% for post in en_posts limit: 6 %}
+{% assign fr_posts = site.posts | where: "lang", "fr" %}
+{% for post in fr_posts limit: 6 %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
