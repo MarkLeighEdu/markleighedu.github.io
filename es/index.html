@@ -39,22 +39,22 @@ allowfullscreen>
 </div>
 </div>
 
-<h2 class="most-updated-title"><strong>Publicaciones más recientes</strong></h2>
-<div class="post-list">
-{% assign es_posts = site.posts | where: "lang", "es" %}
-{% for post in es_posts limit: 6 %}
+{% for post in paginator.posts %}
+{% if post.lang == 'es' %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
-<h2 class="post-title">{{ post.title }}</h2>
+<h2 class="post-title">
+{{ post.title }}
+</h2>
 {% if post.subtitle %}
-<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+<h3 class="post-subtitle">
+{{ post.subtitle }}
+</h3>
 {% endif %}
 <div class="post-content-preview">
-{{ post.content | strip_html | truncate: 300 }}
+{{ post.content | strip_html | truncate:300 }}
 </div>
 </a>
-<p class="post-meta">Publicado el {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
-<hr>
-{% endfor %}
-</div>
+<p class="post-meta">
+Publicado el {{ post.date | date: "%d de %B de %Y" }}
+</p>
