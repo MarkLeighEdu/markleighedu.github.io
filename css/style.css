@@ -49,7 +49,11 @@ YYYY-MM-DD-title.md
   }
 </style>
 
-
+@media (max-width: 768px) {
+  .sidebar-container {
+    display: none;
+  }
+}
 
 
 
