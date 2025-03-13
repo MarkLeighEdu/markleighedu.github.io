@@ -8,8 +8,8 @@ permalink: /tr/commentary/
 ---
 <hr>
 <div class="post-list">
-{% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "tr" %}
-{% for post in commentary_posts %}
+{% assign tr-commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "tr" %}
+{% for post in tr-commentary_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
