@@ -99,7 +99,8 @@ highlighter: rouge
 permalink: pretty
 
 # Pagination settings
-pagination: 10
+paginate: 5  # Number of posts per page
+paginate_path: "/page:num/"
   
 defaults:
   - scope:
