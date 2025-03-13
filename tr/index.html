@@ -2,7 +2,7 @@
 layout: page
 lang: tr
 title: "Mark Leigh Blog"
-description: "「Mark Leigh Ticaret Eğitimi」"
+description: "?Mark Leigh Ticaret E?itimi?"
 hide-in-nav: true
 ---
 <div class="post-preview" style="margin-top: 20px;">
@@ -20,7 +20,7 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">Öğle piyasası değerlendirmesi, piyasa eğilimleri ve kilit seviyeler hakkında derinlemesine içgörüler sunan uzman liderliğinde teknik analiz sağlar. Bu videolar, fiyat hareketlerini analiz etmeyi, ticaret fırsatlarını belirlemeyi ve teknik stratejileri gerçek piyasa koşullarında etkili bir şekilde uygulamayı öğrenmenize yardımcı olmak için tasarlanmıştır.</p>
+<p class="text-left">??le piyasas? de?erlendirmesi, piyasa e?ilimleri ve kilit seviyeler hakk?nda derinlemesine i?g?r?ler sunan uzman liderli?inde teknik analiz sa?lar. Bu videolar, fiyat hareketlerini analiz etmeyi, ticaret f?rsatlar?n? belirlemeyi ve teknik stratejileri ger?ek piyasa ko?ullar?nda etkili bir ?ekilde uygulamay? ??renmenize yard?mc? olmak i?in tasarlanm??t?r.</p>
 </div>
 <!-- Second Video -->
 <div class="col-12 mb-3">
@@ -34,47 +34,27 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">Trade Setup videosu, çeşitli varlıklardaki en son piyasa trendlerini ve izlenmesi gereken kilit seviyeleri analiz eder. İster acemi ister deneyimli bir yatırımcı olun, bir sonraki işleminize rehberlik edecek değerli içgörüler bulacaksınız.</p>
+<p class="text-left">Trade Setup videosu, ?e?itli varl?klardaki en son piyasa trendlerini ve izlenmesi gereken kilit seviyeleri analiz eder. ?ster acemi ister deneyimli bir yat?r?mc? olun, bir sonraki i?leminize rehberlik edecek de?erli i?g?r?ler bulacaks?n?z.</p>
 </div>
 </div>
 </div>
 
-{% for post in paginator.posts %}
-{% if post.lang == 'tr' %}
+<div class="post-list">
+{% assign en_posts = site.posts | where: "lang", "tr" %}
+{% for post in en_posts limit: 6 %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
-<h2 class="post-title">
-{{ post.title }}
-</h2>
+<h2 class="post-title">{{ post.title }}</h2>
 {% if post.subtitle %}
-<h3 class="post-subtitle">
-{{ post.subtitle }}
-</h3>
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
 {% endif %}
 <div class="post-content-preview">
-{{ post.content | strip_html | truncate:300 }}
+{{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">
-Yayınlanma tarihi: {{ post.date | date: "%d %B %Y" }}
-</p>
+<p class="post-meta">Yay?nlanma tarihi: {{ post.date | date: "%d %B %Y" }}</p>
 </div>
 <hr>
-{% endif %}
 {% endfor %}
-
-<!-- Sayfalama -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-{% if paginator.previous_page %}
-<li class="previous">
-<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Yeni Yazılar</a>
-</li>
-{% endif %}
-{% if paginator.next_page %}
-<li class="next">
-<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Eski Yazılar &rarr;</a>
-</li>
-{% endif %}
-</ul>
-{% endif %}
+</div>
+</p>
