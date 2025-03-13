@@ -1,6 +1,6 @@
 ---
 lang: en
-category: Commentary
+category: commentary
 title: "End of Day Commentary"
 date: 2025-03-13
 ---
