@@ -39,22 +39,22 @@ allowfullscreen>
 </div>
 </div>
 
-<h2 class="most-updated-title"><strong>En Güncel Paylaşımlar</strong></h2>
-<div class="post-list">
-{% assign tr_posts = site.posts | where: "lang", "tr" %}
-{% for post in tr_posts limit: 6 %}
+{% for post in paginator.posts %}
+{% if post.lang == 'tr' %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
-<h2 class="post-title">{{ post.title }}</h2>
+<h2 class="post-title">
+{{ post.title }}
+</h2>
 {% if post.subtitle %}
-<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+<h3 class="post-subtitle">
+{{ post.subtitle }}
+</h3>
 {% endif %}
 <div class="post-content-preview">
-{{ post.content | strip_html | truncate: 300 }}
+{{ post.content | strip_html | truncate:300 }}
 </div>
 </a>
-<p class="post-meta">Yayınlanma tarihi: {{ post.date | date: "%d %B %Y" }}</p>
-</div>
-<hr>
-{% endfor %}
-</div>
+<p class="post-meta">
+Yayınlanma tarihi: {{ post.date | date: "%d %B %Y" }}
+</p>
