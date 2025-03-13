@@ -58,3 +58,23 @@ allowfullscreen>
 <p class="post-meta">
 Publié le {{ post.date | date: "%d %B %Y" }}
 </p>
+</div>
+<hr>
+{% endif %}
+{% endfor %}
+
+<!-- Pagination -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+{% if paginator.previous_page %}
+<li class="previous">
+<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Articles plus récents</a>
+</li>
+{% endif %}
+{% if paginator.next_page %}
+<li class="next">
+<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Articles plus anciens &rarr;</a>
+</li>
+{% endif %}
+</ul>
+{% endif %}
