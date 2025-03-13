@@ -8,8 +8,8 @@ permalink: /zh-cn/report/
 ---
 <hr>
 <div class="post-list">
-{% assign report_posts = site.posts | where: "category", "report" | where: "lang", "zh-cn" %}
-{% for post in report_posts %}
+{% assign zh-cn-report_posts = site.posts | where: "category", "report" | where: "lang", "zh-cn" %}
+{% for post in zh-cn-report_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
