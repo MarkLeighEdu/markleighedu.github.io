@@ -41,8 +41,8 @@ allowfullscreen>
 
 <h2 class="most-updated-title"><strong>最新更新的文章</strong></h2>
 <div class="post-list">
-{% assign en_posts = site.posts | where: "lang", "zh-tw" %}
-{% for post in en_posts limit: 6 %}
+{% assign zh-tw_posts = site.posts | where: "lang", "zh-tw" %}
+{% for post in zh-tw_posts limit: 6 %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
