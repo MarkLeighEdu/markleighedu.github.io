@@ -2,7 +2,7 @@
 layout: page
 lang: en
 title: "Mark Leigh Blog"
-description: "「Mark Leigh Trading Education」"
+description: "Mark Leigh Trading Education"
 hide-in-nav: true
 ---
 <div class="post-preview" style="margin-top: 20px;">
@@ -39,9 +39,10 @@ allowfullscreen>
 </div>
 </div>
 
+<h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
 <div class="post-list">
-{% assign en-home_posts = site.posts | where: "category", "home" | where: "lang", "en" %}
-{% for post in en-home_posts %}
+{% assign en_posts = site.posts | where: "lang", "en" %}
+{% for post in en_posts limit: 6 %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
