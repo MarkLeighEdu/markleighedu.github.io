@@ -52,9 +52,29 @@ allowfullscreen>
 </h3>
 {% endif %}
 <div class="post-content-preview">
-{{ post.content | strip_html | truncate:300 }}
+{{ post.content | strip_html | truncate:200 }}
 </div>
 </a>
 <p class="post-meta">
 發佈於 {{ post.date | date: "%Y年%B%-d日" }}
 </p>
+</div>
+<hr>
+{% endif %}
+{% endfor %}
+
+<!-- 分頁 -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+{% if paginator.previous_page %}
+<li class="previous">
+<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; 新文章</a>
+</li>
+{% endif %}
+{% if paginator.next_page %}
+<li class="next">
+<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">舊文章 &rarr;</a>
+</li>
+{% endif %}
+</ul>
+{% endif %}
