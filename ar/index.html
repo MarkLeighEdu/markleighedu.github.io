@@ -58,3 +58,23 @@ allowfullscreen>
 <p class="post-meta">
 نشر في {{ post.date | date: "%d %B %Y" }}
 </p>
+</div>
+<hr>
+{% endif %}
+{% endfor %}
+
+<!-- التنقل بين الصفحات -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+{% if paginator.previous_page %}
+<li class="previous">
+<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; مقالات أحدث</a>
+</li>
+{% endif %}
+{% if paginator.next_page %}
+<li class="next">
+<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">مقالات أقدم &rarr;</a>
+</li>
+{% endif %}
+</ul>
+{% endif %}
