@@ -1,9 +1,9 @@
 ---
 layout: page
 lang: ja
-title: "?????"
-nav-title: "??"
-description: "??????????????????"
+title: "毎日の解説"
+nav-title: "解説"
+description: "「マーク・リーのトレーディング教育」"
 permalink: /ja/commentary/
 ---
 <hr>
@@ -20,7 +20,7 @@ permalink: /ja/commentary/
 {{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">??? {{ post.date | date: "%Y?%-m?%-d?" }}</p>
+<p class="post-meta">投稿日 {{ post.date | date: "%Y年%-m月%-d日" }}</p>
 </div>
 <hr>
 {% endfor %}
