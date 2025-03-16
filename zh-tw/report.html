@@ -3,13 +3,13 @@ layout: page
 lang: zh-tw
 title: "每日報告"
 nav-title: "市場報告"
-description: "{{ site.titles.zh_tw.commentary_description }}"
+description: "“Mark Leigh 馬克-李 交易教學”"
 permalink: /zh-tw/report/
 ---
 <hr>
 <div class="post-list">
-{% assign zh-cn-report_posts = site.posts | where: "category", "report" | where: "lang", "zh-tw" %}
-{% for post in zh-cn-report_posts %}
+{% assign zh-tw-report_posts = site.posts | where: "category", "report" | where: "lang", "zh-tw" %}
+{% for post in zh-tw-report_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
