@@ -1,9 +1,9 @@
 ---
 layout: page
 lang: ko
-title: "?? ??"
-nav-title: "??"
-description: "??? ?? ???? ???"
+title: "일일 해설"
+nav-title: "댓글"
+description: "「마크 리의 트레이딩 교육」"
 permalink: /ko/commentary/
 ---
 <hr>
@@ -20,7 +20,7 @@ permalink: /ko/commentary/
 {{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">??? {{ post.date | date: "%Y?%-m?%-d?" }}</p>
+<p class="post-meta">게시일 {{ post.date | date: "%Y년%-m월%-d일" }}</p>
 </div>
 <hr>
 {% endfor %}
