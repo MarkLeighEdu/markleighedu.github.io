@@ -3,13 +3,13 @@ layout: page
 lang: ko
 title: "일일 보고"
 nav-title: "시장 보고서"
-description: "「Mark Leigh Trading Education」"
+description: "「마크 리의 트레이딩 교육」"
 permalink: /ko/report/
 ---
 <hr>
 <div class="post-list">
-{% assign report_posts = site.posts | where: "category", "report" | where: "lang", "ko" %}
-{% for post in report_posts %}
+{% assign ko-report_posts = site.posts | where: "category", "report" | where: "lang", "ko" %}
+{% for post in ko-report_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
