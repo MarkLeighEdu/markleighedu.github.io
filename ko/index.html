@@ -40,8 +40,8 @@ allowfullscreen>
 </div>
 
 <div class="post-list">
-{% assign en_posts = site.posts | where: "lang", "ko" %}
-{% for post in en_posts limit: 6 %}
+{% assign ko_posts = site.posts | where: "lang", "ko" %}
+{% for post in ko_posts limit: 6 %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
