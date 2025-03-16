@@ -3,13 +3,13 @@ layout: page
 lang: ja
 title: "日報"
 nav-title: "市場レポート"
-description: "「Mark Leigh Trading Education」"
+description: "「マーク・リーのトレーディング教育」"
 permalink: /ja/report/
 ---
 <hr>
 <div class="post-list">
-{% assign report_posts = site.posts | where: "category", "report" | where: "lang", "ja" %}
-{% for post in report_posts %}
+{% assign ja-report_posts = site.posts | where: "category", "report" | where: "lang", "ja" %}
+{% for post in ja-report_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
