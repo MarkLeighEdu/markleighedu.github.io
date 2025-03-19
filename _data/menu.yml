@@ -3,6 +3,7 @@ en:
   - { url: "/about/", title: "About" }
   - { url: "/commentary/", title: "Commentary" }
   - { url: "/comment/", title: "Commentary" }
+  - { url: "/comm/", title: "Commentary" }
   - { url: "/report/", title: "Report" }
   - { url: "/weekly/", title: "Weekly" }
 
@@ -11,6 +12,7 @@ es:
   - { url: "/es/about/", title: "Acerca de" }
   - { url: "/es/commentary/", title: "Comentario" }
   - { url: "/es/comment/", title: "Comentario" }
+  - { url: "/es/comm/", title: "Comentario" }
   - { url: "/es/report/", title: "Informe" }
   - { url: "/es/weekly/", title: "Semanal" }
 
@@ -19,6 +21,7 @@ zh-cn:
   - { url: "/zh-cn/about/", title: "关于我" }
   - { url: "/zh-cn/commentary/", title: "市场评论" }
   - { url: "/zh-cn/comment/", title: "市场评论" }
+  - { url: "/zh-cn/comm/", title: "市场评论" }
   - { url: "/zh-cn/report/", title: "市场报告" }
   - { url: "/zh-cn/weekly/", title: "每周回顾" }
 
@@ -27,6 +30,7 @@ zh-tw:
   - { url: "/zh-tw/about/", title: "關於我" }
   - { url: "/zh-tw/commentary/", title: "市場評論" }
   - { url: "/zh-tw/comment/", title: "市場評論" }
+  - { url: "/zh-tw/comm/", title: "市場評論" }
   - { url: "/zh-tw/report/", title: "市場報告" }
   - { url: "/zh-tw/weekly/", title: "每週回顧" }
 
@@ -35,6 +39,7 @@ ar:
   - { url: "/ar/about/", title: "عن الموقع" }
   - { url: "/ar/commentary/", title: "تعليق السوق" }
   - { url: "/ar/comment/", title: "تعليق السوق" }
+  - { url: "/ar/comm/", title: "تعليق السوق" }
   - { url: "/ar/report/", title: "تقرير السوق" }
   - { url: "/ar/weekly/", title: "أسبوعي" }
 
@@ -43,6 +48,7 @@ fr:
   - { url: "/fr/about/", title: "À propos" }
   - { url: "/fr/commentary/", title: "Commentaire" }
   - { url: "/fr/comment/", title: "Commentaire" }
+  - { url: "/fr/comm/", title: "Commentaire" }
   - { url: "/fr/report/", title: "Rapport" }
   - { url: "/fr/weekly/", title: "Hebdomadaire" }
 
@@ -51,6 +57,7 @@ de:
   - { url: "/de/about/", title: "Über mich" }
   - { url: "/de/commentary/", title: "Marktkommentar" }
   - { url: "/de/comment/", title: "Marktkommentar" }
+  - { url: "/de/comm/", title: "Marktkommentar" }
   - { url: "/de/report/", title: "Marktbericht" }
   - { url: "/de/weekly/", title: "Wöchentlich" }
 
@@ -59,6 +66,7 @@ pt-br:
   - { url: "/pt-br/about/", title: "Sobre" }
   - { url: "/pt-br/commentary/", title: "Comentário" }
   - { url: "/pt-br/comment/", title: "Comentário" }
+  - { url: "/pt-br/comm/", title: "Comentário" }
   - { url: "/pt-br/report/", title: "Relatório" }
   - { url: "/pt-br/weekly/", title: "Semanal" }
 
@@ -67,6 +75,7 @@ tr:
   - { url: "/tr/about/", title: "Hakkında" }
   - { url: "/tr/commentary/", title: "Piyasa Yorumu" }
   - { url: "/tr/comment/", title: "Piyasa Yorumu" }
+  - { url: "/tr/comm/", title: "Piyasa Yorumu" }
   - { url: "/tr/report/", title: "Piyasa Raporu" }
   - { url: "/tr/weekly/", title: "Haftalık" }
 
@@ -75,6 +84,7 @@ ja:
   - { url: "/ja/about/", title: "私について" }
   - { url: "/ja/commentary/", title: "市場コメント" }
   - { url: "/ja/comment/", title: "市場コメント" }
+  - { url: "/ja/comm/", title: "市場コメント" }
   - { url: "/ja/report/", title: "市場レポート" }
   - { url: "/ja/weekly/", title: "週間レビュー" }
 
@@ -83,5 +93,6 @@ ko:
   - { url: "/ko/about/", title: "소개" }
   - { url: "/ko/commentary/", title: "시장 논평" }
   - { url: "/ko/comment/", title: "시장 논평" }
+  - { url: "/ko/comm/", title: "시장 논평" }
   - { url: "/ko/report/", title: "시장 보고서" }
   - { url: "/ko/weekly/", title: "주간 리뷰" }
