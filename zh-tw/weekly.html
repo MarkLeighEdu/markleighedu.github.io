@@ -3,13 +3,13 @@ layout: page
 lang: zh-tw
 title: "每週回顧"
 nav-title: "每週回顧"
-description: "{{ site.titles.zh_tw.commentary_description }}"
+description: "“Mark Leigh 馬克-李 交易教學”"
 permalink: /zh-tw/weekly/
 ---
 <hr>
 <div class="post-list">
-{% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-tw" %}
-{% for post in weekly_posts %}
+{% assign zh-tw-weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "zh-tw" %}
+{% for post in zh-tw-weekly_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
