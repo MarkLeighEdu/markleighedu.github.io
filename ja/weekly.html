@@ -3,13 +3,13 @@ layout: page
 lang: ja
 title: "週間レビュー"
 nav-title: "週間レビュー"
-description: "「Mark Leigh Trading Education」"
+description: "「マーク・リーのトレーディング教育」"
 permalink: /ja/weekly/
 ---
 <hr>
 <div class="post-list">
-{% assign weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "ja" %}
-{% for post in weekly_posts %}
+{% assign ja-weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "ja" %}
+{% for post in ja-weekly_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
