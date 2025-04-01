@@ -199,7 +199,7 @@ sidebar-avatar: https://github.com/markleighedu.png
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
-service-worker: true
+# service-worker: true
 
 # MathJax rendering for layout:page
 page-mathjax: false
