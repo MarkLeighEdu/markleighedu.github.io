@@ -1,7 +1,10 @@
 ---
 layout: page
-title: "Pagination Test"
-permalink: /pagination-test/
+lang: en
+title: "Daily Commentary"
+nav-title: "Commentary"
+description: "「Mark Leigh Trading Education」"
+permalink: /commentary/
 ---
 
 
