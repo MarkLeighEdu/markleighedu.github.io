@@ -8,11 +8,11 @@ permalink: /report/
 paginate: 5
 paginate_path: "/report/page:num/"
 ---
-<hr>
+
 <div class="post-list">
-  {% assign en-report_posts = paginator.posts | where: "category", "report" | where: "lang", "en" %}
-  
-  {% for post in en-report_posts %}
+  {% assign en-report_posts = site.posts | where: "category", "report" | where: "lang", "en" %}
+
+  {% for post in paginator.posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
