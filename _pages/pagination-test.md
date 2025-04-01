@@ -2,32 +2,47 @@
 layout: page
 title: "Pagination Test"
 permalink: /pagination-test/
-paginate_path: "/pagination-test/page:num/"
 ---
 
 
-<h1>Pagination Test</h1>
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {% if post.lang == 'en' %}
+                {{ post.content | strip_html | truncate:300 }}
+            {% else %}
+                {{ post.content | strip_html | truncate:200 }}
+            {% endif %}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
 <hr>
-
-{% assign test_posts = site.posts | where: "category", "commentary" %}
-{% if test_posts.size > 0 %}
-    {% for post in test_posts %}
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt }}</p>
-        <hr>
-    {% endfor %}
-{% else %}
-    <p>No posts found.</p>
-{% endif %}
+{% endfor %}
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
-<ul>
+<ul class="pager">
     {% if paginator.previous_page %}
-    <li><a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer Posts</a></li>
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
     {% endif %}
     {% if paginator.next_page %}
-    <li><a href="{{ paginator.next_page_path | relative_url }}">Older Posts &rarr;</a></li>
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
     {% endif %}
 </ul>
 {% endif %}
