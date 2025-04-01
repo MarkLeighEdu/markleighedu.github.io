@@ -7,13 +7,9 @@ permalink: /pagination-test/
 <h1>Pagination Test</h1>
 <hr>
 
-{% if paginator.posts.size > 0 %}
-{% for post in site.posts %}
-    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-    <p>{{ post.excerpt }}</p>
-    <hr>
-{% endfor %}
-
+{% assign test_posts = site.posts | where: "category", "commentary" %}
+{% if test_posts.size > 0 %}
+    {% for post in test_posts %}
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         <p>{{ post.excerpt }}</p>
         <hr>
