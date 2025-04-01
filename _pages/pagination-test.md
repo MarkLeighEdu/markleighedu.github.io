@@ -2,7 +2,9 @@
 layout: page
 title: "Pagination Test"
 permalink: /pagination-test/
+paginate_path: "/pagination-test/page:num/"
 ---
+
 
 <h1>Pagination Test</h1>
 <hr>
