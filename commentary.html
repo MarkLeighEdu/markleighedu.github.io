@@ -5,15 +5,13 @@ title: "Commentary"
 nav-title: "Commentary"
 description: "「Mark Leigh Trading Education」"
 permalink: /commentary/
-paginate: 4
-paginate_path: "/commentary/page:num/"
 ---
 
 <hr>
 <div class="post-list">
-  {% assign commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "en" %}
+  {% assign en-commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "en" %}
   
-  {% assign paginated_posts = commentary_posts | slice: paginator.offset, paginator.per_page %}
+  {% assign paginated_posts = en-commentary_posts | slice: paginator.offset, paginator.per_page %}
   
   {% for post in paginated_posts %}
     <div class="post-preview">
