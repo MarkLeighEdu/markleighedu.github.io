@@ -8,7 +8,12 @@ permalink: /pagination-test/
 <hr>
 
 {% if paginator.posts.size > 0 %}
-    {% for post in paginator.posts %}
+{% for post in site.posts %}
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt }}</p>
+    <hr>
+{% endfor %}
+
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         <p>{{ post.excerpt }}</p>
         <hr>
