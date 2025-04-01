@@ -10,9 +10,9 @@ paginate_path: "/report/page:num/"
 ---
 <hr>
 <div class="post-list">
-  {% assign en-report_posts = site.posts | where: "category", "report" | where: "lang", "en" %}
+  {% assign en-report_posts = paginator.posts | where: "category", "report" | where: "lang", "en" %}
   
-  {% for post in en-report_posts offset: paginator.offset limit: paginator.per_page %}
+  {% for post in en-report_posts %}
     <div class="post-preview">
       <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
