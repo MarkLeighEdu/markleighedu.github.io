@@ -20,7 +20,7 @@ permalink: /commentary/
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {% if post.lang == 'en' %}
+        {% if post.lang == 'en' and post.cat == 'commentary' %}
                 {{ post.content | strip_html | truncate:300 }}
             {% else %}
                 {{ post.content | strip_html | truncate:200 }}
