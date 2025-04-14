@@ -1,0 +1,37 @@
+---
+lang: pt-br
+category: commentary
+title: "Comentário de fim de dia"
+date: 2025-04-14
+---
+
+### ÍNDICE USD
+
+O dólar americano perdeu terreno hoje, somado à tendência de baixa, mas mostrou relativa estabilidade após a liquidação drástica da semana passada. Os compradores não conseguiram negociar acima de 100, enquanto os vendedores estabeleceram o suporte em 98,96, ligeiramente acima do mínimo de 98,78. O RSI permanece com leitura sobrevendida 26. Sem um movimento material de baixa, o sentimento permanece negativo à medida que o mercado digere a ideia de que a moeda de reserva global será questionada. 
+
+![Image](https://markleighedu.github.io/img/Apr-2025/14-Apr-2025/usdindex.jpg)
+
+### S&P 500
+
+Depois de uma diferença no início da semana, o dia terminou ligeiramente abaixo da abertura, com os compradores incapazes de aumentar os ganhos pré-mercado. A resistência situa-se em 5498 com o suporte em 5386. Os mercados de ações mantiveram-se e a recuperação tardia da semana passada e a tendência técnica de alta permanecem intactas. Os compradores buscarão níveis pré-recíprocos (5.500 - 5.600) de forma lenta, mas constante, sabendo que uma nova declaração, verdadeira ou boato, pode desencadear vendas em pânico a qualquer momento.
+
+![Image](https://markleighedu.github.io/img/Apr-2025/14-Apr-2025/sp500.jpg)
+
+### OURO
+
+O metal deu uma pausa há muito esperada em sua alta recorde, com a contribuição da realização de lucros e dos indicadores técnicos de sobrecompra. A resistência de US$ 3.245 agora forma um topo duplo (forte sinal de reversão) que pode fornecer aos vendedores um motivo para acompanhar a retração de hoje. Os vendedores olharão abaixo do nível de suporte de hoje de US$ 3.193. Os compradores reconhecem que a commodity ainda é o principal instrumento financeiro de refúgio e podem ver a retração e o preço mais baixo como uma nova oportunidade de compra.
+
+![Image](https://markleighedu.github.io/img/Apr-2025/14-Apr-2025/gold.jpg)
+
+### ÓLEO BRENT
+
+O petróleo terminou o dia junto com a abertura, com a ação do preço contida em uma faixa estreita entre US$ 63,83 e US$ 65,76. O gráfico confirma uma máxima mais alta e uma mínima mais alta. Os compradores tentarão recuperar US$ 66, enquanto os vendedores terão como objetivo abaixo de US$ 63. Enquanto as preocupações com a oferta continuarem a não ser um problema e um abrandamento económico global continuar a parecer provável, a tendência poderá permanecer inclinada para o lado negativo. 
+
+![Image](https://markleighedu.github.io/img/Apr-2025/14-Apr-2025/brentoil.jpg)
+
+### Bitcoin
+
+Uma faixa de negociação estreita fez com que compradores e vendedores não estivessem dispostos a tomar posição em nenhuma direção. A resistência está em US$ 85,7 mil com suporte em US$ 83,6 mil. Os EMAs sinalizam uma tendência de alta enquanto os vendedores lutam para manter a ação dos preços abaixo da linha de tendência descendente. Os compradores buscam a área alta de US$ 80 mil, enquanto os vendedores visam abaixo do nível de US$ 80 mil.
+
+![Image](https://markleighedu.github.io/img/Apr-2025/14-Apr-2025/bitcoin.jpg)
+
