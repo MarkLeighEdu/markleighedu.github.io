@@ -18,7 +18,14 @@ layout: default
                     {% include multilingual-sel.html %}
                 {% endif %}
 
-                {{ content }}
+{% if page.lang == 'ar' %}
+<div style="direction: rtl;">
+    {{ content }}
+</div>
+{% else %}
+{{ content }}
+{% endif %}
+
 
                 <hr style="visibility: hidden;">
 
