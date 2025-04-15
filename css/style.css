@@ -139,3 +139,11 @@ YYYY-MM-DD-title.md
 .most-updated-title {
   color: #003366; /* Dark Blue */
 }
+
+/* Arabic (rtl) support */
+.ar {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Arial', 'Noto Naskh Arabic', sans-serif;
+}
+
