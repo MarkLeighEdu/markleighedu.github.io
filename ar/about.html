@@ -8,12 +8,12 @@ header-mask: 0.3
 multilingual: true
 permalink: /ar/about/
 ---
+<!-- Apply RTL only to content (not to the center title) -->
+<div dir="rtl" style="text-align: right;">
 <div style="text-align: center;">
 <h1>مارك لي</h1>
 </div>
-<div>
 <h2>🌐🎓 متداول خبير ومُعلم تداول</h2>
-</div>
 <div style="margin-top: 1em;">
 ✅ <strong>متداول محترف ومعلم</strong><br>
 مع مشاركة نشطة في السوق منذ عام 2003، متخصص في السلع والفوركس، وفي الآونة الأخيرة، العملات الرقمية.
@@ -24,7 +24,7 @@ permalink: /ar/about/
 - يقدم تعليقات وتحليلات للسوق لوسطاء العقود مقابل الفروقات العالميين في أوروبا وآسيا وجنوب أفريقيا وأمريكا الشمالية ومنطقة الخليج.<br>
 - يقوم بتطوير وتعليم الدورات المعتمدة من الجامعات، ويُدرِّس على جميع المستويات.
 </div>
-<div>
+<div style="margin-top: 2em;">
 <h2>🎥📈 محاضرات تداول على الموقع</h2>
 </div>
 <div class="image-grid">
@@ -35,6 +35,7 @@ permalink: /ar/about/
 <img src="/img/MarkLeigh_1222.jpg" class="grid-img">
 <img src="/img/MarkLeigh_1163.jpg" class="grid-img">
 </div>
+</div>
 <style>
 .image-grid {
 display: grid;
@@ -42,15 +43,14 @@ gap: 10px;
 max-width: 1080px;
 margin: auto;
 }
-/* PC: 2 صفوف، 3 صور في كل صف */
 @media (min-width: 1024px) {
 .image-grid { grid-template-columns: repeat(3, 1fr); }
 }
-/* جهاز لوحي: 3 صفوف، 2 صور في كل صف */
+/* Tablet: 3 rows, 2 images per row */
 @media (min-width: 768px) and (max-width: 1023px) {
 .image-grid { grid-template-columns: repeat(2, 1fr); }
 }
-/* هاتف محمول: 6 صفوف، صورة واحدة في كل صف */
+/* Mobile: 6 rows, 1 image per row */
 @media (max-width: 767px) {
 .image-grid { grid-template-columns: repeat(1, 1fr); }
 }
