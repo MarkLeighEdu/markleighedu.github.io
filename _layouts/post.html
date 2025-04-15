@@ -17,16 +17,7 @@ layout: default
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
                 {% endif %}
-
-{% if page.lang == 'ar' %}
-<div style="direction: rtl;">
     {{ content }}
-</div>
-{% else %}
-{{ content }}
-{% endif %}
-
-
                 <hr style="visibility: hidden;">
 
                 <!-- Language-Specific Previous/Next Navigation -->
