@@ -144,3 +144,16 @@ YYYY-MM-DD-title.md
   direction: rtl;
   text-align: right;
 }
+html[lang="ar"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang="ar"] .post-container,
+html[lang="ar"] .sidebar-container,
+html[lang="ar"] .post-preview,
+html[lang="ar"] .post-meta,
+html[lang="ar"] .pager {
+  direction: rtl;
+  text-align: right;
+}
