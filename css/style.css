@@ -139,3 +139,8 @@ YYYY-MM-DD-title.md
 .most-updated-title {
   color: #003366; /* Dark Blue */
 }
+
+.post-list-ar, .post-list-ar .post-preview {
+  direction: rtl;
+  text-align: right;
+}
