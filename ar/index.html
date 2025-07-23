@@ -36,39 +36,41 @@ allowfullscreen>
 </div>
 <p class="text-right">تحديث العملات الرئيسية: رؤى فنية يومية على مؤشر الدولار الأمريكي (DXY) وأزواج العملات الرئيسية مثل EUR/USD وGBP/USD وUSD/JPY وUSD/CAD وغيرها. احصل على مستويات رئيسية، إعدادات الرسوم البيانية، ونصائح من Mark لزيادة ثقتك في التداول والبقاء متماشياً مع الأسواق.</p>
 </div>
-<!-- الفيديو الثالث -->
+<!-- الفيديو الرابع -->
 <div class="col-12 mb-3">
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&hl=ar&cc_lang_pref=ar&cc_load_policy=1"
-title="قائمة تشغيل يوتيوب 2"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&hl=ar&cc_lang_pref=ar&cc_load_policy=1"
+title="قائمة تشغيل يوتيوب 4"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-right"><strong>فيديو إعداد الصفقات</strong> يوفر تحليلًا لأحدث اتجاهات السوق والمستويات الرئيسية عبر مختلف الأصول. سواء كنت مبتدئًا أو متداولًا محترفًا، ستجد رؤى قيمة تساعدك على اتخاذ قرارات تداول ذكية.</p>
+<p class="text-right">يشرح فيديو أداة التداول كيفية استخدام الأداة عمليًا على منصة التداول، مع أمثلة واقعية توضح إعداد وتنفيذ الصفقات.</p>
+</div>
+<!-- الفيديو الرابع -->
+<div class="col-12 mb-3">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&hl=ar&cc_lang_pref=ar&cc_load_policy=1"
+title="قائمة تشغيل يوتيوب 3"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-right">يشرح فيديو أداة التداول كيفية استخدام الأداة عمليًا على منصة التداول، مع أمثلة واقعية توضح إعداد وتنفيذ الصفقات.</p>
 </div>
 </div>
 </div>
 <div class="post-list post-list-ar">
+
 {% assign ar_posts = site.posts | where: "lang", "ar" %}
 {% for post in ar_posts limit: 6 %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
 {% if post.subtitle %}
-<h3 class="post-subtitle">{{ post.subtitle }}</h3>
-{% endif %}
-<div class="post-content-preview">
-{{ post.content | strip_html | truncate: 300 }}
-</div>
-</a>
-<p class="post-meta">تم النشر في {{ post.date | date: "%d %B, %Y" }}</p>
-</div>
-<hr>
-{% endfor %}
-</div>
-</p>
-
