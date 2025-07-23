@@ -74,3 +74,15 @@ allowfullscreen>
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
 {% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+{% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 300 }}
+</div>
+</a>
+<p class="post-meta">تم النشر في {{ post.date | date: "%d %B, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+</div>
+</p>
