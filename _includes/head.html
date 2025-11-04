@@ -1,77 +1,101 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="{{ site.description }}">
-    <meta name="keywords" content="{{ site.keyword }}">
-    <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
-    <meta name="google" content="notranslate">
-    
-    <!-- Open Graph -->
-    <meta property="og:title"
-        content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
-    {% case page.layout %}
-    {% when 'post' %}
-    <meta property="og:type" content="article">
-    <meta property="og:description" content="{{ page.excerpt | strip_html | truncate:200 }}">
-    {% if page.date %}
-    <meta property="article:published_time" content="{{ page.date | date: " %Y-%m-%dT%H:%M:%SZ" }}">
-    {% endif %}
-    {% if page.author %}
-    <meta property="article:author" content="{{ page.author }}">
-    {% endif %}
-    {% for tag in page.tags %}
-    <meta property="article:tag" content="{{ tag }}">
-    {% endfor %}
-    {% else %}
-    <meta property="og:type" content="website">
-    <meta property="og:description"
-        content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    {% endcase %}
-    <meta property="og:image" content="{{ site.url }}{{ site.sidebar-avatar }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-    <meta property="og:site_name" content="{{ site.SEOTitle }}">
-
-    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
-
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/favicon.ico">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ " /css/bootstrap.min.css" | prepend: site.baseurl }}">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ " /css/mark-blog.min.css" | prepend: site.baseurl }}">
-
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Mark change font-awesome CDN to qiniu -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" type="text/css">
-
-    <!-- New Custom CSS -->
-<link rel="stylesheet" href="{{ '/css/style.css?v=2.0' | prepend: site.baseurl }}">
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-<!-- Google AdSense 
-<script data-ad-client="ca-pub-xxx" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
--->
-
-
-
-    
-</head>
+---
+layout: page
+lang: en
+title: "Mark Leigh Blog"
+description: "Mark Leigh Trading Education"
+hide-in-nav: true
+---
+<div class="post-preview" style="margin-top: 20px;">
+<!-- First Block - Video Embeds -->
+<div class="row mb-4">
+<!-- First Video -->
+<div class="col-12 mb-3">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
+title="YouTube playlist 1"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
+</div>
+<!-- Second Video -->
+<div class="col-12 mb-3">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
+title="YouTube playlist 2"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-left">Fx Majors Update: Daily technical insights on the US Dollar Index (DXY) and major pairs like EUR/USD, GBP/USD, USD/JPY, USD/CAD, and more. Get key levels, chart setups, and price action tips from Mark to boost your trading confidence and stay in sync with the markets.</p>
+</div>
+<!-- Third Video -->
+<div class="col-12 mb-3">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
+title="YouTube playlist 3"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
+</div>
+<!-- Fourth Video -->
+<div class="col-12 mb-3">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
+title="YouTube playlist 4"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-left">Our Featured Market Analysis videos provide in-depth reviews of major assets across global markets — combining real-time fundamentals, technical insights, and key price levels to explain recent moves and outline potential market directions.</p>
+</div>
+<!-- Fifth Video -->
+<div class="col-12 mb-3">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
+title="YouTube playlist 5"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+</div>
+<p class="text-left">The Trading Tool video explains how to use the tool practically on the trading platform, with real-time examples that demonstrate trade setup and execution.</p>
+</div>
+</div>
+</div>
+<h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
+<div class="post-list">
+{% assign en_posts = site.posts | where: "lang", "en" %}
+{% for post in en_posts limit: 6 %}
+<div class="post-preview">
+<a href="{{ post.url | prepend: site.baseurl }}">
+<h2 class="post-title">{{ post.title }}</h2>
+{% if post.subtitle %}
+<h3 class="post-subtitle">{{ post.subtitle }}</h3>
+{% endif %}
+<div class="post-content-preview">
+{{ post.content | strip_html | truncate: 300 }}
+</div>
+</a>
+<p class="post-meta">Posted on {{ post.date | date: "%B %-d, %Y" }}</p>
+</div>
+<hr>
+{% endfor %}
+</div>
