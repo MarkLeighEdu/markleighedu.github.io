@@ -3,6 +3,7 @@ languages:
   - es
   - zh-cn
   - zh-tw
+  - it
   - ar
   - fr
   - de
@@ -32,6 +33,11 @@ zh-tw:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-tw"
   title: "Mark Leigh 馬克.李教育博客"
+
+  it:
+  url: "https://markleighedu.github.io"
+  baseurl: "/it"
+  title: "Blog dell'Educatore Mark Leigh"
 
 ar:
   url: "https://markleighedu.github.io"
