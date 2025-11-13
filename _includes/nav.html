@@ -38,6 +38,8 @@
                                 简体中文
                             {% elsif page.url contains '/zh-tw/' %}
                                 繁體中文
+                            {% elsif page.url contains '/it/' %}
+                                Italiano
                             {% elsif page.url contains '/fr/' %}
                                 Français
                             {% elsif page.url contains '/de/' %}
@@ -57,8 +59,8 @@
                     </a>
                     <!-- Language Dropdown Menu -->
                     <ul id="language-menu" style="display:none;">
-                        {% assign languages = "en,es,ar,zh-cn,zh-tw,fr,de,pt-br,tr,ja,ko" | split: "," %}
-                        {% assign language_names = "English,Español,العربية,简体中文,繁體中文,Français,Deutsch,Português-br,Türkçe,日本語,한국어" | split: "," %}
+                        {% assign languages = "en,es,ar,zh-cn,zh-tw,it,fr,de,pt-br,tr,ja,ko" | split: "," %}
+                        {% assign language_names = "English,Español,العربية,简体中文,繁體中文,Italiano,Français,Deutsch,Português-br,Türkçe,日本語,한국어" | split: "," %}
 
                         {% for lang in languages %}
                             {% unless page.url contains lang %}
