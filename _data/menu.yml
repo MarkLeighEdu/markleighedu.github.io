@@ -26,6 +26,13 @@ zh-tw:
   - { url: "/zh-tw/report/", title: "市場報告" }
   - { url: "/zh-tw/weekly/", title: "每週回顧" }
 
+it:
+  - { url: "/it/", title: "Home" }
+  - { url: "/it/about/", title: "Chi Siamo" }
+  - { url: "/it/commentary/", title: "Commento" }
+  - { url: "/it/report/", title: "Rapporto" }
+  - { url: "/it/weekly/", title: "Settimanale" }
+
 ar:
   - { url: "/ar/", title: "الرئيسية" }
   - { url: "/ar/about/", title: "عن الموقع" }
