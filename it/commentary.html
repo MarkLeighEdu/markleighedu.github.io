@@ -1,15 +1,15 @@
 ---
 layout: page
-lang: es
-title: "Comentario diario"
-nav-title: "Comentario"
-description: "「Educación en Trading de Mark Leigh」"
-permalink: /es/commentary/
+lang: it
+title: "Commento Giornaliero"
+nav-title: "Commento"
+description: "「Mark Leigh Trading Education」"
+permalink: /it/commentary/
 ---
 <hr>
 <div class="post-list">
-{% assign es-commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "es" %}
-{% for post in es-commentary_posts %}
+{% assign it-commentary_posts = site.posts | where: "category", "commentary" | where: "lang", "it" %}
+{% for post in it-commentary_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
@@ -20,7 +20,7 @@ permalink: /es/commentary/
 {{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">Publicado el {{ post.date | date: "%d de %B, %Y" }}</p>
+<p class="post-meta">Pubblicato il {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
 <hr>
 {% endfor %}
