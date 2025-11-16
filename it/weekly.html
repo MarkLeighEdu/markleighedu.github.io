@@ -1,15 +1,15 @@
 ---
 layout: page
-lang: es
-title: "Revisión semanal"
-nav-title: "Semanal"
-description: "「Educación en Trading de Mark Leigh」"
-permalink: /es/weekly/
+lang: it
+title: "Riepilogo Settimanale"
+nav-title: "Settimanale"
+description: "「Mark Leigh Formazione sul trading」"
+permalink: /it/weekly/
 ---
 <hr>
 <div class="post-list">
-{% assign es-weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "es" %}
-{% for post in es-weekly_posts %}
+{% assign it-weekly_posts = site.posts | where: "category", "weekly" | where: "lang", "it" %}
+{% for post in it-weekly_posts %}
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
@@ -20,7 +20,7 @@ permalink: /es/weekly/
 {{ post.content | strip_html | truncate: 300 }}
 </div>
 </a>
-<p class="post-meta">Publicado el {{ post.date | date: "%d de %B, %Y" }}</p>
+<p class="post-meta">Pubblicato il {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
 <hr>
 {% endfor %}
