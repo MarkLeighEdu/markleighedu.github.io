@@ -3,8 +3,8 @@ languages:
   - es
   - zh-cn
   - zh-tw
-  - it
   - ar
+  - it
   - fr
   - de
   - pt-br
@@ -33,17 +33,14 @@ zh-tw:
   url: "https://markleighedu.github.io"
   baseurl: "/zh-tw"
   title: "Mark Leigh 馬克.李教育博客"
-
-  it:
-  url: "https://markleighedu.github.io"
-  baseurl: "/it"
-  title: "Blog dell'Educatore Mark Leigh"
-
 ar:
   url: "https://markleighedu.github.io"
   baseurl: "/ar"
   title: "مدونة مارك لي للمعلم"
-
+it:
+  url: "https://markleighedu.github.io"
+  baseurl: "/it"
+  title: "Blog dell'Educatore Mark Leigh"
 fr:
   url: "https://markleighedu.github.io"
   baseurl: "/fr"
@@ -133,6 +130,10 @@ defaults:
       path: "ar/_posts"
     values:
       lang: "ar"
+  - scope:
+      path: "it/_posts"
+    values:
+      lang: "it"
 
   - scope:
       path: "fr/_posts"
