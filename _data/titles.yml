@@ -10,12 +10,12 @@ zh-cn:
 zh-tw:
   navbar_brand: "Mark Leigh 教育博客"
 
-it:
-  navbar_brand: "Blog dell'Educatore Mark Leigh"
-
 ar:
   navbar_brand: "مدونة مارك لي للمعلم"
 
+it:
+  navbar_brand: "Blog dell'Educatore Mark Leigh"
+  
 fr:
   navbar_brand: "Blog de Mark Leigh pour les éducateurs"
 
