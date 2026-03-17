@@ -1,0 +1,37 @@
+---
+lang: de
+category: commentary
+title: "Kommentar zum Tagesende"
+date: 2026-03-17
+---
+
+### USD-INDEX
+
+Der US-Dollar gab den zweiten Tag in Folge nach und erreichte ein niedrigeres Hoch und Tief. Die Unterstützung entspricht dem Widerstandsniveau vom 16. Januar 2026. Verkäufer werden versuchen, den Kursrückgang fortzusetzen und damit einen neuen Abwärtstrend einzuleiten. Obwohl die meisten Analysten davon ausgehen, dass die Zinsen bei der morgigen FOMC-Sitzung unverändert bleiben, könnten begleitende Erklärungen die unmittelbare Reaktion des Index beeinflussen. Der Widerstand liegt bei 99,87, die Unterstützung bei 99,26.
+
+![Image](https://markleighedu.github.io/img/Mar-2026/17-Mar-2026/usdindex.jpg)
+
+### S&P 500
+
+Obwohl die Käufer die anfänglichen Gewinne nicht halten konnten, reichte der Kursanstieg aus, um die zweite aufeinanderfolgende grüne Kerze mit höherem Hoch und höherem Tief zu sichern. Der Widerstandsbereich deckt sich mit der vorherigen Unterstützungszone vom Jahresbeginn. Gestern und heute bestätigen die traditionellen inversen Beziehungen zwischen einem schwachen US-Dollar und starken Aktien. Der Widerstand liegt bei 6809, die Unterstützung bei 6715.
+
+![Image](https://markleighedu.github.io/img/Mar-2026/17-Mar-2026/sp500.jpg)
+
+### GOLD
+
+Der heutige Kursverlauf ähnelte dem gestrigen - vergleichbare Widerstands- und Unterstützungsniveaus sowie ein ähnlicher Schlusskurs. Der Abwärtstrend hält an, Käufer können sich nur mühsam über der 5000-Dollar-Marke halten. Beachten Sie das Fibonacci-Retracement-Tool, das den jüngsten Aufwärtstrend verdeutlicht: Der aktuelle Kurs liegt leicht unter dem 38,2%-Fibonacci-Retracement, aber immer noch über dem wichtigen 50%-Fibonacci-Retracement bei 4903 Dollar. Der Status von Gold als sicherer Hafen hat die Nachfrage nicht angekurbelt, da die US-Börsen zu Wochenbeginn schwächer notierten. Der Widerstand liegt bei 5040 Dollar, die Unterstützung bei 4973 Dollar.
+
+![Image](https://markleighedu.github.io/img/Mar-2026/17-Mar-2026/gold.jpg)
+
+### BRENT-ÖL
+
+Der Ölpreis bewegt sich weiterhin in einer relativ engen Spanne von 4 US-Dollar mit geringen Schwankungen in beide Richtungen. Die aktuelle Lage vor Ort führt zu unveränderten Preisbewegungen. Die Straße von Hormus bleibt geschlossen, der Iran setzt seine Angriffe auf benachbarte Golfstaaten fort, während die USA keine Unterstützung von der NATO und anderen nicht aktiv am Konflikt beteiligten Ländern erhalten. Die Tendenz, der Trend und die aktuellen Bedingungen deuten vorerst auf einen Aufwärtstrend hin. Die 100-Dollar-Marke behält ihre zentrale Bedeutung. Widerstand liegt bei 105,01 US-Dollar, Unterstützung bei 101,17 US-Dollar.
+
+![Image](https://markleighedu.github.io/img/Mar-2026/17-Mar-2026/brentoil.jpg)
+
+### BITCOIN
+
+Trotz des leichten Rotstichs im Kerzenkörper signalisiert die heutige Kerze ein höheres Hoch und ein höheres Tief und setzt damit den Aufwärtstrend fort. Käufer peilen weiterhin die Marke von 80.000 US-Dollar an, um die langsame, aber stetige Aufwärtsbewegung zu beschleunigen. Beachten Sie, dass das Fibonacci-Retracement-Tool, das den starken Kursverfall von Anfang des Jahres (von 97.900 auf 60.000 US-Dollar) misst, nun beim ersten Test - 38,2 % bei 74.400 US-Dollar - liegt. Der Widerstand liegt bei 75.900 US-Dollar, die Unterstützung bei 73.600 US-Dollar.
+
+![Image](https://markleighedu.github.io/img/Mar-2026/17-Mar-2026/bitcoin.jpg)
+
