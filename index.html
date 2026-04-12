@@ -5,82 +5,111 @@ title: "Mark Leigh Blog"
 description: "Mark Leigh Trading Education"
 hide-in-nav: true
 ---
+
 <div class="post-preview" style="margin-top: 20px;">
-<!-- First Block - Video Embeds -->
 <div class="row mb-4">
-<!-- First Video -->
+
+<!-- 1 -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
+<h4 id="title1" class="yt-title"></h4>
+
+<div class="yt-wrap">
 <iframe
-class="embed-responsive-item"
+id="player1"
+data-title="title1"
+data-playlist="PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
 src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
-title="YouTube playlist 1"
-frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
+
+<p class="text-left">
+The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels.
+</p>
 </div>
-<!-- Second Video -->
+
+<!-- 2 -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
+<h4 id="title2" class="yt-title"></h4>
+
+<div class="yt-wrap">
 <iframe
-class="embed-responsive-item"
+id="player2"
+data-title="title2"
+data-playlist="PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
 src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
-title="YouTube playlist 2"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">Fx Majors Update: Daily technical insights on the US Dollar Index (DXY) and major pairs like EUR/USD, GBP/USD, USD/JPY, USD/CAD, and more. Get key levels, chart setups, and price action tips from Mark to boost your trading confidence and stay in sync with the markets.</p>
+
+<p class="text-left">
+Fx Majors Update daily technical insights.
+</p>
 </div>
-<!-- Third Video -->
+
+<!-- 3 -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
+<h4 id="title3" class="yt-title"></h4>
+
+<div class="yt-wrap">
 <iframe
-class="embed-responsive-item"
+id="player3"
+data-title="title3"
+data-playlist="PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
 src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
-title="YouTube playlist 3"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
+
+<p class="text-left">
+Trade setup breakdowns.
+</p>
 </div>
-<!-- Fourth Video -->
+
+<!-- 4 -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
+<h4 id="title4" class="yt-title"></h4>
+
+<div class="yt-wrap">
 <iframe
-class="embed-responsive-item"
+id="player4"
+data-title="title4"
+data-playlist="PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
 src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
-title="YouTube playlist 4"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">Our Featured Market Analysis videos provide in-depth reviews of major assets across global markets — combining real-time fundamentals, technical insights, and key price levels to explain recent moves and outline potential market directions.</p>
+
+<p class="text-left">
+Market analysis videos.
+</p>
 </div>
-<!-- Fifth Video -->
+
+<!-- 5 -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
+<h4 id="title5" class="yt-title"></h4>
+
+<div class="yt-wrap">
 <iframe
-class="embed-responsive-item"
+id="player5"
+data-title="title5"
+data-playlist="PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
 src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
-title="YouTube playlist 5"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
 </div>
-<p class="text-left">The Trading Tool video explains how to use the tool practically on the trading platform, with real-time examples that demonstrate trade setup and execution.</p>
+
+<p class="text-left">
+Trading tool explanations.
+</p>
+</div>
+
 </div>
 </div>
-</div>
+
 <h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
+
 <div class="post-list">
 {% assign en_posts = site.posts | where: "lang", "en" %}
 {% for post in en_posts limit: 6 %}
@@ -99,3 +128,43 @@ allowfullscreen>
 <hr>
 {% endfor %}
 </div>
+
+<!-- YouTube API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+let players = {};
+
+function onYouTubeIframeAPIReady() {
+
+  ["player1","player2","player3","player4","player5"].forEach(id => {
+
+    const iframe = document.getElementById(id);
+    const titleId = iframe.dataset.title;
+    const playlist = iframe.dataset.playlist;
+
+    players[id] = new YT.Player(id, {
+      height: '100%',
+      width: '100%',
+      playerVars: {
+        listType: 'playlist',
+        list: playlist
+      },
+      events: {
+        onReady: () => updateTitle(id, titleId),
+        onStateChange: () => updateTitle(id, titleId)
+      }
+    });
+
+  });
+
+}
+
+function updateTitle(playerId, titleId) {
+  const player = players[playerId];
+  if (player && player.getVideoData) {
+    const data = player.getVideoData();
+    document.getElementById(titleId).innerText = data.title || "";
+  }
+}
+</script>
