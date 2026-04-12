@@ -5,74 +5,81 @@ title: "Mark Leigh Blog"
 description: "Mark Leigh Trading Education"
 hide-in-nav: true
 ---
-
 <div class="post-preview" style="margin-top: 20px;">
+<!-- First Block - Video Embeds -->
 <div class="row mb-4">
-
-<!-- 1 -->
+<!-- First Video -->
 <div class="col-12 mb-3">
-<h4 class="yt-title" id="title1"></h4>
 <div class="embed-responsive embed-responsive-16by9">
-<iframe data-title="title1"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
+title="YouTube playlist 1"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen></iframe>
+allowfullscreen>
+</iframe>
 </div>
-<p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels.</p>
+<p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
 </div>
-
-<!-- 2 -->
+<!-- Second Video -->
 <div class="col-12 mb-3">
-<h4 class="yt-title" id="title2"></h4>
 <div class="embed-responsive embed-responsive-16by9">
-<iframe data-title="title2"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
+title="YouTube playlist 2"
 frameborder="0"
-allowfullscreen></iframe>
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 </div>
-<p class="text-left">Fx Majors Update daily insights.</p>
+<p class="text-left">Fx Majors Update: Daily technical insights on the US Dollar Index (DXY) and major pairs like EUR/USD, GBP/USD, USD/JPY, USD/CAD, and more. Get key levels, chart setups, and price action tips from Mark to boost your trading confidence and stay in sync with the markets.</p>
 </div>
-
-<!-- 3 -->
+<!-- Third Video -->
 <div class="col-12 mb-3">
-<h4 class="yt-title" id="title3"></h4>
 <div class="embed-responsive embed-responsive-16by9">
-<iframe data-title="title3"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
+title="YouTube playlist 3"
 frameborder="0"
-allowfullscreen></iframe>
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 </div>
-<p class="text-left">Trade setup breakdowns.</p>
+<p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
 </div>
-
-<!-- 4 -->
+<!-- Fourth Video -->
 <div class="col-12 mb-3">
-<h4 class="yt-title" id="title4"></h4>
 <div class="embed-responsive embed-responsive-16by9">
-<iframe data-title="title4"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
+title="YouTube playlist 4"
 frameborder="0"
-allowfullscreen></iframe>
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 </div>
-<p class="text-left">Market analysis videos.</p>
+<p class="text-left">Our Featured Market Analysis videos provide in-depth reviews of major assets across global markets — combining real-time fundamentals, technical insights, and key price levels to explain recent moves and outline potential market directions.</p>
 </div>
-
-<!-- 5 -->
+<!-- Fifth Video -->
 <div class="col-12 mb-3">
-<h4 class="yt-title" id="title5"></h4>
 <div class="embed-responsive embed-responsive-16by9">
-<iframe data-title="title5"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
+<iframe
+class="embed-responsive-item"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
+title="YouTube playlist 5"
 frameborder="0"
-allowfullscreen></iframe>
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 </div>
-<p class="text-left">Trading tool explanation.</p>
-</div>
-
+<p class="text-left">The Trading Tool video explains how to use the tool practically on the trading platform, with real-time examples that demonstrate trade setup and execution.</p>
 </div>
 </div>
-
+</div>
 <h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
 <div class="post-list">
 {% assign en_posts = site.posts | where: "lang", "en" %}
@@ -92,38 +99,3 @@ allowfullscreen></iframe>
 <hr>
 {% endfor %}
 </div>
-
-<!-- SCRIPT -->
-<script>
-function loadIframe(el) {
-  if (el.dataset.loaded) return;
-  el.dataset.loaded = "1";
-  el.src = el.dataset.src;
-}
-
-function updateTitle(id, iframe) {
-  try {
-    const player = iframe.contentWindow;
-    // fallback safe (YouTube doesn't allow direct cross-title fetch)
-    document.getElementById(id).innerText = "Now Playing";
-  } catch (e) {}
-}
-
-/* Lazy load all iframes (prevents YouTube overload) */
-document.querySelectorAll("iframe").forEach((iframe, index) => {
-
-  const titleId = iframe.dataset.title;
-
-  // delay loading (fix YouTube overload issue)
-  setTimeout(() => {
-    loadIframe(iframe);
-
-    // set simple title placeholder
-    if (titleId) {
-      document.getElementById(titleId).innerText = "Loading video...";
-    }
-
-  }, index * 800); // stagger loading (VERY IMPORTANT)
-
-});
-</script>
