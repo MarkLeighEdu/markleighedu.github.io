@@ -157,20 +157,3 @@ html[lang="ar"] .pager {
   direction: rtl;
   text-align: right;
 }
-
-/* YouTube title display */
-.yt-title {
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* keep existing responsive behavior */
-.embed-responsive {
-  position: relative;
-}
-
-/* ensure iframe behaves normally */
-.embed-responsive iframe {
-  width: 100%;
-  height: 100%;
-}
