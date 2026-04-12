@@ -13,7 +13,7 @@ hide-in-nav: true
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
 title="YouTube 播放列表 1"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -27,7 +27,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
 title="YouTube playlist 2"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -41,7 +41,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
 title="YouTube 播放列表 2"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -55,7 +55,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
 title="YouTube 播放列表 4"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -69,7 +69,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
+src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&hl=zh-CN&cc_lang_pref=zh-CN&cc_load_policy=1"
 title="YouTube 播放列表 5"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -99,9 +99,3 @@ allowfullscreen>
 <hr>
 {% endfor %}
 </div>
-<script>
-function loadSequentialIframes() {
-const iframes = document.querySelectorAll("iframe[data-src]");
-let i = 0;
-function loadNext() {
-if (i >= iframes.length) return;
