@@ -13,7 +13,7 @@ hide-in-nav: true
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
 title="YouTube playlist 1"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -27,7 +27,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
 title="YouTube playlist 2"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -41,7 +41,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
 title="YouTube playlist 3"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -55,7 +55,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
 title="YouTube playlist 4"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -69,7 +69,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
 title="YouTube playlist 5"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -99,3 +99,27 @@ allowfullscreen>
 <hr>
 {% endfor %}
 </div>
+
+</div>
+
+<script>
+function loadSequentialIframes() {
+  const iframes = document.querySelectorAll("iframe[data-src]");
+  let i = 0;
+
+  function loadNext() {
+    if (i >= iframes.length) return;
+
+    const iframe = iframes[i];
+    iframe.src = iframe.getAttribute("data-src");
+    iframe.removeAttribute("data-src");
+
+    i++;
+    setTimeout(loadNext, 600);
+  }
+
+  loadNext();
+}
+
+document.addEventListener("DOMContentLoaded", loadSequentialIframes);
+</script>
