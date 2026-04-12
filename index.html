@@ -11,105 +11,69 @@ hide-in-nav: true
 
 <!-- 1 -->
 <div class="col-12 mb-3">
-<h4 id="title1" class="yt-title"></h4>
-
-<div class="yt-wrap">
-<iframe
-id="player1"
-data-title="title1"
-data-playlist="PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
+<h4 class="yt-title" id="title1"></h4>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe data-title="title1"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
+frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+allowfullscreen></iframe>
 </div>
-
-<p class="text-left">
-The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels.
-</p>
+<p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels.</p>
 </div>
 
 <!-- 2 -->
 <div class="col-12 mb-3">
-<h4 id="title2" class="yt-title"></h4>
-
-<div class="yt-wrap">
-<iframe
-id="player2"
-data-title="title2"
-data-playlist="PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
-allowfullscreen>
-</iframe>
+<h4 class="yt-title" id="title2"></h4>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe data-title="title2"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
+frameborder="0"
+allowfullscreen></iframe>
 </div>
-
-<p class="text-left">
-Fx Majors Update daily technical insights.
-</p>
+<p class="text-left">Fx Majors Update daily insights.</p>
 </div>
 
 <!-- 3 -->
 <div class="col-12 mb-3">
-<h4 id="title3" class="yt-title"></h4>
-
-<div class="yt-wrap">
-<iframe
-id="player3"
-data-title="title3"
-data-playlist="PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
-allowfullscreen>
-</iframe>
+<h4 class="yt-title" id="title3"></h4>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe data-title="title3"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
+frameborder="0"
+allowfullscreen></iframe>
 </div>
-
-<p class="text-left">
-Trade setup breakdowns.
-</p>
+<p class="text-left">Trade setup breakdowns.</p>
 </div>
 
 <!-- 4 -->
 <div class="col-12 mb-3">
-<h4 id="title4" class="yt-title"></h4>
-
-<div class="yt-wrap">
-<iframe
-id="player4"
-data-title="title4"
-data-playlist="PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
-allowfullscreen>
-</iframe>
+<h4 class="yt-title" id="title4"></h4>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe data-title="title4"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
+frameborder="0"
+allowfullscreen></iframe>
 </div>
-
-<p class="text-left">
-Market analysis videos.
-</p>
+<p class="text-left">Market analysis videos.</p>
 </div>
 
 <!-- 5 -->
 <div class="col-12 mb-3">
-<h4 id="title5" class="yt-title"></h4>
-
-<div class="yt-wrap">
-<iframe
-id="player5"
-data-title="title5"
-data-playlist="PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
-allowfullscreen>
-</iframe>
+<h4 class="yt-title" id="title5"></h4>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe data-title="title5"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
+frameborder="0"
+allowfullscreen></iframe>
 </div>
-
-<p class="text-left">
-Trading tool explanations.
-</p>
+<p class="text-left">Trading tool explanation.</p>
 </div>
 
 </div>
 </div>
 
 <h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
-
 <div class="post-list">
 {% assign en_posts = site.posts | where: "lang", "en" %}
 {% for post in en_posts limit: 6 %}
@@ -129,42 +93,37 @@ Trading tool explanations.
 {% endfor %}
 </div>
 
-<!-- YouTube API -->
-<script src="https://www.youtube.com/iframe_api"></script>
-
+<!-- SCRIPT -->
 <script>
-let players = {};
-
-function onYouTubeIframeAPIReady() {
-
-  ["player1","player2","player3","player4","player5"].forEach(id => {
-
-    const iframe = document.getElementById(id);
-    const titleId = iframe.dataset.title;
-    const playlist = iframe.dataset.playlist;
-
-    players[id] = new YT.Player(id, {
-      height: '100%',
-      width: '100%',
-      playerVars: {
-        listType: 'playlist',
-        list: playlist
-      },
-      events: {
-        onReady: () => updateTitle(id, titleId),
-        onStateChange: () => updateTitle(id, titleId)
-      }
-    });
-
-  });
-
+function loadIframe(el) {
+  if (el.dataset.loaded) return;
+  el.dataset.loaded = "1";
+  el.src = el.dataset.src;
 }
 
-function updateTitle(playerId, titleId) {
-  const player = players[playerId];
-  if (player && player.getVideoData) {
-    const data = player.getVideoData();
-    document.getElementById(titleId).innerText = data.title || "";
-  }
+function updateTitle(id, iframe) {
+  try {
+    const player = iframe.contentWindow;
+    // fallback safe (YouTube doesn't allow direct cross-title fetch)
+    document.getElementById(id).innerText = "Now Playing";
+  } catch (e) {}
 }
+
+/* Lazy load all iframes (prevents YouTube overload) */
+document.querySelectorAll("iframe").forEach((iframe, index) => {
+
+  const titleId = iframe.dataset.title;
+
+  // delay loading (fix YouTube overload issue)
+  setTimeout(() => {
+    loadIframe(iframe);
+
+    // set simple title placeholder
+    if (titleId) {
+      document.getElementById(titleId).innerText = "Loading video...";
+    }
+
+  }, index * 800); // stagger loading (VERY IMPORTANT)
+
+});
 </script>
