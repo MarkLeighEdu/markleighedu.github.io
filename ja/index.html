@@ -13,7 +13,7 @@ hide-in-nav: true
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
 title="YouTubeプレイリスト1"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -27,7 +27,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
 title="YouTube playlist 2"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -41,7 +41,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
 title="YouTubeプレイリスト2"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -55,7 +55,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
 title="YouTube プレイリスト 4"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -69,7 +69,7 @@ allowfullscreen>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe
 class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
+data-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&hl=ja&cc_lang_pref=ja&cc_load_policy=1"
 title="YouTubeプレイリスト5"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -80,6 +80,7 @@ allowfullscreen>
 </div>
 </div>
 </div>
+<h2 class="most-updated-title"><strong>最新の更新投稿</strong></h2>
 <div class="post-list">
 {% assign ja_posts = site.posts | where: "lang", "ja" %}
 {% for post in ja_posts limit: 6 %}
@@ -98,4 +99,3 @@ allowfullscreen>
 <hr>
 {% endfor %}
 </div>
-</p>
