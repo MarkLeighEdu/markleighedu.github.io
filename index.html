@@ -8,57 +8,71 @@ hide-in-nav: true
 
 <style>
 /* =========================
-   VIDEO SYSTEM STYLES
+   VIDEO SYSTEM (FINAL)
 ========================= */
 
 .post-preview {
   margin-top: 20px;
 }
 
+/* TITLE ALWAYS STABLE */
 .video-title {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-/* responsive 16:9 container */
+/* RESPONSIVE CONTAINER */
 .video-container {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
   background: #111;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* placeholder layer (shown before click) */
-.video-placeholder {
+/* THUMBNAIL LAYER */
+.video-thumb {
   position: absolute;
   inset: 0;
+  background-size: cover;
+  background-position: center;
   cursor: pointer;
-  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  transition: transform 0.3s ease;
+}
+
+/* DARK OVERLAY */
+.video-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* PLAY BUTTON */
+.play-button {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  color: #fff;
-  text-align: center;
+  z-index: 2;
 }
 
-/* play button */
-.play-button {
+.play-button span {
   width: 70px;
   height: 70px;
-  background: rgba(255,255,255,0.15);
   border-radius: 50%;
+  background: rgba(255,255,255,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
   font-size: 28px;
+  color: #fff;
 }
 
-/* iframe once loaded */
+/* IFRAME */
 .video-iframe {
   position: absolute;
   inset: 0;
@@ -71,94 +85,28 @@ hide-in-nav: true
 <div class="post-preview">
 
 <!-- =========================
-     VIDEO 1
+     VIDEO BLOCKS (ONLY PLAYLIST IDS NEEDED)
 ========================= -->
-<div class="col-12 mb-3">
 
-<h3 class="video-title">YouTube playlist 1</h3>
+<div class="video-block"
+     data-title="YouTube playlist 1"
+     data-playlist="PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"></div>
 
-<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z&rel=0&modestbranding=1')">
-  <div class="video-placeholder">
-    <div class="play-button">▶</div>
-    Click to play
-  </div>
-</div>
+<div class="video-block"
+     data-title="YouTube playlist 2"
+     data-playlist="PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"></div>
 
-<p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
+<div class="video-block"
+     data-title="YouTube playlist 3"
+     data-playlist="PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"></div>
 
-</div>
+<div class="video-block"
+     data-title="YouTube playlist 4"
+     data-playlist="PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"></div>
 
-<!-- =========================
-     VIDEO 2
-========================= -->
-<div class="col-12 mb-3">
-
-<h3 class="video-title">YouTube playlist 2</h3>
-
-<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs&rel=0&modestbranding=1')">
-  <div class="video-placeholder">
-    <div class="play-button">▶</div>
-    Click to play
-  </div>
-</div>
-
-<p class="text-left">Fx Majors Update: Daily technical insights on the US Dollar Index (DXY) and major pairs like EUR/USD, GBP/USD, USD/JPY, USD/CAD, and more. Get key levels, chart setups, and price action tips from Mark to boost your trading confidence and stay in sync with the markets.</p>
-
-</div>
-
-<!-- =========================
-     VIDEO 3
-========================= -->
-<div class="col-12 mb-3">
-
-<h3 class="video-title">YouTube playlist 3</h3>
-
-<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&rel=0&modestbranding=1')">
-  <div class="video-placeholder">
-    <div class="play-button">▶</div>
-    Click to play
-  </div>
-</div>
-
-<p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
-
-</div>
-
-<!-- =========================
-     VIDEO 4
-========================= -->
-<div class="col-12 mb-3">
-
-<h3 class="video-title">YouTube playlist 4</h3>
-
-<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ&rel=0&modestbranding=1')">
-  <div class="video-placeholder">
-    <div class="play-button">▶</div>
-    Click to play
-  </div>
-</div>
-
-<p class="text-left">Our Featured Market Analysis videos provide in-depth reviews of major assets across global markets — combining real-time fundamentals, technical insights, and key price levels to explain recent moves and outline potential market directions.</p>
-
-</div>
-
-<!-- =========================
-     VIDEO 5
-========================= -->
-<div class="col-12 mb-3">
-
-<h3 class="video-title">YouTube playlist 5</h3>
-
-<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&rel=0&modestbranding=1')">
-  <div class="video-placeholder">
-    <div class="play-button">▶</div>
-    Click to play
-  </div>
-</div>
-
-<p class="text-left">The Trading Tool video explains how to use the tool practically on the trading platform, with real-time examples that demonstrate trade setup and execution.</p>
-
-</div>
+<div class="video-block"
+     data-title="YouTube playlist 5"
+     data-playlist="PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"></div>
 
 </div>
 
@@ -170,9 +118,6 @@ hide-in-nav: true
 <div class="post-preview">
 <a href="{{ post.url | prepend: site.baseurl }}">
 <h2 class="post-title">{{ post.title }}</h2>
-{% if post.subtitle %}
-<h3 class="post-subtitle">{{ post.subtitle }}</h3>
-{% endif %}
 <div class="post-content-preview">
 {{ post.content | strip_html | truncate: 300 }}
 </div>
@@ -184,15 +129,129 @@ hide-in-nav: true
 </div>
 
 <script>
-function loadVideo(container, url) {
-  container.innerHTML = `
-    <iframe
-      class="video-iframe"
-      src="${url}"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-  `;
+const API_KEY = "AIzaSyDkiEtodrEKyTxSj3VsELhHMPW9JCHndrY";
+const CACHE_TIME = 1000 * 60 * 60 * 24; // 24h cache
+
+// =========================
+// CACHE HELPERS
+// =========================
+function getCache(key) {
+  const cached = localStorage.getItem(key);
+  if (!cached) return null;
+
+  const parsed = JSON.parse(cached);
+  if (Date.now() - parsed.time > CACHE_TIME) return null;
+
+  return parsed.data;
 }
+
+function setCache(key, data) {
+  localStorage.setItem(key, JSON.stringify({
+    time: Date.now(),
+    data
+  }));
+}
+
+// =========================
+// FETCH LATEST VIDEO FROM PLAYLIST
+// =========================
+async function fetchLatestVideo(playlistId) {
+  const cacheKey = "yt_" + playlistId;
+
+  const cached = getCache(cacheKey);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=1&playlistId=${playlistId}&key=${API_KEY}`
+    );
+
+    const data = await res.json();
+
+    const videoId = data.items?.[0]?.snippet?.resourceId?.videoId;
+
+    const result = {
+      videoId,
+      thumb: videoId
+        ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+        : null
+    };
+
+    setCache(cacheKey, result);
+    return result;
+
+  } catch (e) {
+    return { videoId: null, thumb: null };
+  }
+}
+
+// =========================
+// RENDER VIDEO BLOCK
+// =========================
+function createVideoBlock(el, title, playlistId, videoId, thumb) {
+
+  const container = document.createElement("div");
+  container.className = "video-container";
+
+  const thumbDiv = document.createElement("div");
+  thumbDiv.className = "video-thumb";
+
+  // fallback if thumbnail fails
+  thumbDiv.style.backgroundImage =
+    `url('${thumb || "https://via.placeholder.com/1280x720?text=Video"}')`;
+
+  const play = document.createElement("div");
+  play.className = "play-button";
+  play.innerHTML = "<span>▶</span>";
+
+  thumbDiv.appendChild(play);
+
+  thumbDiv.onclick = () => {
+    container.innerHTML = `
+      <iframe class="video-iframe"
+        src="https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1&rel=0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    `;
+  };
+
+  container.appendChild(thumbDiv);
+
+  const wrapper = document.createElement("div");
+
+  const h3 = document.createElement("h3");
+  h3.className = "video-title";
+  h3.textContent = title;
+
+  wrapper.appendChild(h3);
+  wrapper.appendChild(container);
+
+  el.appendChild(wrapper);
+}
+
+// =========================
+// LAZY LOAD SYSTEM (SEO + PERF)
+// =========================
+const observer = new IntersectionObserver(async (entries) => {
+  for (const entry of entries) {
+    if (!entry.isIntersecting) continue;
+
+    const el = entry.target;
+    observer.unobserve(el);
+
+    const playlistId = el.dataset.playlist;
+    const title = el.dataset.title;
+
+    const data = await fetchLatestVideo(playlistId);
+
+    createVideoBlock(el, title, playlistId, data.videoId, data.thumb);
+  }
+}, {
+  rootMargin: "200px"
+});
+
+// init
+document.querySelectorAll(".video-block").forEach(el => {
+  observer.observe(el);
+});
 </script>
