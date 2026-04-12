@@ -99,3 +99,9 @@ allowfullscreen>
 <hr>
 {% endfor %}
 </div>
+<script>
+function loadSequentialIframes() {
+const iframes = document.querySelectorAll("iframe[data-src]");
+let i = 0;
+function loadNext() {
+if (i >= iframes.length) return;
