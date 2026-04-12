@@ -5,82 +5,165 @@ title: "Mark Leigh Blog"
 description: "Mark Leigh Trading Education"
 hide-in-nav: true
 ---
-<div class="post-preview" style="margin-top: 20px;">
-<!-- First Block - Video Embeds -->
-<div class="row mb-4">
-<!-- First Video -->
+
+<style>
+/* =========================
+   VIDEO SYSTEM STYLES
+========================= */
+
+.post-preview {
+  margin-top: 20px;
+}
+
+.video-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* responsive 16:9 container */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #111;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* placeholder layer (shown before click) */
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+
+/* play button */
+.play-button {
+  width: 70px;
+  height: 70px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+/* iframe once loaded */
+.video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+
+<div class="post-preview">
+
+<!-- =========================
+     VIDEO 1
+========================= -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe
-class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z"
-title="YouTube playlist 1"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+
+<h3 class="video-title">YouTube playlist 1</h3>
+
+<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBTgqn8_61KcfoiONqtpr7Z&rel=0&modestbranding=1')">
+  <div class="video-placeholder">
+    <div class="play-button">▶</div>
+    Click to play
+  </div>
 </div>
+
 <p class="text-left">The Market Midday Overview provides expert-led technical analysis, offering in-depth insights into market trends and key levels. These videos are designed to help you understand how to analyze price movements, identify trading opportunities, and apply technical strategies effectively in real-time market conditions.</p>
+
 </div>
-<!-- Second Video -->
+
+<!-- =========================
+     VIDEO 2
+========================= -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe
-class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs"
-title="YouTube playlist 2"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+
+<h3 class="video-title">YouTube playlist 2</h3>
+
+<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzB_ixnufBZKr_g9qINBcLhs&rel=0&modestbranding=1')">
+  <div class="video-placeholder">
+    <div class="play-button">▶</div>
+    Click to play
+  </div>
 </div>
+
 <p class="text-left">Fx Majors Update: Daily technical insights on the US Dollar Index (DXY) and major pairs like EUR/USD, GBP/USD, USD/JPY, USD/CAD, and more. Get key levels, chart setups, and price action tips from Mark to boost your trading confidence and stay in sync with the markets.</p>
+
 </div>
-<!-- Third Video -->
+
+<!-- =========================
+     VIDEO 3
+========================= -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe
-class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ"
-title="YouTube playlist 3"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+
+<h3 class="video-title">YouTube playlist 3</h3>
+
+<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzBzijDKnu-PqDfEQZasUHwQ&rel=0&modestbranding=1')">
+  <div class="video-placeholder">
+    <div class="play-button">▶</div>
+    Click to play
+  </div>
 </div>
+
 <p class="text-left">The Trade Setup video breaks down the latest market trends and key levels to watch across various assets. Whether you're a beginner or an experienced trader, you'll find valuable insights to help guide your next trade.</p>
+
 </div>
-<!-- Fourth Video -->
+
+<!-- =========================
+     VIDEO 4
+========================= -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe
-class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ"
-title="YouTube playlist 4"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+
+<h3 class="video-title">YouTube playlist 4</h3>
+
+<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDu0_XcJ2LaPdWowWOKN1oZ&rel=0&modestbranding=1')">
+  <div class="video-placeholder">
+    <div class="play-button">▶</div>
+    Click to play
+  </div>
 </div>
+
 <p class="text-left">Our Featured Market Analysis videos provide in-depth reviews of major assets across global markets — combining real-time fundamentals, technical insights, and key price levels to explain recent moves and outline potential market directions.</p>
+
 </div>
-<!-- Fifth Video -->
+
+<!-- =========================
+     VIDEO 5
+========================= -->
 <div class="col-12 mb-3">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe
-class="embed-responsive-item"
-src="https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T"
-title="YouTube playlist 5"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen>
-</iframe>
+
+<h3 class="video-title">YouTube playlist 5</h3>
+
+<div class="video-container" onclick="loadVideo(this, 'https://www.youtube.com/embed/videoseries?list=PLYCU907hAzzDBpvbDocy72eOBBu4PAO5T&rel=0&modestbranding=1')">
+  <div class="video-placeholder">
+    <div class="play-button">▶</div>
+    Click to play
+  </div>
 </div>
+
 <p class="text-left">The Trading Tool video explains how to use the tool practically on the trading platform, with real-time examples that demonstrate trade setup and execution.</p>
+
 </div>
+
 </div>
-</div>
+
 <h2 class="most-updated-title"><strong>Most Updated Posts</strong></h2>
+
 <div class="post-list">
 {% assign en_posts = site.posts | where: "lang", "en" %}
 {% for post in en_posts limit: 6 %}
@@ -99,3 +182,17 @@ allowfullscreen>
 <hr>
 {% endfor %}
 </div>
+
+<script>
+function loadVideo(container, url) {
+  container.innerHTML = `
+    <iframe
+      class="video-iframe"
+      src="${url}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  `;
+}
+</script>
